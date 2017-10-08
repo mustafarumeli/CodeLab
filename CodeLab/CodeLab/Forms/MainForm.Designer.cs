@@ -97,6 +97,7 @@
             this.Controls.Add(this.LblDisc);
             this.Controls.Add(this.LblAuth);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "Welcome to CodeLab";
             this.ResumeLayout(false);
             this.PerformLayout();

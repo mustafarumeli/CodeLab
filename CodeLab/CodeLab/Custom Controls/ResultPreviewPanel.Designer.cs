@@ -36,6 +36,7 @@
             this.LblAuthor = new System.Windows.Forms.Label();
             this.PbStars = new System.Windows.Forms.PictureBox();
             this.IlStartImages = new System.Windows.Forms.ImageList(this.components);
+            this.customButton1 = new CodeLab.Custom_Controls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.PbStars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +100,30 @@
             this.IlStartImages.Images.SetKeyName(1, "StarHalf.png");
             this.IlStartImages.Images.SetKeyName(2, "StarSchema.png");
             // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.Fuchsia;
+            this.customButton1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(648, 190);
+            this.customButton1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.customButton1.MinimumSize = new System.Drawing.Size(100, 30);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Padding = new System.Windows.Forms.Padding(3);
+            this.customButton1.Size = new System.Drawing.Size(141, 50);
+            this.customButton1.TabIndex = 5;
+            this.customButton1.Text = "Go To Code";
+            this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
+            // 
             // ResultPreviewPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.Controls.Add(this.customButton1);
             this.Controls.Add(this.PbStars);
             this.Controls.Add(this.LblAuthor);
             this.Controls.Add(this.LblLang);
@@ -111,7 +131,6 @@
             this.Controls.Add(this.LblDate);
             this.Name = "ResultPreviewPanel";
             this.Size = new System.Drawing.Size(1021, 256);
-            this.Load += new System.EventHandler(this.ResultPreviewPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbStars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,5 +145,6 @@
         private System.Windows.Forms.Label LblAuthor;
         private System.Windows.Forms.PictureBox PbStars;
         private System.Windows.Forms.ImageList IlStartImages;
+        private CustomButton customButton1;
     }
 }

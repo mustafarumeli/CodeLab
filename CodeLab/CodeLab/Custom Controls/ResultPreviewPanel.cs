@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeLab.Classes;
+using CodeLab.Forms;
 
 namespace CodeLab.Custom_Controls
 {
@@ -16,11 +17,13 @@ namespace CodeLab.Custom_Controls
         public ResultPreviewPanel(string header, string date, Rate rating, string language, string author)
         {
             InitializeComponent();
+            this.header = header;
             Setup(header, date, rating, language, author);
 
         }
         const int MAX_STAR_COUNT = 4;
-
+        private string header = "";
+        private string id = ""; // ID eklenecek tabii
         void Setup(string header, string date, Rate rating, string language, string author)
         {
             LblHeader.Text = header;
@@ -55,9 +58,11 @@ namespace CodeLab.Custom_Controls
 
             PbStars.Image = b;
         }
-        private void ResultPreviewPanel_Load(object sender, EventArgs e)
-        {
 
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            Code code = new Code(header);
+            code.ShowDialog();
         }
     }
 }

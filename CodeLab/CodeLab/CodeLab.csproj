@@ -85,6 +85,12 @@
     <Compile Include="Forms\Auth\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Code.Designer.cs">
+      <DependentUpon>Code.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListResults.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Code.resx">
+      <DependentUpon>Code.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListResults.resx">
       <DependentUpon>ListResults.cs</DependentUpon>
