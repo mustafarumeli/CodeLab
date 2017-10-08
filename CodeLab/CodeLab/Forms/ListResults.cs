@@ -14,11 +14,12 @@ namespace CodeLab.Forms
 {
     public partial class ListResults : MetroFramework.Forms.MetroForm
     {
-        public ListResults()
+        public ListResults(string searchText)
         {
             InitializeComponent();
+            LblResult.Text += searchText;
         }
-
+        
         private void ListResults_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < 50; i++)

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblResult = new System.Windows.Forms.Label();
             this.resultContainer1 = new CodeLab.Custom_Controls.ResultContainer();
             this.SuspendLayout();
             // 
-            // label1
+            // LblResult
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Results For : ";
+            this.LblResult.AutoSize = true;
+            this.LblResult.Font = new System.Drawing.Font("Arial", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblResult.Location = new System.Drawing.Point(175, 108);
+            this.LblResult.Name = "LblResult";
+            this.LblResult.Size = new System.Drawing.Size(210, 38);
+            this.LblResult.TabIndex = 0;
+            this.LblResult.Text = "Results For : ";
             // 
             // resultContainer1
             // 
@@ -59,7 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 524);
             this.Controls.Add(this.resultContainer1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblResult);
             this.Name = "ListResults";
             this.Text = "ListResults";
             this.Load += new System.EventHandler(this.ListResults_Load);
@@ -70,7 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblResult;
         private Custom_Controls.ResultContainer resultContainer1;
     }
 }

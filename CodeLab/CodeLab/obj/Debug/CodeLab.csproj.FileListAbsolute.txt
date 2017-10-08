@@ -14,3 +14,5 @@ C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.pdb
 C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Custom_Controls.ResultPreviewPanel.resources
 C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.ListResults.resources
 C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Custom_Controls.ResultContainer.resources
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.Login.resources
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.Register.resources

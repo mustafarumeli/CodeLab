@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Rate.cs" />
+    <Compile Include="Custom Controls\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\CustomButton.Designer.cs">
+      <DependentUpon>CustomButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom Controls\ResultContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -66,6 +72,18 @@
     </Compile>
     <Compile Include="Custom Controls\ResultPreviewPanel.Designer.cs">
       <DependentUpon>ResultPreviewPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Auth\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Auth\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListResults.cs">
       <SubType>Form</SubType>
@@ -86,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Custom Controls\ResultPreviewPanel.resx">
       <DependentUpon>ResultPreviewPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListResults.resx">
       <DependentUpon>ListResults.cs</DependentUpon>

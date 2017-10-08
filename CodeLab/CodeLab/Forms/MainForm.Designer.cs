@@ -28,73 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LblAuth = new System.Windows.Forms.Label();
+            this.LblDisc = new System.Windows.Forms.Label();
+            this.TbSearch = new System.Windows.Forms.TextBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // LblAuth
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14F);
-            this.label1.Location = new System.Drawing.Point(880, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Login / Register";
+            this.LblAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblAuth.AutoSize = true;
+            this.LblAuth.Font = new System.Drawing.Font("Calibri", 14F);
+            this.LblAuth.Location = new System.Drawing.Point(880, 31);
+            this.LblAuth.Name = "LblAuth";
+            this.LblAuth.Size = new System.Drawing.Size(128, 23);
+            this.LblAuth.TabIndex = 0;
+            this.LblAuth.Text = "Login / Register";
+            this.LblAuth.Click += new System.EventHandler(this.LblAuth_Click);
             // 
-            // label2
+            // LblDisc
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 398);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(569, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bu proje Mahmut-san Bilişim Hizmetleri ve Yazılım Ticaret A.Ş. Limited Şirketler " +
+            this.LblDisc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblDisc.AutoSize = true;
+            this.LblDisc.Location = new System.Drawing.Point(23, 398);
+            this.LblDisc.Name = "LblDisc";
+            this.LblDisc.Size = new System.Drawing.Size(569, 13);
+            this.LblDisc.TabIndex = 1;
+            this.LblDisc.Text = "Bu proje Mahmut-san Bilişim Hizmetleri ve Yazılım Ticaret A.Ş. Limited Şirketler " +
     "Grubu tarafından Pervaneh için yapılmıştır";
             // 
-            // textBox1
+            // TbSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(156, 181);
-            this.textBox1.MaximumSize = new System.Drawing.Size(1080, 80);
-            this.textBox1.MinimumSize = new System.Drawing.Size(629, 80);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(629, 80);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "asdas";
+            this.TbSearch.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbSearch.Location = new System.Drawing.Point(156, 181);
+            this.TbSearch.MaximumSize = new System.Drawing.Size(1080, 80);
+            this.TbSearch.MinimumSize = new System.Drawing.Size(629, 80);
+            this.TbSearch.Multiline = true;
+            this.TbSearch.Name = "TbSearch";
+            this.TbSearch.Size = new System.Drawing.Size(629, 80);
+            this.TbSearch.TabIndex = 2;
+            this.TbSearch.Text = "asdas";
             // 
-            // button1
+            // BtnSearch
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::CodeLab.Properties.Resources.Glass1;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(782, 181);
-            this.button1.MaximumSize = new System.Drawing.Size(80, 80);
-            this.button1.MinimumSize = new System.Drawing.Size(80, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 80);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnSearch.BackgroundImage = global::CodeLab.Properties.Resources.Glass1;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearch.Location = new System.Drawing.Point(782, 181);
+            this.BtnSearch.MaximumSize = new System.Drawing.Size(80, 80);
+            this.BtnSearch.MinimumSize = new System.Drawing.Size(80, 80);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(80, 80);
+            this.BtnSearch.TabIndex = 3;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 431);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BtnSearch);
+            this.Controls.Add(this.TbSearch);
+            this.Controls.Add(this.LblDisc);
+            this.Controls.Add(this.LblAuth);
             this.Name = "MainForm";
             this.Text = "Welcome to CodeLab";
             this.ResumeLayout(false);
@@ -104,9 +105,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label LblAuth;
+        private System.Windows.Forms.Label LblDisc;
+        private System.Windows.Forms.TextBox TbSearch;
+        private System.Windows.Forms.Button BtnSearch;
     }
 }

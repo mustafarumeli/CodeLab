@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeLab.Forms.Auth;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,16 @@ namespace CodeLab.Forms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
-            ListResults lr = new ListResults();
+            ListResults lr = new ListResults(TbSearch.Text);
             lr.Show();
+        }
+
+        private void LblAuth_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.ShowDialog();
         }
     }
 }
