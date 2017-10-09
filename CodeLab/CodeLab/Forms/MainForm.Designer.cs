@@ -32,6 +32,7 @@
             this.LblDisc = new System.Windows.Forms.Label();
             this.TbSearch = new System.Windows.Forms.TextBox();
             this.BtnSearch = new System.Windows.Forms.Button();
+            this.LblContribute = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LblAuth
@@ -87,11 +88,23 @@
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // LblContribute
+            // 
+            this.LblContribute.AutoSize = true;
+            this.LblContribute.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContribute.Location = new System.Drawing.Point(881, 54);
+            this.LblContribute.Name = "LblContribute";
+            this.LblContribute.Size = new System.Drawing.Size(80, 18);
+            this.LblContribute.TabIndex = 4;
+            this.LblContribute.Text = "Contribute";
+            this.LblContribute.Click += new System.EventHandler(this.LblContribute_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 431);
+            this.Controls.Add(this.LblContribute);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.TbSearch);
             this.Controls.Add(this.LblDisc);
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Label LblDisc;
         private System.Windows.Forms.TextBox TbSearch;
         private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.Label LblContribute;
     }
 }

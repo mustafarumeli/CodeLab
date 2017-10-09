@@ -16,8 +16,8 @@ namespace CodeLab.Custom_Controls
         private static Font _normalFont = new Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
         private static Color _back = System.Drawing.Color.Gray;
-        private static Color _border = System.Drawing.Color.Green;
-        private static Color _activeBorder = System.Drawing.Color.DarkGreen;
+        private static Color _border = System.Drawing.Color.Black;
+        private static Color _activeBorder = System.Drawing.Color.Black;
         private static Color _fore = System.Drawing.Color.White;
 
         private static Padding _margin = new System.Windows.Forms.Padding(5, 0, 5, 0);

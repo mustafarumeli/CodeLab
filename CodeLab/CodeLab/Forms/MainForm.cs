@@ -29,5 +29,13 @@ namespace CodeLab.Forms
             Login login = new Login();
             login.ShowDialog();
         }
+
+        private void LblContribute_Click(object sender, EventArgs e)
+        {
+            using (var frm = new UserAddCodeForm())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
