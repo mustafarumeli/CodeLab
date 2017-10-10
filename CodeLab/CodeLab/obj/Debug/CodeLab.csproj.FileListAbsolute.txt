@@ -18,3 +18,12 @@ C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.Lo
 C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.Register.resources
 C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Code.resources
 C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.UserAddCodeForm.resources
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\MongoDB.Bson.dll
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\MongoDB.Driver.dll
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\MongoDB.Bson.xml
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\MongoDB.Driver.xml
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mustafa\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\Newtonsoft.Json.xml
