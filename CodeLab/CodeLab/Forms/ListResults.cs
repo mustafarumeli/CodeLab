@@ -20,19 +20,17 @@ namespace CodeLab.Forms
             LblResult.Text += searchText;
         }
         
-        private void ListResults_Load(object sender, EventArgs e)
+        private async void ListResults_LoadAsync(object sender, EventArgs e)
         {
-            for (int i = 0; i < 50; i++)
-            {
-                MahmutEkle();
-            }
 
-            void MahmutEkle()
+          var results = await Server.GetValuesAsync<CodePiece>(new MongoDB.Bson.BsonDocument());
+            foreach (var result in results)
             {
-                Random rnd = new Random();
-                var mahmut = new ResultPreviewPanel("Mail atma2 Programı", DateTime.Now.ToShortTimeString(), new Rate(rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100)), "c#", "Mahmut-San");
-                resultContainer1.Add(mahmut);
+
+                var user =  await Server.GetValue<User>(new MongoDB.Bson.BsonDocument { { "_id", result.Contributer } });
+                resultContainer1.Add(new ResultPreviewPanel(result._id,result.Title, result.Date.ToString(), result.Scores, result.Language, user.Name));
             }
+            
         }
     }
 }

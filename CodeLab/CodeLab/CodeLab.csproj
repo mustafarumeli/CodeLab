@@ -69,7 +69,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\CodePiece.cs" />
+    <Compile Include="Classes\DbObject.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Rate.cs" />
     <Compile Include="Classes\Server.cs" />
     <Compile Include="Custom Controls\CustomButton.cs">

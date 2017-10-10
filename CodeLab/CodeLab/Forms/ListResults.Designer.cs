@@ -62,7 +62,7 @@
             this.Controls.Add(this.LblResult);
             this.Name = "ListResults";
             this.Text = "ListResults";
-            this.Load += new System.EventHandler(this.ListResults_Load);
+            this.Load += new System.EventHandler(this.ListResults_LoadAsync);
             this.ResumeLayout(false);
             this.PerformLayout();
 

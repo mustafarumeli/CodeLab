@@ -76,7 +76,7 @@
             this.CbtnSend.TabIndex = 1;
             this.CbtnSend.Text = "Send";
             this.CbtnSend.UseVisualStyleBackColor = false;
-            this.CbtnSend.Click += new System.EventHandler(this.CbtnSend_Click);
+            this.CbtnSend.Click += new System.EventHandler(this.CbtnSend_ClickAsync);
             // 
             // TxtCodeTitle
             // 

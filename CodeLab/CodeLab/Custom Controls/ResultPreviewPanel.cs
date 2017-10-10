@@ -14,22 +14,23 @@ namespace CodeLab.Custom_Controls
 {
     public partial class ResultPreviewPanel : UserControl
     {
-        public ResultPreviewPanel(string header, string date, Rate rating, string language, string author)
+        public ResultPreviewPanel(string _id,string header, string date, Rate rating, string language, string author)
         {
             InitializeComponent();
             this.header = header;
-            Setup(header, date, rating, language, author);
+            Setup(_id,header, date, rating, language, author);
 
         }
         const int MAX_STAR_COUNT = 4;
         private string header = "";
         private string id = ""; // ID eklenecek tabii
-        void Setup(string header, string date, Rate rating, string language, string author)
+        void Setup(string _id , string header, string date, Rate rating, string language, string author)
         {
             LblHeader.Text = header;
             LblDate.Text = date;
             LblLang.Text = language;
             LblAuthor.Text = author;
+            id = _id;
             var starCount = rating.StarCount;
             bool hasHalf = false;
             if (starCount < 0)
@@ -61,7 +62,7 @@ namespace CodeLab.Custom_Controls
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            Code code = new Code(header);
+            Code code = new Code(id);
             code.ShowDialog();
         }
     }

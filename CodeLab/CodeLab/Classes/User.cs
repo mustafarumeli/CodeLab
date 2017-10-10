@@ -8,22 +8,21 @@ using MongoDB.Bson;
 
 namespace CodeLab.Classes
 {
-    class Person
+    class User:DbObject
     {
         
-        public int _id { get; set; }
 
         public string Name { get; set; }
-  
-        public string Surname { get; set; }
-    
+      
         public string Email { get; set; }
     
         public string Password { get; set; }
   
-        public int Age { get; set; }
+        public int UserName { get; set; }
+        public string SecurityQuestion { get; set; }
+        public string SecurityAnswer { get; set; }
 
-        public static explicit operator Person(BsonDocument v)
+        public static explicit operator User(BsonDocument v)
         {
             throw new NotImplementedException();
         }

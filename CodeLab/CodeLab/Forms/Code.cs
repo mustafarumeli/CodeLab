@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeLab.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,20 @@ namespace CodeLab.Forms
 {
     public partial class Code : MetroFramework.Forms.MetroForm
     {
-        public Code(string header)
+        string _id;
+        public Code(string id)
         {
             InitializeComponent();
-            this.Text = header;
+            _id = id;
+        }
+
+        private async void Code_LoadAsync(object sender, EventArgs e)
+        {
+            var codePiece = await Server.GetValue<CodePiece>(new MongoDB.Bson.BsonDocument { { "_id", _id } });
+            LblDesc.Text = codePiece.Description;
+            TbCode.Text = codePiece.Code;
+            this.Text = codePiece.Title;
+
         }
     }
 }

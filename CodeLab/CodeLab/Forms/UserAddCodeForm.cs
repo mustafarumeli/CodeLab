@@ -27,11 +27,22 @@ namespace CodeLab.Forms
             }
         }
 
-        private void CbtnSend_Click(object sender, EventArgs e)
+        private async void CbtnSend_ClickAsync(object sender, EventArgs e)
         {
             if (CheckValidations)
             {
-                // Bir şeyler yap
+                var cPiece = new CodeLab.Classes.CodePiece {
+                    Code = RtxtCodes.Text,
+                    Contributer = Guid.NewGuid().ToString(),
+                    Date = DateTime.Now,
+                    Description = TxtCodeDescription.Text,
+                    Language = ClbLanguages.SelectedItem.ToString(),
+                    Scores = new Classes.Rate(85, 65, 100, 69),
+                    Tags = TxtCodeTags.Text.Split(','),
+                    Title=TxtCodeTitle.Text
+                };
+                await Classes.Server.InsertAsync(cPiece);
+                MessageBox.Show("OK OK");
             }
             else
             {

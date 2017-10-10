@@ -79,6 +79,7 @@
             this.MinimumSize = new System.Drawing.Size(1162, 661);
             this.Name = "Code";
             this.Text = "Code";
+            this.Load += new System.EventHandler(this.Code_LoadAsync);
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
