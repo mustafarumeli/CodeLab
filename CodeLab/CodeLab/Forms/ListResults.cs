@@ -1,4 +1,6 @@
 ﻿using CodeLab.Classes;
+using CodeLab.Classes.Database;
+using CodeLab.Classes.Database.Entities;
 using CodeLab.Custom_Controls;
 using System;
 using System.Collections.Generic;
@@ -14,21 +16,22 @@ namespace CodeLab.Forms
 {
     public partial class ListResults : MetroFramework.Forms.MetroForm
     {
+        CodePieceCRUD codePieceCRUD;
         public ListResults(string searchText)
         {
             InitializeComponent();
             LblResult.Text += searchText;
+            codePieceCRUD = new CodePieceCRUD();
         }
         
         private async void ListResults_LoadAsync(object sender, EventArgs e)
         {
 
-          var results = await Server.GetValuesAsync<CodePiece>(new MongoDB.Bson.BsonDocument());
+            var results = await codePieceCRUD.GetAll(new MongoDB.Bson.BsonDocument());
             foreach (var result in results)
-            {
-
-                var user =  await Server.GetValue<User>(new MongoDB.Bson.BsonDocument { { "_id", result.Contributer } });
-                resultContainer1.Add(new ResultPreviewPanel(result._id,result.Title, result.Date.ToString(), result.Scores, result.Language, user.Name));
+            { 
+                User user = await new UserCRUD().GetOne(result.Contributer);
+                resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(), result.Scores, result.Language, user.Name));
             }
             
         }

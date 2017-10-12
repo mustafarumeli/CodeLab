@@ -38,28 +38,5 @@ namespace CodeLab.Forms
                 frm.ShowDialog();
             }
         }
-
-        private async void customButton1_ClickAsync(object sender, EventArgs e)
-        {
-            Server server = new Server();
-        }
-
-        private void button1_ClickAsync(object sender, EventArgs e)
-        {
-            Server server = new Server();
-            
-        }
-
-        private async void button2_ClickAsync(object sender, EventArgs e)
-        {
-            Server server = new Server();
-            await server.UpdateOneAsync<User>();
-        }
-
-        private async void button3_ClickAsync(object sender, EventArgs e)
-        {
-            Server server = new Server();
-            await server.DeleteOneAsync<User>();
-        }
     }
 }

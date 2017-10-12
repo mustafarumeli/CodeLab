@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeLab.Classes
+namespace CodeLab.Classes.Database.Entities
 {
-    class CodePiece : DbObject
+   public class CodePiece : DbObject
     {
         public string Code { get; set; }
         public string Contributer { get; set; }

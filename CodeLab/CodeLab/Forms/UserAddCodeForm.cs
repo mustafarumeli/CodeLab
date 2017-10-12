@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeLab.Classes.Database.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,7 @@ namespace CodeLab.Forms
         {
             if (CheckValidations)
             {
-                var cPiece = new CodeLab.Classes.CodePiece {
+                var cPiece = new CodePiece {
                     Code = RtxtCodes.Text,
                     Contributer = Guid.NewGuid().ToString(),
                     Date = DateTime.Now,
@@ -41,7 +42,7 @@ namespace CodeLab.Forms
                     Tags = TxtCodeTags.Text.Split(','),
                     Title=TxtCodeTitle.Text
                 };
-                await Classes.Server.InsertAsync(cPiece);
+                await new Classes.Database.CodePieceCRUD().Insert(cPiece);
                 MessageBox.Show("OK OK");
             }
             else

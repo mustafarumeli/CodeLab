@@ -69,11 +69,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CodePiece.cs" />
-    <Compile Include="Classes\DbObject.cs" />
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Database\CodePieceCRUD.cs" />
+    <Compile Include="Classes\Database\DbFactory.cs" />
+    <Compile Include="Classes\Database\ICodeLabDB.cs" />
+    <Compile Include="Classes\Database\UserCRUD.cs" />
+    <Compile Include="Classes\Database\DbObject.cs" />
+    <Compile Include="Classes\Database\Entities\CodePiece.cs" />
+    <Compile Include="Classes\Database\Entities\User.cs" />
     <Compile Include="Classes\Rate.cs" />
-    <Compile Include="Classes\Server.cs" />
     <Compile Include="Custom Controls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
