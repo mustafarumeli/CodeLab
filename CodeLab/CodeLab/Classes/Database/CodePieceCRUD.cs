@@ -38,7 +38,7 @@ namespace CodeLab.Classes.Database
                 using (var cursor = await table.FindAsync(filter))
                 {
 
-                    var x = cursor.ToEnumerable().Where(z => 1 == 1).ToList();
+                    var x = cursor.ToList();
                     foreach (var item in x)
                     {
                         CodePiece obj = JsonConvert.DeserializeObject<CodePiece>(item.ToString());
