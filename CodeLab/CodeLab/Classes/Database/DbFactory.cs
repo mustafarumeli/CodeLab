@@ -12,10 +12,48 @@ namespace CodeLab.Classes.Database
    public class DbFactory
     {
         public static IMongoClient _client = new MongoClient();
-        public static IMongoDatabase _database = _client.GetDatabase("test4");
-        public static IMongoCollection<BsonDocument>  Users = _database.GetCollection<BsonDocument>(typeof(User).Name);
-        public static IMongoCollection<BsonDocument> CodePieces = _database.GetCollection<BsonDocument>(typeof(CodePiece).Name);
 
+        private static IMongoDatabase _database;
 
+        public static IMongoDatabase database
+        {
+            get
+            {
+                if (_database == null)
+                {
+                    _database = _client.GetDatabase("test4");
+                }
+                return _database;
+            }
+        }
+
+        private static IMongoCollection<BsonDocument> _Users;
+
+        public static IMongoCollection<BsonDocument> Users
+        {
+            get
+            {
+                if (_Users == null)
+                {
+                    _Users = _database.GetCollection<BsonDocument>(typeof(User).Name);
+                }
+                return _Users;
+            }
+        }
+
+        private static IMongoCollection<BsonDocument> _CodePieces;
+        public static IMongoCollection<BsonDocument> CodePieces
+        {
+            get
+            {
+                if (_CodePieces == null)
+                {
+                    _CodePieces = _database.GetCollection<BsonDocument>(typeof(CodePiece).Name);
+                }
+                return _CodePieces;
+            }
+        }
+
+       
     }
 }

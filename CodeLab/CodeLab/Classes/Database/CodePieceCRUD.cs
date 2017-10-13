@@ -13,7 +13,7 @@ namespace CodeLab.Classes.Database
  public   class CodePieceCRUD : ICodeLabDB<CodePiece>
     {
 
-        protected IMongoDatabase _database = DbFactory._database;
+        protected IMongoDatabase _database = DbFactory.database;
         protected IMongoCollection<BsonDocument> table = DbFactory.CodePieces;
 
         public async Task<bool> Delete(string _id)
