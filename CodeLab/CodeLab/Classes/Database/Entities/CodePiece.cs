@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +18,6 @@ namespace CodeLab.Classes.Database.Entities
         public string Description { get; set; }
         public string Title { get; set; }
         public string[] Tags { get; set; }
+        public byte[] Picture { get; set; }
     }
 }

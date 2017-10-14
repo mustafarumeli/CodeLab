@@ -34,6 +34,7 @@
             this.TxtCodeTitle = new System.Windows.Forms.TextBox();
             this.TxtCodeDescription = new System.Windows.Forms.TextBox();
             this.TxtCodeTags = new System.Windows.Forms.TextBox();
+            this.BtnPicture = new CodeLab.Custom_Controls.CustomButton();
             this.SuspendLayout();
             // 
             // RtxtCodes
@@ -93,7 +94,7 @@
             this.TxtCodeDescription.Location = new System.Drawing.Point(440, 112);
             this.TxtCodeDescription.Multiline = true;
             this.TxtCodeDescription.Name = "TxtCodeDescription";
-            this.TxtCodeDescription.Size = new System.Drawing.Size(327, 196);
+            this.TxtCodeDescription.Size = new System.Drawing.Size(327, 156);
             this.TxtCodeDescription.TabIndex = 7;
             this.TxtCodeDescription.Text = "Code Description";
             // 
@@ -106,6 +107,24 @@
             this.TxtCodeTags.TabIndex = 8;
             this.TxtCodeTags.Text = "Tags";
             // 
+            // BtnPicture
+            // 
+            this.BtnPicture.BackColor = System.Drawing.Color.Black;
+            this.BtnPicture.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.BtnPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPicture.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPicture.ForeColor = System.Drawing.Color.White;
+            this.BtnPicture.Location = new System.Drawing.Point(440, 278);
+            this.BtnPicture.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.BtnPicture.MinimumSize = new System.Drawing.Size(100, 30);
+            this.BtnPicture.Name = "BtnPicture";
+            this.BtnPicture.Padding = new System.Windows.Forms.Padding(3);
+            this.BtnPicture.Size = new System.Drawing.Size(327, 30);
+            this.BtnPicture.TabIndex = 1;
+            this.BtnPicture.Text = "Add Picture";
+            this.BtnPicture.UseVisualStyleBackColor = false;
+            this.BtnPicture.Click += new System.EventHandler(this.BtnPicture_Click);
+            // 
             // UserAddCodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +134,7 @@
             this.Controls.Add(this.TxtCodeDescription);
             this.Controls.Add(this.TxtCodeTitle);
             this.Controls.Add(this.ClbLanguages);
+            this.Controls.Add(this.BtnPicture);
             this.Controls.Add(this.CbtnSend);
             this.Controls.Add(this.RtxtCodes);
             this.MaximizeBox = false;
@@ -135,5 +155,6 @@
         private System.Windows.Forms.TextBox TxtCodeTitle;
         private System.Windows.Forms.TextBox TxtCodeDescription;
         private System.Windows.Forms.TextBox TxtCodeTags;
+        private Custom_Controls.CustomButton BtnPicture;
     }
 }

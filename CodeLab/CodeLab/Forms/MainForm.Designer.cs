@@ -97,6 +97,7 @@
             this.LblContribute.Size = new System.Drawing.Size(80, 18);
             this.LblContribute.TabIndex = 4;
             this.LblContribute.Text = "Contribute";
+            this.LblContribute.Visible = false;
             this.LblContribute.Click += new System.EventHandler(this.LblContribute_Click);
             // 
             // MainForm

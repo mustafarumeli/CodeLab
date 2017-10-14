@@ -1,4 +1,5 @@
 ﻿using CodeLab.Classes;
+using CodeLab.Classes.Database.Entities;
 using CodeLab.Forms.Auth;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace CodeLab.Forms
 {
     public partial class MainForm : MetroFramework.Forms.MetroForm
     {
+        public static User CurrentUser;
         public MainForm()
         {
             InitializeComponent();
@@ -29,8 +31,26 @@ namespace CodeLab.Forms
         {
             Login login = new Login();
             login.ShowDialog();
+            if (CurrentUser != null)
+            {
+                LblContribute.Visible = true;
+                LblAuth.Text = "Welcome " + CurrentUser.Name;
+                LblAuth.Click -= LblAuth_Click;
+                LblAuth.Click += LblAuth_LogOut;
+            }
         }
-
+        private void LblAuth_LogOut(object sender, EventArgs e)
+        {
+        
+            if (MessageBox.Show("Are you sure you want to log out? ","Logout",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                CurrentUser = null;
+                LblContribute.Visible = false;
+                LblAuth.Text = "SignUp/Register";
+                LblAuth.Click -= LblAuth_LogOut;
+                LblAuth.Click += LblAuth_Click;
+            }
+        }
         private void LblContribute_Click(object sender, EventArgs e)
         {
             using (var frm = new UserAddCodeForm())

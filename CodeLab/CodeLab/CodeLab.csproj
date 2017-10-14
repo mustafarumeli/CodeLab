@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\Database\CodePieceCRUD.cs" />
     <Compile Include="Classes\Database\DbFactory.cs" />
     <Compile Include="Classes\Database\ICodeLabDB.cs" />

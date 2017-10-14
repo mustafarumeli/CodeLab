@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeLab.Classes.Database.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,36 @@ namespace CodeLab.Forms.Auth
         {
             InitializeComponent();
         }
-
         private void LblRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register();
             register.ShowDialog();
+            if (MainForm.CurrentUser != null)
+            {
+                this.Close();
+            }
+
+        }
+
+        private async void LoginButton_ClickAsync(object sender, EventArgs e)
+        {
+            if (TbUserName.TextLength > 3 && MtbPassword.TextLength > 7)
+            {
+                var correctLogin = await new Classes.Database.UserCRUD().CheckAuthentication(TbUserName.Text, MtbPassword.Text);
+                if (correctLogin != null)
+                {
+                    MainForm.CurrentUser = correctLogin;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("You have entered wrong credentials","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Information you have entered is not long enough.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
     }
 }

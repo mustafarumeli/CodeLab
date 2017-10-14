@@ -1,10 +1,12 @@
 ﻿using CodeLab.Classes;
 using CodeLab.Classes.Database;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +31,11 @@ namespace CodeLab.Forms
             var codePiece = await codePieceCrud.GetOne(_id);
             LblDesc.Text = codePiece.Description;
             TbCode.Text = codePiece.Code;
+            using (var ms = new MemoryStream(codePiece.Picture))
+            {
+                PBpicture.Image =
+                Image.FromStream(ms);
+            }
             this.Text = codePiece.Title;
 
         }

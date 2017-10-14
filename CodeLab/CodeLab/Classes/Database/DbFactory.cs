@@ -15,13 +15,13 @@ namespace CodeLab.Classes.Database
 
         private static IMongoDatabase _database;
 
-        public static IMongoDatabase database
+        public static IMongoDatabase Database
         {
             get
             {
                 if (_database == null)
                 {
-                    _database = _client.GetDatabase("test4");
+                    _database = _client.GetDatabase("test5");
                 }
                 return _database;
             }

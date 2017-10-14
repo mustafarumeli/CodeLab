@@ -31,7 +31,7 @@
             this.LblUserName = new System.Windows.Forms.Label();
             this.LblPassword = new System.Windows.Forms.Label();
             this.TbUserName = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MtbPassword = new System.Windows.Forms.MaskedTextBox();
             this.LblRegister = new System.Windows.Forms.Label();
             this.LoginButton = new CodeLab.Custom_Controls.CustomButton();
             this.SuspendLayout();
@@ -66,17 +66,17 @@
             this.TbUserName.TabIndex = 2;
             this.TbUserName.Text = "User Name";
             // 
-            // maskedTextBox1
+            // MtbPassword
             // 
-            this.maskedTextBox1.Culture = new System.Globalization.CultureInfo("tr-TR");
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 18.5F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(113, 164);
-            this.maskedTextBox1.MaximumSize = new System.Drawing.Size(228, 36);
-            this.maskedTextBox1.MinimumSize = new System.Drawing.Size(228, 36);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PasswordChar = '*';
-            this.maskedTextBox1.Size = new System.Drawing.Size(228, 36);
-            this.maskedTextBox1.TabIndex = 3;
+            this.MtbPassword.Culture = new System.Globalization.CultureInfo("tr-TR");
+            this.MtbPassword.Font = new System.Drawing.Font("Arial", 18.5F);
+            this.MtbPassword.Location = new System.Drawing.Point(113, 164);
+            this.MtbPassword.MaximumSize = new System.Drawing.Size(228, 36);
+            this.MtbPassword.MinimumSize = new System.Drawing.Size(228, 36);
+            this.MtbPassword.Name = "MtbPassword";
+            this.MtbPassword.PasswordChar = '*';
+            this.MtbPassword.Size = new System.Drawing.Size(228, 36);
+            this.MtbPassword.TabIndex = 3;
             // 
             // LblRegister
             // 
@@ -105,6 +105,7 @@
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_ClickAsync);
             // 
             // Login
             // 
@@ -112,7 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 371);
             this.Controls.Add(this.LblRegister);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.MtbPassword);
             this.Controls.Add(this.TbUserName);
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.LblUserName);
@@ -133,7 +134,7 @@
         private System.Windows.Forms.Label LblUserName;
         private System.Windows.Forms.Label LblPassword;
         private System.Windows.Forms.TextBox TbUserName;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox MtbPassword;
         private System.Windows.Forms.Label LblRegister;
     }
 }

@@ -13,7 +13,7 @@ namespace CodeLab.Classes.Database
     public class UserCRUD : ICodeLabDB<User>
     {
 
-        protected  IMongoDatabase _database = DbFactory.database;
+        protected  IMongoDatabase _database = DbFactory.Database;
         protected IMongoCollection<BsonDocument> table = DbFactory.Users;
 
         public async Task<bool> Delete(string _id)
@@ -107,6 +107,42 @@ namespace CodeLab.Classes.Database
                 return false;
               
             }
+        }
+
+        public async Task<bool> UserNameValidation(string userName)
+        {
+            BsonDocument filter = new BsonDocument { {"UserName",userName } };
+            using (var cursor = await table.FindAsync(filter))
+            {
+                return cursor.Any();
+            }
+        }
+        public async Task<bool> EMailValidation(string email)
+        {
+            BsonDocument filter = new BsonDocument { { "EMail", email } };
+            using (var cursor = await table.FindAsync(filter))
+            {
+                return cursor.Any();
+            }
+        }
+
+
+        public async Task<User> CheckAuthentication(string userName, string password)
+        {
+            try
+            {
+                BsonDocument filter = new BsonDocument { { "UserName", userName }, { "Password", password } };
+                using (var cursor = await table.FindAsync(filter))
+                {
+                    return JsonConvert.DeserializeObject<User>(cursor.FirstOrDefault().ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+           
         }
     }
 }
