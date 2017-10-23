@@ -1,4 +1,6 @@
 # CodeLab
+Codelab is a graduation project for Software Engineering Department of Istanbul Aydin University 
+Lecturer: Parvaneh Shams
 # To Do List
 
  - Find/Create a new logo
