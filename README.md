@@ -6,8 +6,7 @@
 	- For C#
 	- For Html
 	- For Java
-	   #...
-	   #...
+	- etc.
  - Search 
  - Measure Quality of Code 
  - Better Stars for showing quality (Coffe)
