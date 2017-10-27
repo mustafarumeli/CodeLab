@@ -45,7 +45,7 @@
             this.LblDate.AutoSize = true;
             this.LblDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.LblDate.Location = new System.Drawing.Point(895, 19);
+            this.LblDate.Location = new System.Drawing.Point(794, 15);
             this.LblDate.Name = "LblDate";
             this.LblDate.Size = new System.Drawing.Size(42, 18);
             this.LblDate.TabIndex = 0;

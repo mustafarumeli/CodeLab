@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
             this.PBpicture = new System.Windows.Forms.PictureBox();
             this.LblDesc = new System.Windows.Forms.Label();
             this.TbCode = new System.Windows.Forms.RichTextBox();
@@ -74,6 +75,7 @@
             this.Controls.Add(this.TbCode);
             this.Controls.Add(this.LblDesc);
             this.Controls.Add(this.PBpicture);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1162, 661);
             this.MinimumSize = new System.Drawing.Size(1162, 661);

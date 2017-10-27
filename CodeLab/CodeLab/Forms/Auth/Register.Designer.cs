@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.TbName = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.TbEmail = new System.Windows.Forms.TextBox();
@@ -48,8 +49,8 @@
             this.LName = new System.Windows.Forms.Label();
             this.LEmail = new System.Windows.Forms.Label();
             this.LSecurityAnswer = new System.Windows.Forms.Label();
-            this.BtnApply = new CodeLab.Custom_Controls.CustomButton();
             this.CbSecurityQuestion = new MetroFramework.Controls.MetroComboBox();
+            this.BtnApply = new CodeLab.Custom_Controls.CustomButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -244,24 +245,6 @@
             this.LSecurityAnswer.Size = new System.Drawing.Size(0, 13);
             this.LSecurityAnswer.TabIndex = 11;
             // 
-            // BtnApply
-            // 
-            this.BtnApply.BackColor = System.Drawing.Color.Black;
-            this.BtnApply.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnApply.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnApply.ForeColor = System.Drawing.Color.White;
-            this.BtnApply.Location = new System.Drawing.Point(100, 341);
-            this.BtnApply.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.BtnApply.MinimumSize = new System.Drawing.Size(100, 30);
-            this.BtnApply.Name = "BtnApply";
-            this.BtnApply.Padding = new System.Windows.Forms.Padding(3);
-            this.BtnApply.Size = new System.Drawing.Size(100, 35);
-            this.BtnApply.TabIndex = 12;
-            this.BtnApply.Text = "Register";
-            this.BtnApply.UseVisualStyleBackColor = false;
-            this.BtnApply.Click += new System.EventHandler(this.BtnApply_Click);
-            // 
             // CbSecurityQuestion
             // 
             this.CbSecurityQuestion.FontSize = MetroFramework.MetroComboBoxSize.Small;
@@ -281,6 +264,24 @@
             this.CbSecurityQuestion.TabIndex = 13;
             this.CbSecurityQuestion.UseSelectable = true;
             // 
+            // BtnApply
+            // 
+            this.BtnApply.BackColor = System.Drawing.Color.Black;
+            this.BtnApply.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnApply.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnApply.ForeColor = System.Drawing.Color.White;
+            this.BtnApply.Location = new System.Drawing.Point(100, 341);
+            this.BtnApply.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.BtnApply.MinimumSize = new System.Drawing.Size(100, 30);
+            this.BtnApply.Name = "BtnApply";
+            this.BtnApply.Padding = new System.Windows.Forms.Padding(3);
+            this.BtnApply.Size = new System.Drawing.Size(100, 35);
+            this.BtnApply.TabIndex = 12;
+            this.BtnApply.Text = "Register";
+            this.BtnApply.UseVisualStyleBackColor = false;
+            this.BtnApply.Click += new System.EventHandler(this.BtnApply_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +300,7 @@
             this.Controls.Add(this.TbEmail);
             this.Controls.Add(this.label);
             this.Controls.Add(this.TbName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(438, 612);
             this.MinimumSize = new System.Drawing.Size(438, 612);

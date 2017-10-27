@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAddCodeForm));
             this.RtxtCodes = new System.Windows.Forms.RichTextBox();
             this.ClbLanguages = new System.Windows.Forms.CheckedListBox();
             this.CbtnSend = new CodeLab.Custom_Controls.CustomButton();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.BtnPicture);
             this.Controls.Add(this.CbtnSend);
             this.Controls.Add(this.RtxtCodes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(790, 448);
             this.MinimumSize = new System.Drawing.Size(790, 448);

@@ -58,5 +58,13 @@ namespace CodeLab.Forms
                 frm.ShowDialog();
             }
         }
+        /// <summary>
+        /// Placeholder
+        /// </summary>
+        private void TbSearch_Enter(object sender, EventArgs e)
+        {
+            TbSearch.Text="";
+            TbSearch.ForeColor = Color.Black;
+        }
     }
 }

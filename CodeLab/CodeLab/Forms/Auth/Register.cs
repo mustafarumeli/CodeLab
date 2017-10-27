@@ -61,6 +61,10 @@ namespace CodeLab.Forms.Auth
             {
                 try
                 {
+                    if (emailaddress == null)
+                    {
+                        return false;
+                    }
                     System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(emailaddress);
 
                     return true;

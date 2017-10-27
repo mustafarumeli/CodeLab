@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
             this.LblResult = new System.Windows.Forms.Label();
             this.resultContainer1 = new CodeLab.Custom_Controls.ResultContainer();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.ClientSize = new System.Drawing.Size(1252, 524);
             this.Controls.Add(this.resultContainer1);
             this.Controls.Add(this.LblResult);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListResults";
             this.Text = "ListResults";
             this.Load += new System.EventHandler(this.ListResults_LoadAsync);

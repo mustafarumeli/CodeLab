@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LblAuth = new System.Windows.Forms.Label();
-            this.LblDisc = new System.Windows.Forms.Label();
             this.TbSearch = new System.Windows.Forms.TextBox();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.LblContribute = new System.Windows.Forms.Label();
@@ -47,23 +47,13 @@
             this.LblAuth.Text = "Login / Register";
             this.LblAuth.Click += new System.EventHandler(this.LblAuth_Click);
             // 
-            // LblDisc
-            // 
-            this.LblDisc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblDisc.AutoSize = true;
-            this.LblDisc.Location = new System.Drawing.Point(23, 398);
-            this.LblDisc.Name = "LblDisc";
-            this.LblDisc.Size = new System.Drawing.Size(569, 13);
-            this.LblDisc.TabIndex = 1;
-            this.LblDisc.Text = "Bu proje Mahmut-san Bilişim Hizmetleri ve Yazılım Ticaret A.Ş. Limited Şirketler " +
-    "Grubu tarafından Pervaneh için yapılmıştır";
-            // 
             // TbSearch
             // 
             this.TbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbSearch.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbSearch.Font = new System.Drawing.Font("Arial", 42F);
+            this.TbSearch.ForeColor = System.Drawing.Color.Silver;
             this.TbSearch.Location = new System.Drawing.Point(156, 181);
             this.TbSearch.MaximumSize = new System.Drawing.Size(1080, 80);
             this.TbSearch.MinimumSize = new System.Drawing.Size(629, 80);
@@ -71,7 +61,9 @@
             this.TbSearch.Name = "TbSearch";
             this.TbSearch.Size = new System.Drawing.Size(629, 80);
             this.TbSearch.TabIndex = 2;
-            this.TbSearch.Text = "asdas";
+            this.TbSearch.Text = "Search here...";
+            this.TbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TbSearch.Enter += new System.EventHandler(this.TbSearch_Enter);
             // 
             // BtnSearch
             // 
@@ -84,7 +76,7 @@
             this.BtnSearch.MinimumSize = new System.Drawing.Size(80, 80);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(80, 80);
-            this.BtnSearch.TabIndex = 3;
+            this.BtnSearch.TabIndex = 1;
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
@@ -108,8 +100,8 @@
             this.Controls.Add(this.LblContribute);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.TbSearch);
-            this.Controls.Add(this.LblDisc);
             this.Controls.Add(this.LblAuth);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Welcome to CodeLab";
             this.ResumeLayout(false);
@@ -120,7 +112,6 @@
         #endregion
 
         private System.Windows.Forms.Label LblAuth;
-        private System.Windows.Forms.Label LblDisc;
         private System.Windows.Forms.TextBox TbSearch;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label LblContribute;

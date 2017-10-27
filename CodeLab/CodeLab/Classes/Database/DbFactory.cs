@@ -11,8 +11,7 @@ namespace CodeLab.Classes.Database
 {
    public class DbFactory
     {
-        public static IMongoClient _client = new MongoClient();
-
+        public static IMongoClient _client = new MongoClient("mongodb://mustafarumeli:2dDfShKEX9rbc6e2eHxedLaouu8glHyZE9Ghz5PauBTfBkhpIWhvZuwxsgal1bnhQ2ZIQdIgjxDSrfT6XjS9YA==@mustafarumeli.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
         private static IMongoDatabase _database;
 
         public static IMongoDatabase Database

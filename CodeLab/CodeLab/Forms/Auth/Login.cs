@@ -48,5 +48,20 @@ namespace CodeLab.Forms.Auth
                 MessageBox.Show("Information you have entered is not long enough.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
+
+        private void TbUserName_Enter(object sender, EventArgs e)
+        {
+            TbUserName.Text = "";
+            TbUserName.ForeColor = Color.Black;
+            TbUserName.TextAlign = HorizontalAlignment.Left;
+        }
+
+        private void MtbPassword_Enter(object sender, EventArgs e)
+        {
+            MtbPassword.Text = "";
+            MtbPassword.ForeColor = Color.Black;
+            MtbPassword.PasswordChar = '*';
+            MtbPassword.TextAlign = HorizontalAlignment.Left;
+        }
     }
 }
