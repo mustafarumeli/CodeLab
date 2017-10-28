@@ -46,7 +46,7 @@ namespace CodeLab.Forms.Auth
             }
             else
             {
-                if (await new UserCRUD().EMailValidation(TbEmail.Text) == true)
+                if (await new UserCrud().EMailValidation(TbEmail.Text) == true)
                 {
                     LEmail.Text = "This E-Mail is already registered";
                     _isViable = false;
@@ -61,11 +61,11 @@ namespace CodeLab.Forms.Auth
             {
                 try
                 {
-                    if (emailaddress == null)
+                    if (string.IsNullOrEmpty(emailaddress))
                     {
                         return false;
                     }
-                    System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(emailaddress);
+                    var m = new System.Net.Mail.MailAddress(emailaddress);
 
                     return true;
                 }
@@ -99,7 +99,7 @@ namespace CodeLab.Forms.Auth
             }
             else
             {
-                if (await new UserCRUD().UserNameValidation(TbUserName.Text) == true)
+                if (await new UserCrud().UserNameValidation(TbUserName.Text) == true)
                 {
                     LUsername.Text = "This User Name is already taken";
                     _isViable = false;
@@ -151,13 +151,18 @@ namespace CodeLab.Forms.Auth
                 LRePassword.Text = "";
                 _isViable = true;
             }
+            if (TbPassword.TextLength < 6)
+            {
+                LPassword.Text = "Password cannot be shorter than 6 characters";
+                _isViable = false;
+            }
         }
 
         private async void BtnApply_Click(object sender, EventArgs e)
         {
             if (_isViable == true)
             {
-                User user = new User {
+                var user = new User {
                     Name = TbName.Text,
                     Email = TbEmail.Text,
                     Password = TbPassword.Text,
@@ -165,7 +170,7 @@ namespace CodeLab.Forms.Auth
                     SecurityAnswer = TbSecurityAnswer.Text,
                     UserName = TbUserName.Text
                 };
-                if (await new UserCRUD().Insert(user) == true)
+                if (await new UserCrud().Insert(user) == true)
                 {
                     MessageBox.Show("Welcome To the Jungle");
                     MainForm.CurrentUser = user;

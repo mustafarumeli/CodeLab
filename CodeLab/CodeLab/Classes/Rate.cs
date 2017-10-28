@@ -26,9 +26,9 @@ namespace CodeLab.Classes
         {
             get
             {
-                double ratingTotal = RatingDecimal * 0.04;
-                int rate = (int)(ratingTotal);
-                double afterComma = ratingTotal - rate;
+                var ratingTotal = RatingDecimal * 0.04;
+                var rate = (int)(ratingTotal);
+                var afterComma = ratingTotal - rate;
                 rate = afterComma > 0.4 ? -1 * rate : rate;
                 return rate;
             }

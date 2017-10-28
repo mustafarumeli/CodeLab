@@ -23,21 +23,19 @@ namespace CodeLab.Forms
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            ListResults lr = new ListResults(TbSearch.Text);
+            var lr = new ListResults(TbSearch.Text);
             lr.Show();
         }
 
         private void LblAuth_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            var login = new Login();
             login.ShowDialog();
-            if (CurrentUser != null)
-            {
-                LblContribute.Visible = true;
-                LblAuth.Text = "Welcome " + CurrentUser.Name;
-                LblAuth.Click -= LblAuth_Click;
-                LblAuth.Click += LblAuth_LogOut;
-            }
+            if (CurrentUser == null) return;
+            LblContribute.Visible = true;
+            LblAuth.Text = "Welcome " + CurrentUser.Name;
+            LblAuth.Click -= LblAuth_Click;
+            LblAuth.Click += LblAuth_LogOut;
         }
         private void LblAuth_LogOut(object sender, EventArgs e)
         {

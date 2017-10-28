@@ -19,7 +19,7 @@ namespace CodeLab.Forms.Auth
         }
         private void LblRegister_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
+            var register = new Register();
             register.ShowDialog();
             if (MainForm.CurrentUser != null)
             {
@@ -30,9 +30,9 @@ namespace CodeLab.Forms.Auth
 
         private async void LoginButton_ClickAsync(object sender, EventArgs e)
         {
-            if (TbUserName.TextLength > 3 && MtbPassword.TextLength > 7)
+            if (TbUserName.TextLength > 2 && MtbPassword.TextLength > 5)
             {
-                var correctLogin = await new Classes.Database.UserCRUD().CheckAuthentication(TbUserName.Text, MtbPassword.Text);
+                var correctLogin = await new Classes.Database.UserCrud().CheckAuthentication(TbUserName.Text, MtbPassword.Text);
                 if (correctLogin != null)
                 {
                     MainForm.CurrentUser = correctLogin;

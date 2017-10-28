@@ -39,7 +39,7 @@ namespace CodeLab.Forms
                 var cPiece = new CodePiece
                 {
                     Code = RtxtCodes.Text,
-                    Contributer = MainForm.CurrentUser._id,
+                    Contributer = MainForm.CurrentUser.Id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
                     Language = ClbLanguages.SelectedItem.ToString(),
@@ -48,7 +48,7 @@ namespace CodeLab.Forms
                     Title = TxtCodeTitle.Text,
                     Picture = _image
                 };
-                await new Classes.Database.CodePieceCRUD().Insert(cPiece);
+                await new Classes.Database.CodePieceCrud().Insert(cPiece);
                 MessageBox.Show("OK OK");
             }
             else
@@ -59,7 +59,7 @@ namespace CodeLab.Forms
 
         private void BtnPicture_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Jpeg files (*.jpg)|*.jpg|Png files (*.png)|*.png";
             openFileDialog.FileName = "";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -71,7 +71,7 @@ namespace CodeLab.Forms
 
                 if (size < 16777216)
                 {
-                    using (BinaryReader theReader = new BinaryReader(file))
+                    using (var theReader = new BinaryReader(file))
                     {
                         _image = theReader.ReadBytes((int)file.Length);
                     }

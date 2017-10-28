@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
             this.PBpicture = new System.Windows.Forms.PictureBox();
             this.LblDesc = new System.Windows.Forms.Label();
             this.TbCode = new System.Windows.Forms.RichTextBox();

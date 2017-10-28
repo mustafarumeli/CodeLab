@@ -11,7 +11,7 @@ namespace CodeLab.Classes.Database
 {
    public class DbFactory
     {
-        public static IMongoClient _client = new MongoClient("mongodb://mustafarumeli:2dDfShKEX9rbc6e2eHxedLaouu8glHyZE9Ghz5PauBTfBkhpIWhvZuwxsgal1bnhQ2ZIQdIgjxDSrfT6XjS9YA==@mustafarumeli.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
+        public static IMongoClient Client = new MongoClient("mongodb://mustafarumeli:2dDfShKEX9rbc6e2eHxedLaouu8glHyZE9Ghz5PauBTfBkhpIWhvZuwxsgal1bnhQ2ZIQdIgjxDSrfT6XjS9YA==@mustafarumeli.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
         private static IMongoDatabase _database;
 
         public static IMongoDatabase Database
@@ -20,36 +20,36 @@ namespace CodeLab.Classes.Database
             {
                 if (_database == null)
                 {
-                    _database = _client.GetDatabase("test5");
+                    _database = Client.GetDatabase("test5");
                 }
                 return _database;
             }
         }
 
-        private static IMongoCollection<BsonDocument> _Users;
+        private static IMongoCollection<BsonDocument> _users;
 
         public static IMongoCollection<BsonDocument> Users
         {
             get
             {
-                if (_Users == null)
+                if (_users == null)
                 {
-                    _Users = _database.GetCollection<BsonDocument>(typeof(User).Name);
+                    _users = _database.GetCollection<BsonDocument>(typeof(User).Name);
                 }
-                return _Users;
+                return _users;
             }
         }
 
-        private static IMongoCollection<BsonDocument> _CodePieces;
+        private static IMongoCollection<BsonDocument> _codePieces;
         public static IMongoCollection<BsonDocument> CodePieces
         {
             get
             {
-                if (_CodePieces == null)
+                if (_codePieces == null)
                 {
-                    _CodePieces = _database.GetCollection<BsonDocument>(typeof(CodePiece).Name);
+                    _codePieces = _database.GetCollection<BsonDocument>(typeof(CodePiece).Name);
                 }
-                return _CodePieces;
+                return _codePieces;
             }
         }
 

@@ -39,7 +39,7 @@ namespace CodeLab.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CodeLab.Properties.Resources", typeof(Resources).Assembly);
+                    var temp = new global::System.Resources.ResourceManager("CodeLab.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -65,7 +65,7 @@ namespace CodeLab.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Glass1 {
             get {
-                object obj = ResourceManager.GetObject("Glass1", resourceCulture);
+                var obj = ResourceManager.GetObject("Glass1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

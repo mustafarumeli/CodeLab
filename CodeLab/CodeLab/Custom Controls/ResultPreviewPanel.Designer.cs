@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultPreviewPanel));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultPreviewPanel));
             this.LblDate = new System.Windows.Forms.Label();
             this.LblHeader = new System.Windows.Forms.Label();
             this.LblLang = new System.Windows.Forms.Label();

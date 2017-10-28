@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
             this.LblResult = new System.Windows.Forms.Label();
             this.resultContainer1 = new CodeLab.Custom_Controls.ResultContainer();
             this.SuspendLayout();

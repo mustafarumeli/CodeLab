@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.TbName = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.TbEmail = new System.Windows.Forms.TextBox();

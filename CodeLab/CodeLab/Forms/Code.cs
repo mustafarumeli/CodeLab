@@ -16,25 +16,24 @@ namespace CodeLab.Forms
 {
     public partial class Code : MetroFramework.Forms.MetroForm
     {
-        string _id;
-        CodePieceCRUD codePieceCrud;
+        private readonly string _id;
+        private readonly CodePieceCrud _codePieceCrud;
         public Code(string id)
         {
             InitializeComponent();
             _id = id;
-            codePieceCrud = new CodePieceCRUD();
+            _codePieceCrud = new CodePieceCrud();
         }
 
 
         private async void Code_LoadAsync(object sender, EventArgs e)
         {
-            var codePiece = await codePieceCrud.GetOne(_id);
+            var codePiece = await _codePieceCrud.GetOne(_id);
             LblDesc.Text = codePiece.Description;
             TbCode.Text = codePiece.Code;
             using (var ms = new MemoryStream(codePiece.Picture))
             {
-                PBpicture.Image =
-                Image.FromStream(ms);
+                PBpicture.Image = Image.FromStream(ms);
             }
             this.Text = codePiece.Title;
 

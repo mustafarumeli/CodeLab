@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,22 +17,22 @@ namespace CodeLab.Forms
 {
     public partial class ListResults : MetroFramework.Forms.MetroForm
     {
-        CodePieceCRUD codePieceCRUD;
+        private readonly CodePieceCrud _codePieceCrud;
         public ListResults(string searchText)
         {
             InitializeComponent();
             LblResult.Text += searchText;
-            codePieceCRUD = new CodePieceCRUD();
+            _codePieceCrud = new CodePieceCrud();
         }
         
         private async void ListResults_LoadAsync(object sender, EventArgs e)
         {
 
-            var results = await codePieceCRUD.GetAll(new MongoDB.Bson.BsonDocument());
+            var results = await _codePieceCrud.GetAll(new MongoDB.Bson.BsonDocument());
             foreach (var result in results)
             { 
-                User user = await new UserCRUD().GetOne(result.Contributer);
-                resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(), result.Scores, result.Language, user.Name));
+                var user = await new UserCrud().GetOne(result.Contributer);
+                resultContainer1.Add(new ResultPreviewPanel(result.Id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name));
             }
             
         }

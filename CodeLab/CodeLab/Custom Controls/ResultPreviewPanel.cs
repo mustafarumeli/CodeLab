@@ -17,29 +17,29 @@ namespace CodeLab.Custom_Controls
         public ResultPreviewPanel(string _id,string header, string date, Rate rating, string language, string author)
         {
             InitializeComponent();
-            this.header = header;
+            this._header = header;
             Setup(_id,header, date, rating, language, author);
 
         }
         const int MAX_STAR_COUNT = 4;
-        private string header = "";
-        private string id = ""; // ID eklenecek tabii
+        private string _header = "";
+        private string _id = ""; // ID eklenecek tabii
         void Setup(string _id , string header, string date, Rate rating, string language, string author)
         {
             LblHeader.Text = header;
             LblDate.Text = date;
             LblLang.Text = language;
             LblAuthor.Text = author;
-            id = _id;
+            this._id = _id;
             var starCount = rating.StarCount;
-            bool hasHalf = false;
+            var hasHalf = false;
             if (starCount < 0)
             {
                 starCount = starCount * -1;
                 hasHalf = true;
             }
-            Bitmap b = new Bitmap(128, 32);
-            Graphics g = Graphics.FromImage(b);
+            var b = new Bitmap(128, 32);
+            var g = Graphics.FromImage(b);
 
             int i;
             for (i = 0; i < starCount; i++)
@@ -51,8 +51,8 @@ namespace CodeLab.Custom_Controls
             {
                 g.DrawImage(IlStartImages.Images[1], i * 32, 0, 32, 32);
             }
-            int emptyStarCount = MAX_STAR_COUNT - starCount;
-            for (int j = 0; j < emptyStarCount; j++)
+            var emptyStarCount = MAX_STAR_COUNT - starCount;
+            for (var j = 0; j < emptyStarCount; j++)
             {
                 g.DrawImage(IlStartImages.Images[2], (i + j) * 32, 0, 32, 32);
             }
@@ -62,7 +62,7 @@ namespace CodeLab.Custom_Controls
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            Code code = new Code(id);
+            var code = new Code(_id);
             code.ShowDialog();
         }
     }

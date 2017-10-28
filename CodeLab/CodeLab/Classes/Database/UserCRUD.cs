@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace CodeLab.Classes.Database
 {
-    public class UserCRUD : ICodeLabDB<User>
+    public class UserCrud : ICodeLabDb<User>
     {
 
-        protected  IMongoDatabase _database = DbFactory.Database;
-        protected IMongoCollection<BsonDocument> table = DbFactory.Users;
+        protected  IMongoDatabase Database = DbFactory.Database;
+        protected IMongoCollection<BsonDocument> Table = DbFactory.Users;
 
-        public async Task<bool> Delete(string _id)
+        public async Task<bool> Delete(string id)
         {
             try
             {
-                BsonDocument filter = new BsonDocument { { "_id", _id } };
-                var result = await table.DeleteOneAsync(filter);
+                var filter = new BsonDocument { { "_id", id } };
+                await Table.DeleteOneAsync(filter);
                 return true;
             }
             catch (Exception)
@@ -34,17 +34,11 @@ namespace CodeLab.Classes.Database
         {
             try
             {
-                List<User> results = new List<User>();
-                using (var cursor = await table.FindAsync(filter))
+                var results = new List<User>();
+                using (var cursor = await Table.FindAsync(filter))
                 {
-
-                    var x = cursor.ToEnumerable().Where(z => 1 == 1).ToList();
-                    foreach (var item in x)
-                    {
-                        User obj = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(item.ToString());
-                        results.Add(obj);
-                    }
-
+                    var x = cursor.ToEnumerable().Where(z => true).ToList();
+                    results.AddRange(x.Select(item => Newtonsoft.Json.JsonConvert.DeserializeObject<User>(item.ToString())));
                 }
                 return results;
             }
@@ -56,12 +50,12 @@ namespace CodeLab.Classes.Database
             
         }
 
-        public async Task<User> GetOne(string _id)
+        public async Task<User> GetOne(string id)
         {
             try
             {
-                BsonDocument filter = new BsonDocument { { "_id", _id } };
-                using (var cursor = await table.FindAsync(filter))
+                var filter = new BsonDocument { { "_id", id } };
+                using (var cursor = await Table.FindAsync(filter))
                 {
                     return JsonConvert.DeserializeObject<User>(cursor.First().ToString());
                 }
@@ -70,7 +64,7 @@ namespace CodeLab.Classes.Database
             catch (Exception)
             {
 
-                return new User { _id = null };
+                return new User { Id = null };
             }
            
         }
@@ -82,7 +76,7 @@ namespace CodeLab.Classes.Database
                 
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(entity);
                 var bsonDocument = BsonDocument.Parse(json);
-                await table.InsertOneAsync(bsonDocument);
+                await Table.InsertOneAsync(bsonDocument);
                 return true;
             }
             catch (Exception)
@@ -94,12 +88,12 @@ namespace CodeLab.Classes.Database
             
         }
 
-        public async Task<bool> Update(string _id, User entity)
+        public async Task<bool> Update(string id, User entity)
         {
             try
             {
-                BsonDocument filter = new BsonDocument { { "_id",_id}};
-                await table.UpdateOneAsync(filter, JsonConvert.SerializeObject(entity));
+                var filter = new BsonDocument { { "_id",id}};
+                await Table.UpdateOneAsync(filter, JsonConvert.SerializeObject(entity));
                 return true;
             }
             catch (Exception)
@@ -111,16 +105,16 @@ namespace CodeLab.Classes.Database
 
         public async Task<bool> UserNameValidation(string userName)
         {
-            BsonDocument filter = new BsonDocument { {"UserName",userName } };
-            using (var cursor = await table.FindAsync(filter))
+            var filter = new BsonDocument { {"UserName",userName } };
+            using (var cursor = await Table.FindAsync(filter))
             {
                 return cursor.Any();
             }
         }
         public async Task<bool> EMailValidation(string email)
         {
-            BsonDocument filter = new BsonDocument { { "EMail", email } };
-            using (var cursor = await table.FindAsync(filter))
+            var filter = new BsonDocument { { "EMail", email } };
+            using (var cursor = await Table.FindAsync(filter))
             {
                 return cursor.Any();
             }
@@ -131,8 +125,8 @@ namespace CodeLab.Classes.Database
         {
             try
             {
-                BsonDocument filter = new BsonDocument { { "UserName", userName }, { "Password", password } };
-                using (var cursor = await table.FindAsync(filter))
+                var filter = new BsonDocument { { "UserName", userName }, { "Password", password } };
+                using (var cursor = await Table.FindAsync(filter))
                 {
                     return JsonConvert.DeserializeObject<User>(cursor.FirstOrDefault().ToString());
                 }

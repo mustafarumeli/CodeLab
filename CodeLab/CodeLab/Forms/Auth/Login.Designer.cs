@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.TbUserName = new System.Windows.Forms.TextBox();
             this.MtbPassword = new System.Windows.Forms.MaskedTextBox();
             this.LblRegister = new System.Windows.Forms.Label();
