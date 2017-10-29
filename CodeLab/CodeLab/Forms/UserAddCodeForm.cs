@@ -24,16 +24,17 @@ namespace CodeLab.Forms
         {
             get
             {
-                if (TxtCodeTitle.TextLength > 3 && RtxtCodes.TextLength > 10 && TxtCodeDescription.TextLength > 10 && TxtCodeTags.TextLength > 2 && ClbLanguages.SelectedItems.Count > 0)
+                if (_image != null && TxtCodeTitle.TextLength > 3 && RtxtCodes.TextLength > 10 && TxtCodeDescription.TextLength > 10 && TxtCodeTags.TextLength > 2 && ClbLanguages.SelectedItems.Count > 0)
                 {
                     return true;
                 }
                 return false;
             }
         }
-        byte[] _image = new byte[16777216];
+        byte[] _image;
         private async void CbtnSend_ClickAsync(object sender, EventArgs e)
         {
+      
             if (CheckValidations == true && MainForm.CurrentUser != null)
             {
                 var cPiece = new CodePiece
@@ -59,28 +60,29 @@ namespace CodeLab.Forms
 
         private void BtnPicture_Click(object sender, EventArgs e)
         {
+          
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Jpeg files (*.jpg)|*.jpg|Png files (*.png)|*.png";
             openFileDialog.FileName = "";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
-                var file = File.Open(openFileDialog.FileName, FileMode.Open);
-            
-                var size = new FileInfo(openFileDialog.FileName).Length;
+                    _image = new byte[16777216];
+                    var file = File.Open(openFileDialog.FileName, FileMode.Open);
 
-                if (size < 16777216)
-                {
-                    using (var theReader = new BinaryReader(file))
+                    var size = new FileInfo(openFileDialog.FileName).Length;
+
+                    if (size < 16777216)
                     {
-                        _image = theReader.ReadBytes((int)file.Length);
-                    }
+                        using (var theReader = new BinaryReader(file))
+                        {
+                            _image = theReader.ReadBytes((int)file.Length);
+                        }
 
-                }
-                else
-                {
-                    MessageBox.Show("Your File is too big");
-                }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your File is too big");
+                    }
             }
         }
     }

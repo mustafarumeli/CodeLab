@@ -85,7 +85,7 @@ namespace CodeLab.Classes.Database
                 await Table.InsertOneAsync(bsonDocument);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;
