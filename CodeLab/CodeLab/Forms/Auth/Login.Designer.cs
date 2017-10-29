@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.TbUserName = new System.Windows.Forms.TextBox();
             this.MtbPassword = new System.Windows.Forms.MaskedTextBox();
             this.LblRegister = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.MtbPassword.Text = "Password";
             this.MtbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbPassword.Enter += new System.EventHandler(this.MtbPassword_Enter);
+            this.MtbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtbPassword_KeyUp);
             // 
             // LblRegister
             // 

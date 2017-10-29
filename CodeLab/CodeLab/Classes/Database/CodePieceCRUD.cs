@@ -48,7 +48,7 @@ namespace CodeLab.Classes.Database
                 }
                 return results;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return new List<CodePiece>();
@@ -70,7 +70,7 @@ namespace CodeLab.Classes.Database
             catch (Exception)
             {
 
-                return new CodePiece { Id = null };
+                return new CodePiece { _id = null };
             }
 
         }

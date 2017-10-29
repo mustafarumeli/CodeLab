@@ -30,6 +30,10 @@ namespace CodeLab.Forms.Auth
 
         private async void LoginButton_ClickAsync(object sender, EventArgs e)
         {
+            checkLogin();
+        }
+        private async void checkLogin()
+        {
             if (TbUserName.TextLength > 2 && MtbPassword.TextLength > 5)
             {
                 var correctLogin = await new Classes.Database.UserCrud().CheckAuthentication(TbUserName.Text, MtbPassword.Text);
@@ -40,15 +44,14 @@ namespace CodeLab.Forms.Auth
                 }
                 else
                 {
-                    MessageBox.Show("You have entered wrong credentials","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("You have entered wrong credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Information you have entered is not long enough.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Information you have entered is not long enough.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void TbUserName_Enter(object sender, EventArgs e)
         {
             TbUserName.Text = "";
@@ -62,6 +65,14 @@ namespace CodeLab.Forms.Auth
             MtbPassword.ForeColor = Color.Black;
             MtbPassword.PasswordChar = '*';
             MtbPassword.TextAlign = HorizontalAlignment.Left;
+        }
+
+        private void MtbPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                checkLogin();
+            }
         }
     }
 }

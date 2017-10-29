@@ -32,7 +32,7 @@ namespace CodeLab.Forms
             foreach (var result in results)
             { 
                 var user = await new UserCrud().GetOne(result.Contributer);
-                resultContainer1.Add(new ResultPreviewPanel(result.Id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name));
+                resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name));
             }
             
         }

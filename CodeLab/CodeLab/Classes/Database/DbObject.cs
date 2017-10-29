@@ -8,11 +8,11 @@ namespace CodeLab.Classes
 {
     public class DbObject
     {
-        public string Id { get; set; }
+        public string _id { get; set; }
         public DateTime CreationDate { get; set; }
         public DbObject()
         {
-            Id = Guid.NewGuid().ToString();
+            _id = Guid.NewGuid().ToString();
             CreationDate = DateTime.Now;
         }
     }

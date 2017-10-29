@@ -64,7 +64,7 @@ namespace CodeLab.Classes.Database
             catch (Exception)
             {
 
-                return new User { Id = null };
+                return new User { _id = null };
             }
            
         }

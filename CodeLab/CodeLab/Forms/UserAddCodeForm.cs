@@ -39,7 +39,7 @@ namespace CodeLab.Forms
                 var cPiece = new CodePiece
                 {
                     Code = RtxtCodes.Text,
-                    Contributer = MainForm.CurrentUser.Id,
+                    Contributer = MainForm.CurrentUser._id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
                     Language = ClbLanguages.SelectedItem.ToString(),
