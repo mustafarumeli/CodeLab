@@ -32,6 +32,7 @@
             this.PBpicture = new System.Windows.Forms.PictureBox();
             this.LblDesc = new System.Windows.Forms.Label();
             this.TbCode = new System.Windows.Forms.RichTextBox();
+            this.BtnRun = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +71,23 @@
             this.TbCode.Tag = "AsyncItem";
             this.TbCode.Text = "";
             // 
+            // BtnRun
+            // 
+            this.BtnRun.Location = new System.Drawing.Point(566, 45);
+            this.BtnRun.Name = "BtnRun";
+            this.BtnRun.Size = new System.Drawing.Size(89, 23);
+            this.BtnRun.TabIndex = 3;
+            this.BtnRun.Text = "Run ->";
+            this.BtnRun.UseSelectable = true;
+            this.BtnRun.Visible = false;
+            this.BtnRun.Click += new System.EventHandler(this.BtnRun_Click);
+            // 
             // Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 661);
+            this.Controls.Add(this.BtnRun);
             this.Controls.Add(this.TbCode);
             this.Controls.Add(this.LblDesc);
             this.Controls.Add(this.PBpicture);
@@ -95,5 +108,6 @@
         private System.Windows.Forms.PictureBox PBpicture;
         private System.Windows.Forms.Label LblDesc;
         private System.Windows.Forms.RichTextBox TbCode;
+        private MetroFramework.Controls.MetroButton BtnRun;
     }
 }

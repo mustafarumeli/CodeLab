@@ -19,6 +19,7 @@ namespace CodeLab.Forms
     {
         private readonly string _id;
         private readonly CodePieceCrud _codePieceCrud;
+        private CodePiece _codePiece;
         public Code(string id)
         {
             InitializeComponent();
@@ -31,27 +32,33 @@ namespace CodeLab.Forms
         {
             this.Visible = false;
             this.Hide();
-            CodePiece codePiece;
             using (Waiting wating = new Waiting(_id))
             {
 
                 wating.ShowDialog();
-                codePiece = wating.CodePiece;
+                _codePiece = wating.CodePiece;
             }
-
+            if (_codePiece.Languages.Length == 1 && _codePiece.Languages[0] == "C#")
+            {
+                BtnRun.Visible = true;
+            }
             //codePiece = await _codePieceCrud.GetOne(_id);
             
-            LblDesc.Text = codePiece.Description;
-            TbCode.Text = codePiece.Code;
-            using (var ms = new MemoryStream(codePiece.Picture))
+            LblDesc.Text = _codePiece.Description;
+            TbCode.Text = _codePiece.Code;
+            using (var ms = new MemoryStream(_codePiece.Picture))
             {
                 PBpicture.Image = Image.FromStream(ms);
             }
-            this.Text = codePiece.Title;
-            if (codePiece.Languages.Length == 1 && codePiece.Languages[0] == "C#")
-            {
-                CodeRunner cr = new CodeRunner(codePiece.Code);
-            }
+            this.Text = _codePiece.Title;
+          
+        }
+
+        private void BtnRun_Click(object sender, EventArgs e)
+        {
+            
+          CodeRunner cr = new CodeRunner(_codePiece.Code);
+            
         }
     }
 }
