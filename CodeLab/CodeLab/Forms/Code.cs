@@ -1,5 +1,6 @@
 ﻿using CodeLab.Classes;
 using CodeLab.Classes.Database;
+using CodeLab.Classes.Database.Entities;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,18 @@ namespace CodeLab.Forms
 
         private async void Code_LoadAsync(object sender, EventArgs e)
         {
-            var codePiece = await _codePieceCrud.GetOne(_id);
+            this.Visible = false;
+            this.Hide();
+            CodePiece codePiece;
+            using (Waiting wating = new Waiting(_id))
+            {
+
+                wating.ShowDialog();
+                codePiece = wating.CodePiece;
+            }
+
+            //codePiece = await _codePieceCrud.GetOne(_id);
+            
             LblDesc.Text = codePiece.Description;
             TbCode.Text = codePiece.Code;
             using (var ms = new MemoryStream(codePiece.Picture))
@@ -36,7 +48,10 @@ namespace CodeLab.Forms
                 PBpicture.Image = Image.FromStream(ms);
             }
             this.Text = codePiece.Title;
-
+            if (codePiece.Languages.Length == 1 && codePiece.Languages[0] == "C#")
+            {
+                CodeRunner cr = new CodeRunner(codePiece.Code);
+            }
         }
     }
 }

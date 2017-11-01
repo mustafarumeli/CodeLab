@@ -37,20 +37,28 @@ namespace CodeLab.Forms
       
             if (CheckValidations == true && MainForm.CurrentUser != null)
             {
+                string[] languages = new string[ClbLanguages.CheckedItems.Count];
+                for (int i = 0; i < languages.Length; i++)
+                {
+                    languages[i] = ClbLanguages.CheckedItems[i].ToString();
+                }
+                Random rnd = new Random();
                 var cPiece = new CodePiece
                 {
                     Code = RtxtCodes.Text,
                     Contributer = MainForm.CurrentUser._id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
-                    Language = ClbLanguages.SelectedItem.ToString(),
-                    Scores = new Classes.Rate(85, 65, 100, 69),
+                    Languages = languages,
+                   
+                    Scores = new Classes.Rate(rnd.Next(0,100), rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100)),
                     Tags = TxtCodeTags.Text.Split(','),
                     Title = TxtCodeTitle.Text,
                     Picture = _image
                 };
                 await new Classes.Database.CodePieceCrud().Insert(cPiece);
-                MessageBox.Show("OK OK");
+                MessageBox.Show("Your Code Has Been Added "+Environment.NewLine+" Thank you");
+                this.Close();
             }
             else
             {
@@ -62,7 +70,7 @@ namespace CodeLab.Forms
         {
           
             var openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Jpeg files (*.jpg)|*.jpg|Png files (*.png)|*.png";
+            openFileDialog.Filter = "Image files |*.jpg;*.png;*.gif;*.bmp";
             openFileDialog.FileName = "";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {

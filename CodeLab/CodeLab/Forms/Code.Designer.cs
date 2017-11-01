@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
             this.PBpicture = new System.Windows.Forms.PictureBox();
             this.LblDesc = new System.Windows.Forms.Label();
             this.TbCode = new System.Windows.Forms.RichTextBox();
@@ -43,8 +43,10 @@
             this.PBpicture.Location = new System.Drawing.Point(688, 74);
             this.PBpicture.Name = "PBpicture";
             this.PBpicture.Size = new System.Drawing.Size(419, 471);
+            this.PBpicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PBpicture.TabIndex = 0;
             this.PBpicture.TabStop = false;
+            this.PBpicture.Tag = "AsyncItem";
             // 
             // LblDesc
             // 
@@ -52,9 +54,9 @@
             this.LblDesc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDesc.Location = new System.Drawing.Point(23, 623);
             this.LblDesc.Name = "LblDesc";
-            this.LblDesc.Size = new System.Drawing.Size(162, 18);
+            this.LblDesc.Size = new System.Drawing.Size(0, 18);
             this.LblDesc.TabIndex = 1;
-            this.LblDesc.Text = "Put Description here...";
+            this.LblDesc.Tag = "AsyncItem";
             // 
             // TbCode
             // 
@@ -65,7 +67,8 @@
             this.TbCode.Name = "TbCode";
             this.TbCode.Size = new System.Drawing.Size(618, 519);
             this.TbCode.TabIndex = 2;
-            this.TbCode.Text = "Put Code Here";
+            this.TbCode.Tag = "AsyncItem";
+            this.TbCode.Text = "";
             // 
             // Code
             // 
@@ -80,7 +83,6 @@
             this.MaximumSize = new System.Drawing.Size(1162, 661);
             this.MinimumSize = new System.Drawing.Size(1162, 661);
             this.Name = "Code";
-            this.Text = "Code";
             this.Load += new System.EventHandler(this.Code_LoadAsync);
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).EndInit();
             this.ResumeLayout(false);

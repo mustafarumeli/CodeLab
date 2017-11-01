@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAddCodeForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAddCodeForm));
             this.RtxtCodes = new System.Windows.Forms.RichTextBox();
             this.ClbLanguages = new System.Windows.Forms.CheckedListBox();
             this.CbtnSend = new CodeLab.Custom_Controls.CustomButton();

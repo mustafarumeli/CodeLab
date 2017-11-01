@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultPreviewPanel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultPreviewPanel));
             this.LblDate = new System.Windows.Forms.Label();
             this.LblHeader = new System.Windows.Forms.Label();
             this.LblLang = new System.Windows.Forms.Label();
@@ -63,12 +63,11 @@
             // 
             // LblLang
             // 
-            this.LblLang.AutoSize = true;
             this.LblLang.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLang.ForeColor = System.Drawing.SystemColors.Control;
             this.LblLang.Location = new System.Drawing.Point(58, 190);
             this.LblLang.Name = "LblLang";
-            this.LblLang.Size = new System.Drawing.Size(56, 24);
+            this.LblLang.Size = new System.Drawing.Size(239, 50);
             this.LblLang.TabIndex = 2;
             this.LblLang.Text = "Lang";
             // 
@@ -77,7 +76,7 @@
             this.LblAuthor.AutoSize = true;
             this.LblAuthor.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblAuthor.ForeColor = System.Drawing.SystemColors.Control;
-            this.LblAuthor.Location = new System.Drawing.Point(210, 190);
+            this.LblAuthor.Location = new System.Drawing.Point(303, 190);
             this.LblAuthor.Name = "LblAuthor";
             this.LblAuthor.Size = new System.Drawing.Size(70, 24);
             this.LblAuthor.TabIndex = 2;

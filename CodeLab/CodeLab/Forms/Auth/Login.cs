@@ -40,7 +40,7 @@ namespace CodeLab.Forms.Auth
                 if (correctLogin != null)
                 {
                     MainForm.CurrentUser = correctLogin;
-                    this.Close();
+                    Close();
                 }
                 else
                 {
@@ -69,9 +69,14 @@ namespace CodeLab.Forms.Auth
 
         private void MtbPassword_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+
+        }
+
+        private void LblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (var frm = new ForgotPassword())
             {
-                checkLogin();
+                frm.ShowDialog();
             }
         }
     }

@@ -120,7 +120,23 @@ namespace CodeLab.Classes.Database
             }
         }
 
+        public async Task<User> FindUser(string userNameOrEmail)
+        {
+            try
+            {
+                var builder = Builders<BsonDocument>.Filter;
+                var filter = builder.Eq("UserName", userNameOrEmail) | builder.Eq("EMail", userNameOrEmail);
+                using (var cursor = await Table.FindAsync(filter))
+                {
+                    return JsonConvert.DeserializeObject<User>(cursor.FirstOrDefault().ToString());
+                }
+            }
+            catch (Exception)
+            {
 
+                return null;
+            }
+        }
         public async Task<User> CheckAuthentication(string userName, string password)
         {
             try
