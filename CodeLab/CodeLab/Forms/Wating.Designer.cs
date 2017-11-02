@@ -1,6 +1,9 @@
-﻿namespace CodeLab.Forms
+﻿
+using System.Windows.Forms;
+
+namespace CodeLab.Forms
 {
-    partial class Waiting
+    partial class Waiting:Form
     {
         /// <summary>
         /// Required designer variable.

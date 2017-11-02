@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeLab.Classes.Database;
+using CodeLab.Classes.Database.Entities;
 
 namespace CodeLab.Forms
 {
     public partial class Waiting : Form
     {
-        private readonly Classes.Database.CodePieceCrud _codePieceCrud;
+        private readonly Classes.Database.CRUD<CodePiece> _codePieceCrud;
         string _id;
         public Waiting(string id)
         {
             InitializeComponent();
-            _codePieceCrud = new Classes.Database.CodePieceCrud();
+            _codePieceCrud = new Classes.Database.CRUD<CodePiece>(DbFactory.CodePieces);
             _id = id;
         }
         public Classes.Database.Entities.CodePiece CodePiece;

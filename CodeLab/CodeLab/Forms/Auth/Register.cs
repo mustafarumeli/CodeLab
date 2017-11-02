@@ -46,7 +46,7 @@ namespace CodeLab.Forms.Auth
             }
             else
             {
-                if (await new UserCrud().EMailValidation(TbEmail.Text) == true)
+                if (await new UserCrud().CheckIfExists("EMail",TbEmail.Text) == true)
                 {
                     LEmail.Text = "This E-Mail is already registered";
                     _isViable = false;
@@ -99,7 +99,7 @@ namespace CodeLab.Forms.Auth
             }
             else
             {
-                if (await new UserCrud().UserNameValidation(TbUserName.Text) == true)
+                if (await new UserCrud().CheckIfExists("UserName",TbUserName.Text) == true)
                 {
                     LUsername.Text = "This User Name is already taken";
                     _isViable = false;

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeLab.Classes.Database;
 
 namespace CodeLab.Forms
 {
@@ -56,7 +57,7 @@ namespace CodeLab.Forms
                     Title = TxtCodeTitle.Text,
                     Picture = _image
                 };
-                await new Classes.Database.CodePieceCrud().Insert(cPiece);
+                await new Classes.Database.CRUD<CodePiece>(DbFactory.CodePieces).Insert(cPiece);
                 MessageBox.Show("Your Code Has Been Added "+Environment.NewLine+" Thank you");
                 this.Close();
             }

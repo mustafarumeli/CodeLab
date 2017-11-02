@@ -1,4 +1,6 @@
-﻿namespace CodeLab.Forms
+﻿using CodeLab.Custom_Controls;
+
+namespace CodeLab.Forms
 {
     partial class Code
     {
@@ -31,10 +33,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
             this.PBpicture = new System.Windows.Forms.PictureBox();
             this.LblDesc = new System.Windows.Forms.Label();
-            this.TbCode = new System.Windows.Forms.RichTextBox();
+            this.TbCode = new CustomRichTextBox();
             this.BtnRun = new MetroFramework.Controls.MetroButton();
             this.BtnOriginal = new CodeLab.Custom_Controls.CustomButton();
-            TbStatus = new System.Windows.Forms.RichTextBox();
+            TbStatus = new CustomRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,9 +140,9 @@
 
         private System.Windows.Forms.PictureBox PBpicture;
         private System.Windows.Forms.Label LblDesc;
-        private System.Windows.Forms.RichTextBox TbCode;
+        private CustomRichTextBox TbCode;
         private MetroFramework.Controls.MetroButton BtnRun;
         private Custom_Controls.CustomButton BtnOriginal;
-        public static System.Windows.Forms.RichTextBox TbStatus;
+        public static CustomRichTextBox TbStatus;
     }
 }

@@ -179,6 +179,7 @@
     <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\CodeRunner.cs" />
     <Compile Include="Classes\Database\CodePieceCRUD.cs" />
+    <Compile Include="Classes\Database\CRUD.cs" />
     <Compile Include="Classes\Database\DbFactory.cs" />
     <Compile Include="Classes\Database\ICodeLabDB.cs" />
     <Compile Include="Classes\Database\UserCRUD.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Classes\Database\Entities\CodePiece.cs" />
     <Compile Include="Classes\Database\Entities\User.cs" />
     <Compile Include="Classes\Rate.cs" />
+    <Compile Include="Classes\Threader.cs" />
     <Compile Include="Custom Controls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -203,6 +205,9 @@
     </Compile>
     <Compile Include="Custom Controls\ResultPreviewPanel.Designer.cs">
       <DependentUpon>ResultPreviewPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\CustomTextBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\Auth\ForgotPassword.cs">
       <SubType>Form</SubType>

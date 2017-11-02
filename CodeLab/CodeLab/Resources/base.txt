@@ -5,7 +5,7 @@ namespace Test
 {
     class testClass
     {
-        public void Run()
+        public object Run()
 		{
 		*
 		}

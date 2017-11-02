@@ -15,7 +15,8 @@ namespace CodeLab.Classes
     public class CodeRunner
     {
 
-        private string _code;
+        private readonly string _code;
+
         public CodeRunner(string code)
         {
             string baseLine =  File.ReadAllText("../../Resources/base.txt");
@@ -26,18 +27,12 @@ namespace CodeLab.Classes
             using (var ms = new MemoryStream())
             {
                 var result = compilation.Emit(ms);
-                Code.TbStatus.Clear();
-                if (result.Success)
-                {
-                    ExecuteCompiledCode(ms);
-                }
-                else
-                {
-                    ConsoleWriteErrors(result);
-                }
+                Result = result.Success ? (ExecuteCompiledCode(ms),true) : (GetErrorText(result),false);
             }
 
         }
+
+        public (object result,bool succes) Result { get; }
 
         IEnumerable<string> GetAssemblyFiles(Assembly assembly)
         {
@@ -73,14 +68,14 @@ namespace CodeLab.Classes
         * @param result The result.
         **************************************************************************************************/
 
-        private void ConsoleWriteErrors(EmitResult result)
+        private string GetErrorText(EmitResult result)
         {
             var failures = result.Diagnostics.Where(CodeHasError);
             var err = "";
             foreach (var diagnostic in failures)
                 err += $"{diagnostic.Id}: {diagnostic.GetMessage()}" + Environment.NewLine;
 
-            Code.TbStatus.Text = err;
+            return err;
         }
 
         /**************************************************************************************************
@@ -89,18 +84,19 @@ namespace CodeLab.Classes
         * @param ms The milliseconds.
         **************************************************************************************************/
 
-        private void ExecuteCompiledCode(MemoryStream ms)
+        private object ExecuteCompiledCode(MemoryStream ms)
         {
             ms.Seek(0, SeekOrigin.Begin);
             var assembly = Assembly.Load(ms.ToArray());
 
             var type = assembly.GetType("Test.testClass");
             var obj = Activator.CreateInstance(type);
-            type.InvokeMember("Run",
+            object result = type.InvokeMember("Run",
                               BindingFlags.Default | BindingFlags.InvokeMethod,
                               null,
                               obj,
                               new object[] { });
+            return result;
         }
 
         /**************************************************************************************************

@@ -10,116 +10,22 @@ using System.Threading.Tasks;
 
 namespace CodeLab.Classes.Database
 {
-    public class UserCrud : ICodeLabDb<User>
+    public class UserCrud : CRUD<User>
     {
 
-        protected  IMongoDatabase Database = DbFactory.Database;
-        protected IMongoCollection<BsonDocument> Table = DbFactory.Users;
-
-        public async Task<bool> Delete(string id)
+        public UserCrud()
         {
-            try
-            {
-                var filter = new BsonDocument { { "_id", id } };
-                await Table.DeleteOneAsync(filter);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            Table = DbFactory.Users;
         }
 
-        public async Task<List<User>> GetAll(BsonDocument filter)
+        public async Task<bool> CheckIfExists(string column,string value)
         {
-            try
-            {
-                var results = new List<User>();
-                using (var cursor = await Table.FindAsync(filter))
-                {
-                    var x = cursor.ToEnumerable().Where(z => true).ToList();
-                    results.AddRange(x.Select(item => Newtonsoft.Json.JsonConvert.DeserializeObject<User>(item.ToString())));
-                }
-                return results;
-            }
-            catch (Exception)
-            {
-
-                return new List<User>();
-            }
-            
-        }
-
-        public async Task<User> GetOne(string id)
-        {
-            try
-            {
-                var filter = new BsonDocument { { "_id", id } };
-                using (var cursor = await Table.FindAsync(filter))
-                {
-                    return JsonConvert.DeserializeObject<User>(cursor.First().ToString());
-                }
-
-            }
-            catch (Exception)
-            {
-
-                return new User { _id = null };
-            }
-           
-        }
-
-        public async Task<bool> Insert(User entity)
-        {
-            try
-            {
-                
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(entity);
-                var bsonDocument = BsonDocument.Parse(json);
-                await Table.InsertOneAsync(bsonDocument);
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-         
-            
-        }
-
-        public async Task<bool> Update(string id, User entity)
-        {
-            try
-            {
-                var filter = new BsonDocument { { "_id",id}};
-                await Table.UpdateOneAsync(filter, JsonConvert.SerializeObject(entity));
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-              
-            }
-        }
-
-        public async Task<bool> UserNameValidation(string userName)
-        {
-            var filter = new BsonDocument { {"UserName",userName } };
+            var filter = new BsonDocument { { column, value } };
             using (var cursor = await Table.FindAsync(filter))
             {
                 return cursor.Any();
             }
         }
-        public async Task<bool> EMailValidation(string email)
-        {
-            var filter = new BsonDocument { { "EMail", email } };
-            using (var cursor = await Table.FindAsync(filter))
-            {
-                return cursor.Any();
-            }
-        }
-
         public async Task<User> FindUser(string userNameOrEmail)
         {
             try
@@ -154,5 +60,6 @@ namespace CodeLab.Classes.Database
             }
            
         }
+
     }
 }

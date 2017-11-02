@@ -18,14 +18,14 @@ namespace CodeLab.Forms
     public partial class Code : MetroFramework.Forms.MetroForm
     {
         private readonly string _id;
-        private readonly CodePieceCrud _codePieceCrud;
+        private readonly CRUD<CodePiece> _codePieceCrud;
         private CodePiece _codePiece;
        
         public Code(string id)
         {
             InitializeComponent();
             _id = id;
-            _codePieceCrud = new CodePieceCrud();
+            _codePieceCrud = new CRUD<CodePiece>(DbFactory.CodePieces);
         }
 
 
@@ -57,9 +57,17 @@ namespace CodeLab.Forms
 
         private void BtnRun_Click(object sender, EventArgs e)
         {
-            
+            TbStatus.AppendText("Build Started.",Color.Black);
           CodeRunner cr = new CodeRunner(TbCode.Text);
-            
+            (object result,bool success) = cr.Result;
+            Color color = Color.Red;
+            string text = result.ToString();
+            if (success)
+            {
+                color = Color.Green;
+            }
+            TbStatus.AppendText(text,color);
+
         }
 
         private void BtnOriginal_Click(object sender, EventArgs e)

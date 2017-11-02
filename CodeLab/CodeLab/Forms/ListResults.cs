@@ -17,23 +17,22 @@ namespace CodeLab.Forms
 {
     public partial class ListResults : MetroFramework.Forms.MetroForm
     {
-        private readonly CodePieceCrud _codePieceCrud;
+        private readonly CRUD<CodePiece> _codePieceCrud;
         public ListResults(string searchText)
         {
             InitializeComponent();
             LblResult.Text += searchText;
-            _codePieceCrud = new CodePieceCrud();
+            _codePieceCrud = new CRUD<CodePiece>(DbFactory.CodePieces);
         }
         
         private async void ListResults_LoadAsync(object sender, EventArgs e)
         {
             var text = LblResult.Text;
             LblResult.Text = "Listing";
-            System.Threading.ThreadStart childref = WaitingText();
-            System.Threading.Thread childThread = new System.Threading.Thread(childref);
-            childThread.Start();
+            var thread = new Threader(LblResult,"Listing");
+            thread.Run();
             var results = await _codePieceCrud.GetAll(new MongoDB.Bson.BsonDocument());
-            childThread.Abort();
+            thread.Stop();
             LblResult.Text = text;
 
             foreach (var result in results)
@@ -42,23 +41,6 @@ namespace CodeLab.Forms
                 resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.GetLanguages(), user.Name));
             }
 
-        }
-
-        private System.Threading.ThreadStart WaitingText()
-        {
-            return new System.Threading.ThreadStart(() =>
-            {
-                head:
-                for (int i = 0; i < 4; i++)
-                {
-                    System.Threading.Thread.Sleep(100);
-                    Invoke((MethodInvoker)(() => LblResult.Text += '.'));
-                    Application.DoEvents();
-                }
-                Invoke((MethodInvoker)(() => LblResult.Text = "Listing"));
-                Application.DoEvents();
-                goto head;
-            });
         }
     }
 }
