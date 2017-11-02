@@ -20,6 +20,7 @@ namespace CodeLab.Forms
         private readonly string _id;
         private readonly CodePieceCrud _codePieceCrud;
         private CodePiece _codePiece;
+       
         public Code(string id)
         {
             InitializeComponent();
@@ -57,8 +58,13 @@ namespace CodeLab.Forms
         private void BtnRun_Click(object sender, EventArgs e)
         {
             
-          CodeRunner cr = new CodeRunner(_codePiece.Code);
+          CodeRunner cr = new CodeRunner(TbCode.Text);
             
+        }
+
+        private void BtnOriginal_Click(object sender, EventArgs e)
+        {
+            TbCode.Text = _codePiece.Code;
         }
     }
 }

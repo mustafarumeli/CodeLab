@@ -1,4 +1,5 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using CodeLab.Forms;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
 using System;
@@ -25,7 +26,7 @@ namespace CodeLab.Classes
             using (var ms = new MemoryStream())
             {
                 var result = compilation.Emit(ms);
-
+                Code.TbStatus.Clear();
                 if (result.Success)
                 {
                     ExecuteCompiledCode(ms);
@@ -77,9 +78,9 @@ namespace CodeLab.Classes
             var failures = result.Diagnostics.Where(CodeHasError);
             var err = "";
             foreach (var diagnostic in failures)
-                err += $"{diagnostic.Id}: {diagnostic.GetMessage()}";
+                err += $"{diagnostic.Id}: {diagnostic.GetMessage()}" + Environment.NewLine;
 
-            //ErrorTextBox.AppendText(err);
+            Code.TbStatus.Text = err;
         }
 
         /**************************************************************************************************
@@ -100,7 +101,6 @@ namespace CodeLab.Classes
                               null,
                               obj,
                               new object[] { });
-            ShowPosition();
         }
 
         /**************************************************************************************************
@@ -141,10 +141,7 @@ namespace CodeLab.Classes
             return diagnostic.IsWarningAsError || diagnostic.Severity == DiagnosticSeverity.Error;
         }
 
-        private void ShowPosition()
-        {
-          //  PositionTextBox.Text = Block.Location.X + "," + Block.Location.Y;
-        }
+       
 
 
     }

@@ -33,6 +33,8 @@
             this.LblDesc = new System.Windows.Forms.Label();
             this.TbCode = new System.Windows.Forms.RichTextBox();
             this.BtnRun = new MetroFramework.Controls.MetroButton();
+            this.BtnOriginal = new CodeLab.Custom_Controls.CustomButton();
+            TbStatus = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,9 +43,9 @@
             this.PBpicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PBpicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PBpicture.Location = new System.Drawing.Point(688, 74);
+            this.PBpicture.Location = new System.Drawing.Point(688, 193);
             this.PBpicture.Name = "PBpicture";
-            this.PBpicture.Size = new System.Drawing.Size(419, 471);
+            this.PBpicture.Size = new System.Drawing.Size(419, 352);
             this.PBpicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PBpicture.TabIndex = 0;
             this.PBpicture.TabStop = false;
@@ -82,11 +84,40 @@
             this.BtnRun.Visible = false;
             this.BtnRun.Click += new System.EventHandler(this.BtnRun_Click);
             // 
+            // BtnOriginal
+            // 
+            this.BtnOriginal.BackColor = System.Drawing.Color.Black;
+            this.BtnOriginal.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.BtnOriginal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOriginal.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnOriginal.ForeColor = System.Drawing.Color.White;
+            this.BtnOriginal.Location = new System.Drawing.Point(377, 41);
+            this.BtnOriginal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.BtnOriginal.MinimumSize = new System.Drawing.Size(100, 30);
+            this.BtnOriginal.Name = "BtnOriginal";
+            this.BtnOriginal.Padding = new System.Windows.Forms.Padding(3);
+            this.BtnOriginal.Size = new System.Drawing.Size(181, 30);
+            this.BtnOriginal.TabIndex = 4;
+            this.BtnOriginal.Text = "Convert to original";
+            this.BtnOriginal.UseVisualStyleBackColor = false;
+            this.BtnOriginal.Click += new System.EventHandler(this.BtnOriginal_Click);
+            // 
+            // TbStatus
+            // 
+            TbStatus.ForeColor = System.Drawing.Color.Red;
+            TbStatus.Location = new System.Drawing.Point(688, 74);
+            TbStatus.Name = "TbStatus";
+            TbStatus.Size = new System.Drawing.Size(419, 102);
+            TbStatus.TabIndex = 5;
+            TbStatus.Text = "";
+            // 
             // Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 661);
+            this.Controls.Add(TbStatus);
+            this.Controls.Add(this.BtnOriginal);
             this.Controls.Add(this.BtnRun);
             this.Controls.Add(this.TbCode);
             this.Controls.Add(this.LblDesc);
@@ -109,5 +140,7 @@
         private System.Windows.Forms.Label LblDesc;
         private System.Windows.Forms.RichTextBox TbCode;
         private MetroFramework.Controls.MetroButton BtnRun;
+        private Custom_Controls.CustomButton BtnOriginal;
+        public static System.Windows.Forms.RichTextBox TbStatus;
     }
 }
