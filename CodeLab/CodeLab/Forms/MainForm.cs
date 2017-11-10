@@ -1,14 +1,7 @@
-﻿using CodeLab.Classes;
-using CodeLab.Classes.Database.Entities;
+﻿using CodeLab.Classes.Database.Entities;
 using CodeLab.Forms.Auth;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CodeLab.Forms
@@ -23,7 +16,12 @@ namespace CodeLab.Forms
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            var lr = new ListResults(TbSearch.Text);
+            var selectedLanguages= new string[clbLanguages.CheckedItems.Count];
+            for (var i = 0; i < selectedLanguages.Length; i++)
+            {
+                selectedLanguages[i] = clbLanguages.CheckedItems[i].ToString();
+            }
+            var lr = new ListResults(TbSearch.Text,selectedLanguages);
             lr.Show();
         }
 

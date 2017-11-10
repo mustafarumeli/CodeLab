@@ -1,14 +1,6 @@
 ﻿using CodeLab.Classes.Database.Entities;
-using MongoDB.Bson.IO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeLab.Classes.Database;
 
@@ -32,7 +24,8 @@ namespace CodeLab.Forms
                 return false;
             }
         }
-        byte[] _image;
+
+        private byte[] _image;
         private async void CbtnSend_ClickAsync(object sender, EventArgs e)
         {
       

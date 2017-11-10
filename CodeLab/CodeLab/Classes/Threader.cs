@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CodeLab.Classes
 {
-    class Threader
+    internal class Threader
     {
         private readonly System.Threading.Thread _childThread;
         private bool _run = true;
@@ -24,6 +20,7 @@ namespace CodeLab.Classes
 
         public void Stop()
         {
+            _childThread.Abort();
             _run = false;
         }
         private System.Threading.ThreadStart WaitingText(Control control,string text)
@@ -35,10 +32,21 @@ namespace CodeLab.Classes
                     for (var i = 0; i < 4; i++)
                     {
                         System.Threading.Thread.Sleep(100);
-                        control.Invoke((MethodInvoker) (() => control.Text += '.'));
+                        try
+                        {
+                            control.Invoke((MethodInvoker) (() => control.Text += '.'));
+                        }
+                        catch (Exception)
+                        {
+                            break;
+                        }
                         Application.DoEvents();
                     }
-                    control.Invoke((MethodInvoker) (() => control.Text = text));
+                    try
+                    {
+                        control.Invoke((MethodInvoker) (() => control.Text = text));
+                    }
+                    catch (Exception) { break;}
                     Application.DoEvents();
                 }
             };

@@ -176,7 +176,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\CodeRunner.cs" />
     <Compile Include="Classes\Database\CodePieceCRUD.cs" />
     <Compile Include="Classes\Database\CRUD.cs" />

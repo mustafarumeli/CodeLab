@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -9,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace CodeLab.Classes.Database
 {
-    public class CRUD<T> where T:DbObject,new()
+    public class CRUD<T> : ICodeLabDb<T> where T:DbObject,new()
     {
         protected IMongoDatabase Database;
         protected IMongoCollection<BsonDocument> Table;
@@ -52,7 +51,7 @@ namespace CodeLab.Classes.Database
                 }
                 return results;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return new List<T>();
@@ -83,15 +82,13 @@ namespace CodeLab.Classes.Database
         {
             try
             {
-
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(entity);
                 var bsonDocument = BsonDocument.Parse(json);
                 await Table.InsertOneAsync(bsonDocument);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return false;
             }
 
@@ -109,7 +106,6 @@ namespace CodeLab.Classes.Database
             catch (Exception)
             {
                 return false;
-
             }
         }
     }

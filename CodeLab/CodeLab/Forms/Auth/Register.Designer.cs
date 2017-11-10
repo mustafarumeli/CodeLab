@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.TbName = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.TbEmail = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             // 
             // TbName
             // 
-            this.TbName.Location = new System.Drawing.Point(100, 63);
+            this.TbName.Location = new System.Drawing.Point(105, 79);
             this.TbName.MaxLength = 25;
             this.TbName.Name = "TbName";
             this.TbName.Size = new System.Drawing.Size(100, 20);
@@ -66,7 +66,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(59, 66);
+            this.label.Location = new System.Drawing.Point(64, 82);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(35, 13);
             this.label.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             // TbEmail
             // 
-            this.TbEmail.Location = new System.Drawing.Point(100, 89);
+            this.TbEmail.Location = new System.Drawing.Point(105, 105);
             this.TbEmail.MaxLength = 25;
             this.TbEmail.Name = "TbEmail";
             this.TbEmail.Size = new System.Drawing.Size(100, 20);
@@ -84,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 92);
+            this.label1.Location = new System.Drawing.Point(63, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 3;
@@ -93,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 118);
+            this.label2.Location = new System.Drawing.Point(9, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // TbSecurityAnswer
             // 
-            this.TbSecurityAnswer.Location = new System.Drawing.Point(100, 142);
+            this.TbSecurityAnswer.Location = new System.Drawing.Point(105, 158);
             this.TbSecurityAnswer.MaxLength = 15;
             this.TbSecurityAnswer.Name = "TbSecurityAnswer";
             this.TbSecurityAnswer.Size = new System.Drawing.Size(100, 20);
@@ -111,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 145);
+            this.label3.Location = new System.Drawing.Point(16, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 7;
@@ -128,9 +128,9 @@
             this.groupBox1.Controls.Add(this.TbPassword);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TbUserName);
-            this.groupBox1.Location = new System.Drawing.Point(7, 197);
+            this.groupBox1.Location = new System.Drawing.Point(7, 199);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 115);
+            this.groupBox1.Size = new System.Drawing.Size(309, 129);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Options";
@@ -139,7 +139,7 @@
             // 
             this.LRePassword.AutoSize = true;
             this.LRePassword.ForeColor = System.Drawing.Color.Red;
-            this.LRePassword.Location = new System.Drawing.Point(199, 74);
+            this.LRePassword.Location = new System.Drawing.Point(204, 74);
             this.LRePassword.Name = "LRePassword";
             this.LRePassword.Size = new System.Drawing.Size(0, 13);
             this.LRePassword.TabIndex = 15;
@@ -148,7 +148,7 @@
             // 
             this.LPassword.AutoSize = true;
             this.LPassword.ForeColor = System.Drawing.Color.Red;
-            this.LPassword.Location = new System.Drawing.Point(199, 48);
+            this.LPassword.Location = new System.Drawing.Point(204, 48);
             this.LPassword.Name = "LPassword";
             this.LPassword.Size = new System.Drawing.Size(0, 13);
             this.LPassword.TabIndex = 14;
@@ -157,7 +157,7 @@
             // 
             this.LUsername.AutoSize = true;
             this.LUsername.ForeColor = System.Drawing.Color.Red;
-            this.LUsername.Location = new System.Drawing.Point(199, 22);
+            this.LUsername.Location = new System.Drawing.Point(204, 22);
             this.LUsername.Name = "LUsername";
             this.LUsername.Size = new System.Drawing.Size(0, 13);
             this.LUsername.TabIndex = 12;
@@ -165,7 +165,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 74);
+            this.label6.Location = new System.Drawing.Point(22, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 13;
@@ -173,7 +173,7 @@
             // 
             // TbRePassword
             // 
-            this.TbRePassword.Location = new System.Drawing.Point(93, 71);
+            this.TbRePassword.Location = new System.Drawing.Point(98, 78);
             this.TbRePassword.MaxLength = 20;
             this.TbRePassword.Name = "TbRePassword";
             this.TbRePassword.Size = new System.Drawing.Size(100, 20);
@@ -184,7 +184,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 48);
+            this.label5.Location = new System.Drawing.Point(39, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 11;
@@ -192,7 +192,7 @@
             // 
             // TbPassword
             // 
-            this.TbPassword.Location = new System.Drawing.Point(93, 45);
+            this.TbPassword.Location = new System.Drawing.Point(98, 52);
             this.TbPassword.MaxLength = 20;
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.Size = new System.Drawing.Size(100, 20);
@@ -203,7 +203,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 22);
+            this.label4.Location = new System.Drawing.Point(32, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 9;
@@ -211,7 +211,7 @@
             // 
             // TbUserName
             // 
-            this.TbUserName.Location = new System.Drawing.Point(93, 19);
+            this.TbUserName.Location = new System.Drawing.Point(98, 26);
             this.TbUserName.MaxLength = 15;
             this.TbUserName.Name = "TbUserName";
             this.TbUserName.Size = new System.Drawing.Size(100, 20);
@@ -222,7 +222,7 @@
             // 
             this.LName.AutoSize = true;
             this.LName.ForeColor = System.Drawing.Color.Red;
-            this.LName.Location = new System.Drawing.Point(206, 66);
+            this.LName.Location = new System.Drawing.Point(211, 82);
             this.LName.Name = "LName";
             this.LName.Size = new System.Drawing.Size(0, 13);
             this.LName.TabIndex = 9;
@@ -231,7 +231,7 @@
             // 
             this.LEmail.AutoSize = true;
             this.LEmail.ForeColor = System.Drawing.Color.Red;
-            this.LEmail.Location = new System.Drawing.Point(206, 92);
+            this.LEmail.Location = new System.Drawing.Point(211, 108);
             this.LEmail.Name = "LEmail";
             this.LEmail.Size = new System.Drawing.Size(0, 13);
             this.LEmail.TabIndex = 10;
@@ -240,7 +240,7 @@
             // 
             this.LSecurityAnswer.AutoSize = true;
             this.LSecurityAnswer.ForeColor = System.Drawing.Color.Red;
-            this.LSecurityAnswer.Location = new System.Drawing.Point(206, 145);
+            this.LSecurityAnswer.Location = new System.Drawing.Point(211, 161);
             this.LSecurityAnswer.Name = "LSecurityAnswer";
             this.LSecurityAnswer.Size = new System.Drawing.Size(0, 13);
             this.LSecurityAnswer.TabIndex = 11;
@@ -258,7 +258,7 @@
             "Your favorite colour",
             "Your mother\'s maiden name",
             "Your lucky number"});
-            this.CbSecurityQuestion.Location = new System.Drawing.Point(100, 113);
+            this.CbSecurityQuestion.Location = new System.Drawing.Point(105, 129);
             this.CbSecurityQuestion.Name = "CbSecurityQuestion";
             this.CbSecurityQuestion.Size = new System.Drawing.Size(216, 25);
             this.CbSecurityQuestion.TabIndex = 13;
@@ -271,7 +271,7 @@
             this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnApply.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnApply.ForeColor = System.Drawing.Color.White;
-            this.BtnApply.Location = new System.Drawing.Point(100, 341);
+            this.BtnApply.Location = new System.Drawing.Point(100, 357);
             this.BtnApply.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnApply.MinimumSize = new System.Drawing.Size(100, 30);
             this.BtnApply.Name = "BtnApply";
@@ -286,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 612);
+            this.ClientSize = new System.Drawing.Size(332, 426);
             this.Controls.Add(this.CbSecurityQuestion);
             this.Controls.Add(this.BtnApply);
             this.Controls.Add(this.LSecurityAnswer);
@@ -302,8 +302,6 @@
             this.Controls.Add(this.TbName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(438, 612);
-            this.MinimumSize = new System.Drawing.Size(438, 612);
             this.Name = "Register";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Register";

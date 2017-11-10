@@ -1,11 +1,5 @@
 ﻿using CodeLab.Classes.Database;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,25 +12,18 @@ namespace CodeLab.Forms.Auth
             InitializeComponent();
         }
 
-        async Task<(string sequrityQuestion, string answer,string password)> CheckIfUserExistsAsync(string userNameOrEmail)
+        private async Task<(string sequrityQuestion, string answer,string password)> CheckIfUserExistsAsync(string userNameOrEmail)
         {
             Classes.Database.Entities.User user = await new UserCrud().FindUser(userNameOrEmail);
-            if (user == null)
-            {
-                if(MessageBox.Show("Username or Email is seem to wrong tome my dear user", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                {
-                    Close();
-                    return ("","","");
-                }
-                else
-                {
-                    return ("", "", "");
-                }
-            }
-            return (user.SecurityQuestion, user.SecurityAnswer,user.Password);
+            if (user != null) return (user.SecurityQuestion, user.SecurityAnswer, user.Password);
+            if (MessageBox.Show("Username or Email is seem to wrong tome my dear user", "Error",
+                    MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) != DialogResult.Cancel) return ("", "", "");
+            Close();
+            return ("","","");
         }
-        string _answer;
-        string _password;
+
+        private string _answer;
+        private string _password;
         private async void BtnAccept_ClickAsync(object sender, EventArgs e)
         {
             if(_password != "" && _answer!="" && !string.IsNullOrEmpty(TBQuestion.Text))
@@ -45,7 +32,7 @@ namespace CodeLab.Forms.Auth
                 {
                     if (_answer == TBAnswer.Text)
                     {
-                        MessageBox.Show("Your Password is : "+_password);
+                        MessageBox.Show("Your Password is : "+_password); // Todo : Email Send
                         this.Close();
                     }
                     else
@@ -62,14 +49,11 @@ namespace CodeLab.Forms.Auth
             {
                 string question;
                 (question, _answer,_password) = await CheckIfUserExistsAsync(TBUser.Text);
-                if ( question!="" || _answer!="" || _password != "")
-                {
-                    TBQuestion.Text = question;
-                    GBAuthentication.Visible = true;
-                    TBUser.Enabled = false;
-                    BtnAccept.Text = "Confirm";
-                }
-                
+                if (question == "" && _answer == "" && _password == "") return;
+                TBQuestion.Text = question;
+                GBAuthentication.Visible = true;
+                TBUser.Enabled = false;
+                BtnAccept.Text = "Confirm";
             }
             else
             {

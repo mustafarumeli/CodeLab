@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LblAuth = new System.Windows.Forms.Label();
             this.TbSearch = new System.Windows.Forms.TextBox();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.LblContribute = new System.Windows.Forms.Label();
+            this.clbLanguages = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // LblAuth
@@ -92,11 +93,27 @@
             this.LblContribute.Visible = false;
             this.LblContribute.Click += new System.EventHandler(this.LblContribute_Click);
             // 
+            // clbLanguages
+            // 
+            this.clbLanguages.FormattingEnabled = true;
+            this.clbLanguages.Items.AddRange(new object[] {
+            "C#",
+            "C++",
+            "C",
+            "Java",
+            "JavaScript"});
+            this.clbLanguages.Location = new System.Drawing.Point(156, 267);
+            this.clbLanguages.MultiColumn = true;
+            this.clbLanguages.Name = "clbLanguages";
+            this.clbLanguages.Size = new System.Drawing.Size(706, 19);
+            this.clbLanguages.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 431);
+            this.Controls.Add(this.clbLanguages);
             this.Controls.Add(this.LblContribute);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.TbSearch);
@@ -115,5 +132,6 @@
         private System.Windows.Forms.TextBox TbSearch;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label LblContribute;
+        private System.Windows.Forms.CheckedListBox clbLanguages;
     }
 }

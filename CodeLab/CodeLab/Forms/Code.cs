@@ -1,17 +1,9 @@
 ﻿using CodeLab.Classes;
 using CodeLab.Classes.Database;
 using CodeLab.Classes.Database.Entities;
-using MongoDB.Bson;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CodeLab.Forms
 {

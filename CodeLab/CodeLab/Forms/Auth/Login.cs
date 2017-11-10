@@ -1,13 +1,8 @@
-﻿using CodeLab.Classes.Database.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeLab.Classes;
 using CodeLab.Classes.Database;
 
 namespace CodeLab.Forms.Auth
@@ -31,27 +26,34 @@ namespace CodeLab.Forms.Auth
 
         private async void LoginButton_ClickAsync(object sender, EventArgs e)
         {
-            checkLogin();
+            var threader = new Threader(LoginButton,"Loggining in");
+            threader.Run();
+
+            if (await CheckLogin())
+            {
+                threader.Stop();
+                Close();
+            }
+            threader.Stop();
+            LoginButton.Text = "Login";
         }
-        private async void checkLogin()
+        private async Task<bool> CheckLogin()
         {
             if (TbUserName.TextLength > 2 && MtbPassword.TextLength > 5)
             {
-                var correctLogin = await new Classes.Database.UserCrud().CheckAuthentication(TbUserName.Text, MtbPassword.Text);
+                var correctLogin = await new UserCrud().CheckAuthentication(TbUserName.Text, MtbPassword.Text);
                 if (correctLogin != null)
                 {
                     MainForm.CurrentUser = correctLogin;
-                    Close();
+                    return true;
                 }
-                else
-                {
-                    MessageBox.Show("You have entered wrong credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("You have entered wrong credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 MessageBox.Show("Information you have entered is not long enough.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            return false;
         }
         private void TbUserName_Enter(object sender, EventArgs e)
         {

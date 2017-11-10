@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeLab.Classes;
 using CodeLab.Forms;
@@ -21,10 +15,12 @@ namespace CodeLab.Custom_Controls
             Setup(_id,header, date, rating, language, author);
 
         }
-        const int MAX_STAR_COUNT = 4;
+
+        private const int MAX_STAR_COUNT = 4;
         private string _header = "";
         private string _id = ""; // ID eklenecek tabii
-        void Setup(string _id , string header, string date, Rate rating, string language, string author)
+
+        private void Setup(string _id , string header, string date, Rate rating, string language, string author)
         {
             LblHeader.Text = header;
             LblDate.Text = date;

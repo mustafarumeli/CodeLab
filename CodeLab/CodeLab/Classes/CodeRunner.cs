@@ -1,5 +1,4 @@
-﻿using CodeLab.Forms;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
 using System;
@@ -7,8 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeLab.Classes
 {
@@ -34,7 +31,7 @@ namespace CodeLab.Classes
 
         public (object result,bool succes) Result { get; }
 
-        IEnumerable<string> GetAssemblyFiles(Assembly assembly)
+        private IEnumerable<string> GetAssemblyFiles(Assembly assembly)
         {
             var loadedAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assemblyName in assembly.GetReferencedAssemblies())
@@ -62,20 +59,10 @@ namespace CodeLab.Classes
             return compilation;
         }
 
-        /**************************************************************************************************
-        * Console write errors.
-        *
-        * @param result The result.
-        **************************************************************************************************/
-
         private string GetErrorText(EmitResult result)
         {
             var failures = result.Diagnostics.Where(CodeHasError);
-            var err = "";
-            foreach (var diagnostic in failures)
-                err += $"{diagnostic.Id}: {diagnostic.GetMessage()}" + Environment.NewLine;
-
-            return err;
+            return failures.Aggregate("", (current, diagnostic) => current + ($"{diagnostic.Id}: {diagnostic.GetMessage()}" + Environment.NewLine));
         }
 
         /**************************************************************************************************

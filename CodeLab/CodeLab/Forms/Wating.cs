@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using CodeLab.Classes.Database;
 using CodeLab.Classes.Database.Entities;
 
 namespace CodeLab.Forms
 {
-    public partial class Waiting : Form
+    public partial class Waiting
     {
         private readonly Classes.Database.CRUD<CodePiece> _codePieceCrud;
-        string _id;
+        private readonly string _id;
         public Waiting(string id)
         {
             InitializeComponent();
