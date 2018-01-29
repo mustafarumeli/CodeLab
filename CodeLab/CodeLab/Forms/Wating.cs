@@ -6,12 +6,12 @@ namespace CodeLab.Forms
 {
     public partial class Waiting
     {
-        private readonly Classes.Database.CRUD<CodePiece> _codePieceCrud;
+        private readonly CodePieceCRUD _codePieceCrud;
         private readonly string _id;
         public Waiting(string id)
         {
             InitializeComponent();
-            _codePieceCrud = new Classes.Database.CRUD<CodePiece>(DbFactory.CodePieces);
+            _codePieceCrud = DbFactory.CodePieceCrud;
             _id = id;
         }
         public Classes.Database.Entities.CodePiece CodePiece;

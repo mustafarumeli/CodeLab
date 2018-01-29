@@ -9,7 +9,7 @@ namespace CodeLab.Forms
 {
     public partial class ListResults : MetroFramework.Forms.MetroForm
     {
-        private readonly CRUD<CodePiece> _codePieceCrud;
+        private readonly CodePieceCRUD _codePieceCrud;
         private readonly string _resultText;
         private readonly string[] _selectedLanguages;
         public ListResults(string searchText, string[] selectedLanguages)
@@ -17,7 +17,7 @@ namespace CodeLab.Forms
             InitializeComponent();
             _resultText = LblResult.Text += searchText;
             _selectedLanguages = selectedLanguages;
-            _codePieceCrud = new CRUD<CodePiece>(DbFactory.CodePieces);
+            _codePieceCrud = DbFactory.CodePieceCrud;
         }
         
         private async void ListResults_LoadAsync(object sender, EventArgs e)

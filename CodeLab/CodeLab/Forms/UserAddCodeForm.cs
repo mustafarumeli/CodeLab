@@ -17,7 +17,7 @@ namespace CodeLab.Forms
         {
             get
             {
-                if (_image != null && TxtCodeTitle.TextLength > 3 && RtxtCodes.TextLength > 10 && TxtCodeDescription.TextLength > 10 && TxtCodeTags.TextLength > 2 && ClbLanguages.SelectedItems.Count > 0)
+                if (_image != null && TxtCodeTitle.TextLength > 3 && TxtCodeDescription.TextLength > 10 && TxtCodeTags.TextLength > 2 && ClbLanguages.SelectedItems.Count > 0)
                 {
                     return true;
                 }
@@ -31,6 +31,8 @@ namespace CodeLab.Forms
       
             if (CheckValidations == true && MainForm.CurrentUser != null)
             {
+                {
+                }
                 string[] languages = new string[ClbLanguages.CheckedItems.Count];
                 for (int i = 0; i < languages.Length; i++)
                 {
@@ -39,7 +41,7 @@ namespace CodeLab.Forms
                 Random rnd = new Random();
                 var cPiece = new CodePiece
                 {
-                    Code = RtxtCodes.Text,
+                    
                     Contributer = MainForm.CurrentUser._id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
@@ -50,8 +52,11 @@ namespace CodeLab.Forms
                     Title = TxtCodeTitle.Text,
                     Picture = _image
                 };
-                await new Classes.Database.CRUD<CodePiece>(DbFactory.CodePieces).Insert(cPiece);
-                MessageBox.Show("Your Code Has Been Added "+Environment.NewLine+" Thank you");
+                using (InsertCode ic = new InsertCode(cPiece))
+                {
+                    ic.ShowDialog();
+                }
+
                 this.Close();
             }
             else

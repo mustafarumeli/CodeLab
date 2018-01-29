@@ -10,9 +10,6 @@ namespace CodeLab.Classes.Database
         Task<bool> Delete(string id);
         Task<bool> Update(string id,T entity);
         Task<List<T>> GetAll(BsonDocument filter);
-        Task<T> GetOne(string id);
-
-
-
+        Task<T> GetOne(string id);        
     }
 }

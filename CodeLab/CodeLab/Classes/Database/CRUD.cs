@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace CodeLab.Classes.Database
 {
-    public class CRUD<T> : ICodeLabDb<T> where T:DbObject,new()
+    public class CRUD<T> : ICodeLabDb<T> where T : DbObject, new()
     {
         protected IMongoDatabase Database;
         protected IMongoCollection<BsonDocument> Table;
@@ -21,7 +21,7 @@ namespace CodeLab.Classes.Database
 
         protected CRUD()
         {
-            
+
         }
 
 
@@ -72,7 +72,7 @@ namespace CodeLab.Classes.Database
             }
             catch (Exception)
             {
-                
+
                 return new T { _id = null };
             }
 

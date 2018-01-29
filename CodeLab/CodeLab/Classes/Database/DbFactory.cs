@@ -6,11 +6,17 @@ namespace CodeLab.Classes.Database
 {
    public class DbFactory
     {
-       public static IMongoClient Client = new MongoClient("mongodb://mustafarumeli:2dDfShKEX9rbc6e2eHxedLaouu8glHyZE9Ghz5PauBTfBkhpIWhvZuwxsgal1bnhQ2ZIQdIgjxDSrfT6XjS9YA==@mustafarumeli.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
-       //public static IMongoClient Client = new MongoClient();
+      // public static IMongoClient Client = new MongoClient("mongodb://mustafarumeli:2dDfShKEX9rbc6e2eHxedLaouu8glHyZE9Ghz5PauBTfBkhpIWhvZuwxsgal1bnhQ2ZIQdIgjxDSrfT6XjS9YA==@mustafarumeli.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
+        public static IMongoClient Client = new MongoClient();
         private static IMongoDatabase _database;
 
-        public static IMongoDatabase Database => _database ?? (_database = Client.GetDatabase("test7"));
+        private static UserCrud _userCrud;
+        public static UserCrud UserCrud => _userCrud ?? (_userCrud = new UserCrud());
+
+        private static CodePieceCRUD _codePieceCrud;
+        public static CodePieceCRUD CodePieceCrud => _codePieceCrud ?? (_codePieceCrud = new CodePieceCRUD());
+
+        public static IMongoDatabase Database => _database ?? (_database = Client.GetDatabase("test"));
 
         private static IMongoCollection<BsonDocument> _users;
 

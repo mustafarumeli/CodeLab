@@ -29,23 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAddCodeForm));
-            this.RtxtCodes = new System.Windows.Forms.RichTextBox();
             this.ClbLanguages = new System.Windows.Forms.CheckedListBox();
-            this.CbtnSend = new CodeLab.Custom_Controls.CustomButton();
+            this.BtnAddCode = new CodeLab.Custom_Controls.CustomButton();
             this.TxtCodeTitle = new System.Windows.Forms.TextBox();
             this.TxtCodeDescription = new System.Windows.Forms.TextBox();
             this.TxtCodeTags = new System.Windows.Forms.TextBox();
             this.BtnPicture = new CodeLab.Custom_Controls.CustomButton();
             this.SuspendLayout();
-            // 
-            // RtxtCodes
-            // 
-            this.RtxtCodes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtxtCodes.Location = new System.Drawing.Point(23, 138);
-            this.RtxtCodes.Name = "RtxtCodes";
-            this.RtxtCodes.Size = new System.Drawing.Size(397, 287);
-            this.RtxtCodes.TabIndex = 0;
-            this.RtxtCodes.Text = "Code";
             // 
             // ClbLanguages
             // 
@@ -57,28 +47,28 @@
             "C++",
             "C",
             "JavaScript"});
-            this.ClbLanguages.Location = new System.Drawing.Point(440, 343);
+            this.ClbLanguages.Location = new System.Drawing.Point(23, 140);
             this.ClbLanguages.Name = "ClbLanguages";
-            this.ClbLanguages.Size = new System.Drawing.Size(327, 49);
+            this.ClbLanguages.Size = new System.Drawing.Size(397, 49);
             this.ClbLanguages.TabIndex = 4;
             // 
-            // CbtnSend
+            // BtnAddCode
             // 
-            this.CbtnSend.BackColor = System.Drawing.Color.Black;
-            this.CbtnSend.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.CbtnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbtnSend.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbtnSend.ForeColor = System.Drawing.Color.White;
-            this.CbtnSend.Location = new System.Drawing.Point(440, 395);
-            this.CbtnSend.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CbtnSend.MinimumSize = new System.Drawing.Size(100, 30);
-            this.CbtnSend.Name = "CbtnSend";
-            this.CbtnSend.Padding = new System.Windows.Forms.Padding(3);
-            this.CbtnSend.Size = new System.Drawing.Size(327, 30);
-            this.CbtnSend.TabIndex = 1;
-            this.CbtnSend.Text = "Send";
-            this.CbtnSend.UseVisualStyleBackColor = false;
-            this.CbtnSend.Click += new System.EventHandler(this.CbtnSend_ClickAsync);
+            this.BtnAddCode.BackColor = System.Drawing.Color.Black;
+            this.BtnAddCode.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.BtnAddCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddCode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddCode.ForeColor = System.Drawing.Color.White;
+            this.BtnAddCode.Location = new System.Drawing.Point(55, 445);
+            this.BtnAddCode.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.BtnAddCode.MinimumSize = new System.Drawing.Size(100, 30);
+            this.BtnAddCode.Name = "BtnAddCode";
+            this.BtnAddCode.Padding = new System.Windows.Forms.Padding(3);
+            this.BtnAddCode.Size = new System.Drawing.Size(327, 30);
+            this.BtnAddCode.TabIndex = 1;
+            this.BtnAddCode.Text = "Insert Code";
+            this.BtnAddCode.UseVisualStyleBackColor = false;
+            this.BtnAddCode.Click += new System.EventHandler(this.CbtnSend_ClickAsync);
             // 
             // TxtCodeTitle
             // 
@@ -92,17 +82,17 @@
             // TxtCodeDescription
             // 
             this.TxtCodeDescription.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodeDescription.Location = new System.Drawing.Point(440, 112);
+            this.TxtCodeDescription.Location = new System.Drawing.Point(23, 195);
             this.TxtCodeDescription.Multiline = true;
             this.TxtCodeDescription.Name = "TxtCodeDescription";
-            this.TxtCodeDescription.Size = new System.Drawing.Size(327, 156);
+            this.TxtCodeDescription.Size = new System.Drawing.Size(397, 156);
             this.TxtCodeDescription.TabIndex = 7;
             this.TxtCodeDescription.Text = "Code Description";
             // 
             // TxtCodeTags
             // 
             this.TxtCodeTags.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodeTags.Location = new System.Drawing.Point(440, 317);
+            this.TxtCodeTags.Location = new System.Drawing.Point(55, 403);
             this.TxtCodeTags.Name = "TxtCodeTags";
             this.TxtCodeTags.Size = new System.Drawing.Size(327, 22);
             this.TxtCodeTags.TabIndex = 8;
@@ -115,7 +105,7 @@
             this.BtnPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPicture.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPicture.ForeColor = System.Drawing.Color.White;
-            this.BtnPicture.Location = new System.Drawing.Point(440, 278);
+            this.BtnPicture.Location = new System.Drawing.Point(55, 370);
             this.BtnPicture.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnPicture.MinimumSize = new System.Drawing.Size(100, 30);
             this.BtnPicture.Name = "BtnPicture";
@@ -130,18 +120,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 448);
+            this.ClientSize = new System.Drawing.Size(448, 495);
             this.Controls.Add(this.TxtCodeTags);
             this.Controls.Add(this.TxtCodeDescription);
             this.Controls.Add(this.TxtCodeTitle);
             this.Controls.Add(this.ClbLanguages);
             this.Controls.Add(this.BtnPicture);
-            this.Controls.Add(this.CbtnSend);
-            this.Controls.Add(this.RtxtCodes);
+            this.Controls.Add(this.BtnAddCode);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(790, 448);
-            this.MinimumSize = new System.Drawing.Size(790, 448);
             this.Name = "UserAddCodeForm";
             this.Text = "Add Your Code Here";
             this.ResumeLayout(false);
@@ -150,9 +137,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox RtxtCodes;
-        private Custom_Controls.CustomButton CbtnSend;
+        private Custom_Controls.CustomButton BtnAddCode;
         private System.Windows.Forms.CheckedListBox ClbLanguages;
         private System.Windows.Forms.TextBox TxtCodeTitle;
         private System.Windows.Forms.TextBox TxtCodeDescription;

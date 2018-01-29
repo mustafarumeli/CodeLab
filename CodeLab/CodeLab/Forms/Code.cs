@@ -10,14 +10,14 @@ namespace CodeLab.Forms
     public partial class Code : MetroFramework.Forms.MetroForm
     {
         private readonly string _id;
-        private readonly CRUD<CodePiece> _codePieceCrud;
+        private readonly CodePieceCRUD _codePieceCrud;
         private CodePiece _codePiece;
        
         public Code(string id)
         {
             InitializeComponent();
             _id = id;
-            _codePieceCrud = new CRUD<CodePiece>(DbFactory.CodePieces);
+            _codePieceCrud = DbFactory.CodePieceCrud;
         }
 
 
