@@ -1,16 +1,8 @@
 ﻿using CodeLab.Classes.Database;
 using CodeLab.Classes.Database.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CodeLab.Properties;
 
 namespace CodeLab.Forms
 {
@@ -26,7 +18,7 @@ namespace CodeLab.Forms
 
         void SetPreCode()
         {
-            string currentLanguage = _current.Languages[0];
+            string currentLanguage = _current.Languages[0].ToLower();
             if (currentLanguage != "c#")
             {
                 using (StreamReader stream = new StreamReader(Application.StartupPath + "\\LanguagePre\\" + currentLanguage + ".mhsn"))
@@ -36,11 +28,12 @@ namespace CodeLab.Forms
             }
           
         }
-        private async void BtnComplete_Click(object sender, EventArgs e)
+        public async void BtnComplete_Click(object sender, EventArgs e)
         {
             if (TbCode.TextLength > 3)
             {
                 _current.Code = TbCode.Text;
+              
 
                 await DbFactory.CodePieceCrud.Insert(_current);
                 MessageBox.Show("Your Code Has Been Added " + Environment.NewLine + "Thank you");

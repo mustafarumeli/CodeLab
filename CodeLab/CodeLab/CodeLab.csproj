@@ -180,6 +180,10 @@
     <Compile Include="Classes\Database\CodePieceCRUD.cs" />
     <Compile Include="Classes\Database\CRUD.cs" />
     <Compile Include="Classes\Database\DbFactory.cs" />
+    <Compile Include="Classes\Database\Entities\Comment.cs" />
+    <Compile Include="Classes\Database\Entities\SubComments.cs" />
+    <Compile Include="Classes\Database\Entities\Vote.cs" />
+    <Compile Include="Classes\Database\Entities\VoteTrack.cs" />
     <Compile Include="Classes\Database\ICodeLabDB.cs" />
     <Compile Include="Classes\Database\UserCRUD.cs" />
     <Compile Include="Classes\Database\DbObject.cs" />
@@ -187,6 +191,18 @@
     <Compile Include="Classes\Database\Entities\User.cs" />
     <Compile Include="Classes\Rate.cs" />
     <Compile Include="Classes\Threader.cs" />
+    <Compile Include="Custom Controls\CommentContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\CommentContainer.Designer.cs">
+      <DependentUpon>CommentContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\CommentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\CommentControl.Designer.cs">
+      <DependentUpon>CommentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom Controls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -264,6 +280,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Resources\DownArrow.png" />
+    <None Include="Resources\UpArrow1.png" />
+    <None Include="Resources\DownArrow1.png" />
+    <Content Include="Resources\UpArrow.png" />
+    <EmbeddedResource Include="Custom Controls\CommentControl.resx">
+      <DependentUpon>CommentControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Custom Controls\ResultContainer.resx">
       <DependentUpon>ResultContainer.cs</DependentUpon>
     </EmbeddedResource>
