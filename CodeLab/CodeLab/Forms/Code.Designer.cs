@@ -33,10 +33,11 @@ namespace CodeLab.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Code));
             this.PBpicture = new System.Windows.Forms.PictureBox();
             this.LblDesc = new System.Windows.Forms.Label();
-            this.TbCode = new CustomRichTextBox();
+            this.TbCode = new CodeLab.Custom_Controls.CustomRichTextBox();
             this.BtnRun = new MetroFramework.Controls.MetroButton();
             this.BtnOriginal = new CodeLab.Custom_Controls.CustomButton();
-            TbStatus = new CustomRichTextBox();
+            this.TbStatus = new CodeLab.Custom_Controls.CustomRichTextBox();
+            this.BtnSeeComments = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,19 +107,30 @@ namespace CodeLab.Forms
             // 
             // TbStatus
             // 
-            TbStatus.ForeColor = System.Drawing.Color.Red;
-            TbStatus.Location = new System.Drawing.Point(688, 74);
-            TbStatus.Name = "TbStatus";
-            TbStatus.Size = new System.Drawing.Size(419, 102);
-            TbStatus.TabIndex = 5;
-            TbStatus.Text = "";
+            this.TbStatus.ForeColor = System.Drawing.Color.Red;
+            this.TbStatus.Location = new System.Drawing.Point(688, 74);
+            this.TbStatus.Name = "TbStatus";
+            this.TbStatus.Size = new System.Drawing.Size(419, 102);
+            this.TbStatus.TabIndex = 5;
+            this.TbStatus.Text = "";
+            // 
+            // BtnSeeComments
+            // 
+            this.BtnSeeComments.Location = new System.Drawing.Point(23, 20);
+            this.BtnSeeComments.Name = "BtnSeeComments";
+            this.BtnSeeComments.Size = new System.Drawing.Size(124, 23);
+            this.BtnSeeComments.TabIndex = 6;
+            this.BtnSeeComments.Text = "See Comments";
+            this.BtnSeeComments.UseVisualStyleBackColor = true;
+            this.BtnSeeComments.Click += new System.EventHandler(this.BtnSeeComments_Click);
             // 
             // Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 661);
-            this.Controls.Add(TbStatus);
+            this.Controls.Add(this.BtnSeeComments);
+            this.Controls.Add(this.TbStatus);
             this.Controls.Add(this.BtnOriginal);
             this.Controls.Add(this.BtnRun);
             this.Controls.Add(this.TbCode);
@@ -143,6 +155,7 @@ namespace CodeLab.Forms
         private CustomRichTextBox TbCode;
         private MetroFramework.Controls.MetroButton BtnRun;
         private Custom_Controls.CustomButton BtnOriginal;
-        public static CustomRichTextBox TbStatus;
+        private System.Windows.Forms.Button BtnSeeComments;
+        public CustomRichTextBox TbStatus;
     }
 }

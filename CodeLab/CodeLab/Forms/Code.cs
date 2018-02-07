@@ -10,14 +10,13 @@ namespace CodeLab.Forms
     public partial class Code : MetroFramework.Forms.MetroForm
     {
         private readonly string _id;
-        private readonly CodePieceCRUD _codePieceCrud;
-        private CodePiece _codePiece;
+        public static  CodePiece CurrentCodePiece;
        
         public Code(string id)
         {
             InitializeComponent();
             _id = id;
-            _codePieceCrud = DbFactory.CodePieceCrud;
+            
         }
 
 
@@ -29,21 +28,21 @@ namespace CodeLab.Forms
             {
 
                 wating.ShowDialog();
-                _codePiece = wating.CodePiece;
+                CurrentCodePiece = wating.CodePiece;
             }
-            if(_codePiece.Language.ToLower() == "c#")
+            if(CurrentCodePiece.Language.ToLower() == "c#")
             {
                 BtnRun.Visible = true;
             }
             //codePiece = await _codePieceCrud.GetOne(_id);
             
-            LblDesc.Text = _codePiece.Description;
-            TbCode.Text = _codePiece.Code;
-            using (var ms = new MemoryStream(_codePiece.Picture))
+            LblDesc.Text = CurrentCodePiece.Description;
+            TbCode.Text = CurrentCodePiece.Code;
+            using (var ms = new MemoryStream(CurrentCodePiece.Picture))
             {
                 PBpicture.Image = Image.FromStream(ms);
             }
-            this.Text = _codePiece.Title;
+            this.Text = CurrentCodePiece.Title;
           
         }
 
@@ -64,7 +63,15 @@ namespace CodeLab.Forms
 
         private void BtnOriginal_Click(object sender, EventArgs e)
         {
-            TbCode.Text = _codePiece.Code;
+            TbCode.Text = CurrentCodePiece.Code;
+        }
+
+        private void BtnSeeComments_Click(object sender, EventArgs e)
+        {
+            using (var sc = new SeeComments())
+            {
+                sc.ShowDialog();
+            }
         }
     }
 }

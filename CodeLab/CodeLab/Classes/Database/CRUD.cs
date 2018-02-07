@@ -80,17 +80,10 @@ namespace CodeLab.Classes.Database
 
         public async Task<bool> Insert(T entity)
         {
-            try
-            {
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(entity);
                 var bsonDocument = BsonDocument.Parse(json);
                 await Table.InsertOneAsync(bsonDocument);
                 return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
 
 
         }

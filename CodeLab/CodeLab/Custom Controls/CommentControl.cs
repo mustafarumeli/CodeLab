@@ -14,8 +14,8 @@ namespace CodeLab.Custom_Controls
     public partial class CommentControl : UserControl
     {
         Comment _currentComment;
-        string _currentCodePiece;
-        public CommentControl(Comment comment,string CodePieceId)
+       // CodePiece _currentCodePiece = Code.CurrentCodePiece;
+        public CommentControl(Comment comment)
         {
             InitializeComponent();
             _currentComment = comment;

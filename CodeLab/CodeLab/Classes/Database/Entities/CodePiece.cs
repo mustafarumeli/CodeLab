@@ -20,6 +20,8 @@ namespace CodeLab.Classes.Database.Entities
         {
             Votes = new Vote();
             Comment c = new Comment() { UserId = MainForm.CurrentUser._id, Text = "First Test", Vote = new Vote() { UpVoteCount = 2 } };
+            c.SubComments.Add(new SubComment() { Text = "Sub Comment"});
+            c.SubComments[0].SubSubComments.Add(new SubComment() { Text = "SubS Comment" });
             Comments = new System.Collections.Generic.List<Comment>();
             Comments.Add(c);
         }

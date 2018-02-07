@@ -40,6 +40,11 @@ namespace CodeLab.Classes
                         {
                             break;
                         }
+                        finally
+                        {
+                            _childThread.Abort();
+                            _run = false;
+                        }
                         Application.DoEvents();
                     }
                     try
