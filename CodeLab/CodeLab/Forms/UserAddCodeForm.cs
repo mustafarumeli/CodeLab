@@ -33,11 +33,7 @@ namespace CodeLab.Forms
             {
                 {
                 }
-                string[] languages = new string[ClbLanguages.CheckedItems.Count];
-                for (int i = 0; i < languages.Length; i++)
-                {
-                    languages[i] = ClbLanguages.CheckedItems[i].ToString();
-                }
+               
                 Random rnd = new Random();
                 var cPiece = new CodePiece
                 {
@@ -45,8 +41,7 @@ namespace CodeLab.Forms
                     Contributer = MainForm.CurrentUser._id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
-                    Languages = languages,
-                   
+                    Language =  ClbLanguages.SelectedItem.ToString(),
                     Scores = new Classes.Rate(rnd.Next(0,100), rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100)),
                     Tags = TxtCodeTags.Text.Split(','),
                     Title = TxtCodeTitle.Text,
@@ -91,6 +86,11 @@ namespace CodeLab.Forms
                         MessageBox.Show("Your File is too big");
                     }
             }
+        }
+
+        private void UserAddCodeForm_Load(object sender, EventArgs e)
+        {
+            ClbLanguages.Items.AddRange(DbFactory.CodePieceCrud.GetDistinctLanguages());
         }
     }
 }

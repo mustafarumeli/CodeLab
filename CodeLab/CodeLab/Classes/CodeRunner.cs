@@ -16,10 +16,8 @@ namespace CodeLab.Classes
 
         public CodeRunner(string code)
         {
-            string baseLine =  File.ReadAllText("../../Resources/base.txt");
-            int repleacePoint = baseLine.IndexOf('*');
-            baseLine = baseLine.Replace('*', ' ');
-             _code = baseLine.Insert(repleacePoint, code);
+
+            _code = code;
             var compilation = CreateCompilerContext();
             using (var ms = new MemoryStream())
             {

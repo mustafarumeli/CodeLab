@@ -31,7 +31,7 @@ namespace CodeLab.Forms
                 wating.ShowDialog();
                 _codePiece = wating.CodePiece;
             }
-            if (_codePiece.Languages.Length == 1 && _codePiece.Languages[0] == "C#")
+            if(_codePiece.Language.ToLower() == "c#")
             {
                 BtnRun.Visible = true;
             }

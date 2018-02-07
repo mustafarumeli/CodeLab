@@ -23,6 +23,7 @@ namespace CodeLab.Forms
             }
             var lr = new ListResults(TbSearch.Text,selectedLanguages);
             lr.Show();
+            MainForm_Load(null, null);
         }
 
         private void LblAuth_Click(object sender, EventArgs e)
@@ -30,8 +31,13 @@ namespace CodeLab.Forms
             var login = new Login();
             login.ShowDialog();
             if (CurrentUser == null) return;
+            LoggedIn("Welcome");
+        }
+
+        private void LoggedIn(string message)
+        {
             LblContribute.Visible = true;
-            LblAuth.Text = "Welcome " + CurrentUser.Name;
+            LblAuth.Text = message + " " + CurrentUser.Name.Substring(0, 4)+"..";
             LblAuth.Click -= LblAuth_Click;
             LblAuth.Click += LblAuth_LogOut;
         }
@@ -43,6 +49,9 @@ namespace CodeLab.Forms
                 CurrentUser = null;
                 LblContribute.Visible = false;
                 LblAuth.Text = "SignUp/Register";
+                Properties.Settings.Default.RememberMe = false;
+                Properties.Settings.Default.UserId = "";
+                Properties.Settings.Default.Save();
                 LblAuth.Click -= LblAuth_LogOut;
                 LblAuth.Click += LblAuth_Click;
             }
@@ -53,6 +62,7 @@ namespace CodeLab.Forms
             {
                 frm.ShowDialog();
             }
+            MainForm_Load(null, null);
         }
         /// <summary>
         /// Placeholder
@@ -62,5 +72,18 @@ namespace CodeLab.Forms
             TbSearch.Text="";
             TbSearch.ForeColor = Color.Black;
         }
+
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+            clbLanguages.Items.Clear();
+            clbLanguages.Items.AddRange(Classes.Database.DbFactory.CodePieceCrud.GetDistinctLanguages());
+            if(Properties.Settings.Default.RememberMe == true)
+            {
+                CurrentUser = await Classes.Database.DbFactory.UserCrud.GetOne(Properties.Settings.Default.UserId);
+                LoggedIn("Welcome Back");
+            }
+        }
+
+        
     }
 }

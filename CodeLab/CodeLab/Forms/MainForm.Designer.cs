@@ -41,7 +41,7 @@
             this.LblAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblAuth.AutoSize = true;
             this.LblAuth.Font = new System.Drawing.Font("Calibri", 14F);
-            this.LblAuth.Location = new System.Drawing.Point(880, 31);
+            this.LblAuth.Location = new System.Drawing.Point(834, 32);
             this.LblAuth.Name = "LblAuth";
             this.LblAuth.Size = new System.Drawing.Size(128, 23);
             this.LblAuth.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             this.LblContribute.AutoSize = true;
             this.LblContribute.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContribute.Location = new System.Drawing.Point(881, 54);
+            this.LblContribute.Location = new System.Drawing.Point(835, 55);
             this.LblContribute.Name = "LblContribute";
             this.LblContribute.Size = new System.Drawing.Size(80, 18);
             this.LblContribute.TabIndex = 4;
@@ -97,11 +97,7 @@
             // 
             this.clbLanguages.FormattingEnabled = true;
             this.clbLanguages.Items.AddRange(new object[] {
-            "C#",
-            "C++",
-            "C",
-            "Java",
-            "JavaScript"});
+            ""});
             this.clbLanguages.Location = new System.Drawing.Point(156, 267);
             this.clbLanguages.MultiColumn = true;
             this.clbLanguages.Name = "clbLanguages";
@@ -121,6 +117,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Welcome to CodeLab";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

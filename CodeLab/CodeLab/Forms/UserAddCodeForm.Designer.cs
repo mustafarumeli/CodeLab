@@ -131,6 +131,7 @@
             this.MaximizeBox = false;
             this.Name = "UserAddCodeForm";
             this.Text = "Add Your Code Here";
+            this.Load += new System.EventHandler(this.UserAddCodeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

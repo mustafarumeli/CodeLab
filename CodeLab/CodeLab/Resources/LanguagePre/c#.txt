@@ -7,7 +7,7 @@ namespace Test
     {
         public object Run()
 		{
-		*
+		
 		}
     }
 }

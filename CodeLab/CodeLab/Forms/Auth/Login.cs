@@ -45,6 +45,12 @@ namespace CodeLab.Forms.Auth
                 if (correctLogin != null)
                 {
                     MainForm.CurrentUser = correctLogin;
+                    if (CbRemember.Checked == true)
+                    {
+                        Properties.Settings.Default.RememberMe = true;
+                        Properties.Settings.Default.UserId = correctLogin._id;
+                        Properties.Settings.Default.Save();
+                    }
                     return true;
                 }
                 MessageBox.Show("You have entered wrong credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

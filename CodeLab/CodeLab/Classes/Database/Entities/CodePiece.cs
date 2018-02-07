@@ -11,17 +11,7 @@ namespace CodeLab.Classes.Database.Entities
         public Rate Scores { get; set; }
         public Vote Votes { get; set; }
         public System.Collections.Generic.List<Comment> Comments { get; set; }
-        public string[] Languages;
-        public string GetLanguages()
-        {
-            string returnText = "";
-            foreach (var lang in Languages)
-            {
-                returnText += lang + "-";
-            }
-            returnText = returnText.Remove(returnText.Length - 1);
-            return returnText;
-        }
+        public string Language { get; set; }
         public string Description { get; set; }
         public string Title { get; set; }
         public string[] Tags { get; set; }

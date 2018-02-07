@@ -18,15 +18,10 @@ namespace CodeLab.Forms
 
         void SetPreCode()
         {
-            string currentLanguage = _current.Languages[0].ToLower();
-            if (currentLanguage != "c#")
-            {
-                using (StreamReader stream = new StreamReader(Application.StartupPath + "\\LanguagePre\\" + currentLanguage + ".mhsn"))
-                {
-                    TbCode.Text = stream.ReadToEnd();
-                }
-            }
-          
+            string currentLanguage = _current.Language.ToLower();
+            string filePath = "../../Resources/LanguagePre/" + currentLanguage + ".txt";
+            if (File.Exists(filePath)) 
+                TbCode.Text = File.ReadAllText(filePath);
         }
         public async void BtnComplete_Click(object sender, EventArgs e)
         {

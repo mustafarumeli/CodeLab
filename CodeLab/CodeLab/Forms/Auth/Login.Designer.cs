@@ -34,6 +34,7 @@
             this.LblRegister = new System.Windows.Forms.Label();
             this.LoginButton = new CodeLab.Custom_Controls.CustomButton();
             this.LblForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.CbRemember = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // TbUserName
@@ -104,12 +105,23 @@
             this.LblForgotPassword.Text = "Forgot Password?";
             this.LblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblForgotPassword_LinkClicked);
             // 
+            // CbRemember
+            // 
+            this.CbRemember.AutoSize = true;
+            this.CbRemember.Location = new System.Drawing.Point(64, 197);
+            this.CbRemember.Name = "CbRemember";
+            this.CbRemember.Size = new System.Drawing.Size(95, 17);
+            this.CbRemember.TabIndex = 6;
+            this.CbRemember.Text = "Remember Me";
+            this.CbRemember.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AcceptButton = this.LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 371);
+            this.Controls.Add(this.CbRemember);
             this.Controls.Add(this.LblForgotPassword);
             this.Controls.Add(this.LblRegister);
             this.Controls.Add(this.MtbPassword);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.MaskedTextBox MtbPassword;
         private System.Windows.Forms.Label LblRegister;
         private System.Windows.Forms.LinkLabel LblForgotPassword;
+        private System.Windows.Forms.CheckBox CbRemember;
     }
 }
