@@ -93,10 +93,12 @@ namespace CodeLab.Classes.Database
             try
             {
                 var filter = new BsonDocument { { "_id", id } };
-                await Table.UpdateOneAsync(filter, JsonConvert.SerializeObject(entity));
+                var json = JsonConvert.SerializeObject(entity);
+                await Table.ReplaceOneAsync(filter, BsonDocument.Parse(json));
+                   
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

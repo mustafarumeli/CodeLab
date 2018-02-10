@@ -44,10 +44,18 @@ namespace CodeLab.Classes.Database
         {
             try
             {
-                var filter = new BsonDocument { { "UserName", userName }, { "Password", password } };
+                var filter = new BsonDocument { { "UserName", userName }};
                 using (var cursor = await Table.FindAsync(filter))
                 {
-                    return JsonConvert.DeserializeObject<User>(cursor.FirstOrDefault().ToString());
+                    var user =  JsonConvert.DeserializeObject<User>(cursor.FirstOrDefault().ToString());
+                    if (CryptoService.CheckMatch(user.Password,password) == true)
+                    {
+                        return user;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
             }
             catch (Exception)

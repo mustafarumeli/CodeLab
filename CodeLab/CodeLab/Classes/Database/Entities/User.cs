@@ -21,9 +21,9 @@ namespace CodeLab.Classes.Database.Entities
             VoteTracks = new List<VoteTrack>();
             SearchHistories = new List<SearchHistory>();
         }
-        public void AddOrUpdateSearchHistory(string codePieceID, int point)
+        public async void AddOrUpdateSearchHistory(string codePieceID, int point)
         {
-            var hasCodePiece = SearchHistories.First(x => x.CodePieceId == codePieceID);
+            var hasCodePiece = SearchHistories.FirstOrDefault(x => x.CodePieceId == codePieceID);
             if (hasCodePiece == null)
             {
                 SearchHistory voteTrack = new SearchHistory() { CodePieceId = codePieceID, Point = point };
@@ -34,6 +34,7 @@ namespace CodeLab.Classes.Database.Entities
                 int index = SearchHistories.IndexOf(hasCodePiece);
                 SearchHistories[index].Point += point;
             }
+          await  DbFactory.UserCrud.Update(Forms.MainForm.CurrentUser._id, Forms.MainForm.CurrentUser);
            
         }
         public static explicit operator User(BsonDocument v)

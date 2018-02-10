@@ -158,7 +158,7 @@ namespace CodeLab.Forms.Auth
                 var user = new User {
                     Name = TbName.Text,
                     Email = TbEmail.Text,
-                    Password = TbPassword.Text,
+                    Password = Classes.CryptoService.Encrypt(TbPassword.Text),
                     SecurityQuestion = CbSecurityQuestion.SelectedItem.ToString(),
                     SecurityAnswer = TbSecurityAnswer.Text,
                     UserName = TbUserName.Text
