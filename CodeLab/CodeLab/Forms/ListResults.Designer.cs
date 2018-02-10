@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
             this.LblResult = new System.Windows.Forms.Label();
             this.resultContainer1 = new CodeLab.Custom_Controls.ResultContainer();
             this.SuspendLayout();
@@ -37,7 +37,7 @@
             // 
             this.LblResult.AutoSize = true;
             this.LblResult.Font = new System.Drawing.Font("Arial", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblResult.Location = new System.Drawing.Point(175, 108);
+            this.LblResult.Location = new System.Drawing.Point(175, 90);
             this.LblResult.Name = "LblResult";
             this.LblResult.Size = new System.Drawing.Size(210, 38);
             this.LblResult.TabIndex = 0;

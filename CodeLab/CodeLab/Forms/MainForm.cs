@@ -16,12 +16,12 @@ namespace CodeLab.Forms
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            var selectedLanguages= new string[clbLanguages.CheckedItems.Count];
-            for (var i = 0; i < selectedLanguages.Length; i++)
+            MongoDB.Bson.BsonDocument filter = new MongoDB.Bson.BsonDocument();
+            if (clbLanguages.CheckedItems.Count > 0 )
             {
-                selectedLanguages[i] = clbLanguages.CheckedItems[i].ToString();
-            }
-            var lr = new ListResults(TbSearch.Text,selectedLanguages);
+                filter = new MongoDB.Bson.BsonDocument("Language",clbLanguages.CheckedItems[0]?.ToString()); 
+            } 
+            var lr = new ListResults(TbSearch.Text, filter);
             lr.Show();
             MainForm_Load(null, null);
         }

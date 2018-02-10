@@ -42,9 +42,9 @@
             // PbDownVote
             // 
             this.PbDownVote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.PbDownVote.Image = global::CodeLab.Properties.Resources.DownArrow;
-            this.PbDownVote.Location = new System.Drawing.Point(501, 50);
+            this.PbDownVote.Location = new System.Drawing.Point(261, 3);
             this.PbDownVote.MaximumSize = new System.Drawing.Size(32, 32);
             this.PbDownVote.MinimumSize = new System.Drawing.Size(32, 32);
             this.PbDownVote.Name = "PbDownVote";
@@ -55,10 +55,11 @@
             // 
             // PbUpVote
             // 
-            this.PbUpVote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PbUpVote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PbUpVote.Image = global::CodeLab.Properties.Resources.UpArrow;
-            this.PbUpVote.Location = new System.Drawing.Point(502, 12);
+            this.PbUpVote.Location = new System.Drawing.Point(201, 3);
             this.PbUpVote.MaximumSize = new System.Drawing.Size(32, 32);
             this.PbUpVote.MinimumSize = new System.Drawing.Size(16, 16);
             this.PbUpVote.Name = "PbUpVote";
@@ -91,26 +92,25 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.LblCommentText);
             this.panel1.Location = new System.Drawing.Point(18, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 113);
+            this.panel1.Size = new System.Drawing.Size(275, 57);
             this.panel1.TabIndex = 3;
             // 
             // LbTotalPoint
             // 
             this.LbTotalPoint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.LbTotalPoint.AutoSize = true;
-            this.LbTotalPoint.Font = new System.Drawing.Font("Arial", 8F);
+            this.LbTotalPoint.Font = new System.Drawing.Font("Arial", 12F);
             this.LbTotalPoint.ForeColor = System.Drawing.Color.Yellow;
-            this.LbTotalPoint.Location = new System.Drawing.Point(477, 14);
+            this.LbTotalPoint.Location = new System.Drawing.Point(235, 10);
             this.LbTotalPoint.Name = "LbTotalPoint";
-            this.LbTotalPoint.Size = new System.Drawing.Size(19, 14);
+            this.LbTotalPoint.Size = new System.Drawing.Size(26, 18);
             this.LbTotalPoint.TabIndex = 4;
             this.LbTotalPoint.Text = "10";
             // 
@@ -125,7 +125,7 @@
             this.Controls.Add(this.PbDownVote);
             this.Controls.Add(this.PbUpVote);
             this.Name = "CommentControl";
-            this.Size = new System.Drawing.Size(537, 161);
+            this.Size = new System.Drawing.Size(314, 105);
             ((System.ComponentModel.ISupportInitialize)(this.PbDownVote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbUpVote)).EndInit();
             this.panel1.ResumeLayout(false);

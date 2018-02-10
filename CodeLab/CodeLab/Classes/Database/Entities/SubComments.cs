@@ -13,7 +13,7 @@
         }
         public static implicit operator Comment(SubComment x)
         {
-           return new Comment { Text = x.Text, SubComments = x.SubSubComments, Vote = x.Vote, UserId = x.UserId,CreationDate=x.CreationDate };
+           return new Comment {_id = x._id, Text = x.Text, SubComments = x.SubSubComments, Vote = x.Vote, UserId = x.UserId,CreationDate=x.CreationDate };
         }
     }
 }

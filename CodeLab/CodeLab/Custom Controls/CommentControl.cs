@@ -19,6 +19,9 @@ namespace CodeLab.Custom_Controls
         {
             InitializeComponent();
             _currentComment = comment;
+            LbUserName.Text = Forms.MainForm.CurrentUser.UserName;
+            LblCommentText.Text = comment.Text;
+            LbTotalPoint.Text = comment.Vote?.TotalPoint.ToString();
         }
 
         private void PbUpVote_Click(object sender, EventArgs e)
