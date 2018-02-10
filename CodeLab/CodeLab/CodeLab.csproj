@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CodeRunner.cs" />
+    <Compile Include="Classes\CryptoService.cs" />
     <Compile Include="Classes\Database\CodePieceCRUD.cs" />
     <Compile Include="Classes\Database\CRUD.cs" />
     <Compile Include="Classes\Database\DbFactory.cs" />

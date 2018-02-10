@@ -369,3 +369,6 @@ C:\Users\musta\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\zh-Hans\Microsoft.Build
 C:\Users\musta\Desktop\CodeLab\CodeLab\CodeLab\bin\Debug\zh-Hant\Microsoft.Build.Utilities.Core.resources.dll
 C:\Users\musta\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Custom_Controls.CommentControl.resources
 C:\Users\musta\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.SeeComments.resources
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Custom_Controls.CommentControl.resources
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.InsertCode.resources
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.SeeComments.resources
