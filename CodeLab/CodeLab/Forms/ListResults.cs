@@ -26,17 +26,53 @@ namespace CodeLab.Forms
             var thread = new Threader(LblResult,"Listing");
             thread.Run();
             List<CodePiece> results = await DbFactory.CodePieceCrud.GetAll(_filter);
-            results = results.OrderByDescending(x => x.Votes.TotalPoint).ToList();
+            bool hasResults = false;
+            results = ReDesignResults();
+            List<CodePiece> ReDesignResults()
+            {
+                List<CodePiece> returnList = new List<CodePiece>();
+                List<CodePiece> viableList = new List<CodePiece>();//CodePiece._id
+                var currentUsersSearchHistory = MainForm.CurrentUser.SearchHistories;
+               
+                foreach (var result in results)
+                {
+
+                    if (IsAViableResult(result) == true)
+                    {
+                        if (hasResults == false)
+                        {
+                            hasResults = true;
+                        }
+                        viableList.Add(result);
+                    }
+
+                }
+                Dictionary<CodePiece,int> primaryDict = new Dictionary<CodePiece, int>();
+                foreach (var item in currentUsersSearchHistory)
+                {
+                    CodePiece currentItemInViableList = viableList.First(x => x._id == item.CodePieceId);
+                    if (currentItemInViableList != null)
+                    {
+                        primaryDict.Add(currentItemInViableList,item.Point);
+                        viableList.Remove(currentItemInViableList);
+                    }
+                }
+                viableList = viableList.OrderByDescending(x => x.Votes.TotalPoint).ToList();
+                returnList.AddRange(primaryDict.OrderByDescending(x => x.Value).Select(x => x.Key).ToList());
+                returnList.AddRange(viableList);
+                return returnList;
+            }
             bool IsAViableResult(CodePiece result)
             {
                 string searchInto = result.Title + result.Description;
                 searchInto = searchInto.ToLower();
+                string searchTextTemp = _searchText.ToLower();
                 int searchTextLenght = _searchText.Length;
                 int occurance = 0;
                 for (int i = 0; i < searchInto.Length-searchTextLenght; i++)
                 {
                     string currentSlice = searchInto.Substring(i, searchTextLenght);
-                    if (currentSlice == _searchText)
+                    if (currentSlice == searchTextTemp)
                     {
                         occurance++;
                     }
@@ -51,19 +87,9 @@ namespace CodeLab.Forms
                 }
             }
             thread.Stop();
-            bool hasResults = false;
             foreach (var result in results)
-            {
-                if (IsAViableResult(result) == true)
-                {
-                    if (hasResults == false)
-                    {
-                        hasResults = true;
-                    }
-                    var user = await new UserCrud().GetOne(result.Contributer);
+            {       var user = await new UserCrud().GetOne(result.Contributer);
                     resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name));
-                }
-
             }
             LblResult.Text += " " + _searchText;
             if (hasResults == false)

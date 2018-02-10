@@ -181,6 +181,7 @@
     <Compile Include="Classes\Database\CRUD.cs" />
     <Compile Include="Classes\Database\DbFactory.cs" />
     <Compile Include="Classes\Database\Entities\Comment.cs" />
+    <Compile Include="Classes\Database\Entities\SearchHistory.cs" />
     <Compile Include="Classes\Database\Entities\SubComments.cs" />
     <Compile Include="Classes\Database\Entities\Vote.cs" />
     <Compile Include="Classes\Database\Entities\VoteTrack.cs" />

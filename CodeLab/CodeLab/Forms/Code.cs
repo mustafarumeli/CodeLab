@@ -43,13 +43,13 @@ namespace CodeLab.Forms
                 PBpicture.Image = Image.FromStream(ms);
             }
             this.Text = CurrentCodePiece.Title;
-          
+            MainForm.CurrentUser.AddOrUpdateSearchHistory(CurrentCodePiece._id, 10);
         }
 
         private void BtnRun_Click(object sender, EventArgs e)
         {
-            TbStatus.AppendText("Build Started.",Color.Black);
-          CodeRunner cr = new CodeRunner(TbCode.Text);
+             TbStatus.AppendText("Build Started.",Color.Black);
+             CodeRunner cr = new CodeRunner(TbCode.Text);
             (object result,bool success) = cr.Result;
             Color color = Color.Red;
             string text = result.ToString();

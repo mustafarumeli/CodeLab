@@ -1,6 +1,8 @@
 ﻿using MongoDB.Bson;
 using System;
 
+using System.Collections.Generic;
+using System.Linq;
 namespace CodeLab.Classes.Database.Entities
 {
     public class User : DbObject
@@ -12,9 +14,28 @@ namespace CodeLab.Classes.Database.Entities
         public string UserName { get; set; }
         public string SecurityQuestion { get; set; }
         public string SecurityAnswer { get; set; }
-        public VoteTrack[] VoteTracks{ get; set; } // This field is for checking Wheter the User Voted on given CodePiece or Comment
-        
-        
+        public List<VoteTrack> VoteTracks { get; set; } // This field is for checking Wheter the User Voted on given CodePiece or Comment
+        public List<SearchHistory> SearchHistories { get; }
+        public User()
+        {
+            VoteTracks = new List<VoteTrack>();
+            SearchHistories = new List<SearchHistory>();
+        }
+        public void AddOrUpdateSearchHistory(string codePieceID, int point)
+        {
+            var hasCodePiece = SearchHistories.First(x => x.CodePieceId == codePieceID);
+            if (hasCodePiece == null)
+            {
+                SearchHistory voteTrack = new SearchHistory() { CodePieceId = codePieceID, Point = point };
+                SearchHistories.Add(voteTrack);
+            }
+            else
+            {
+                int index = SearchHistories.IndexOf(hasCodePiece);
+                SearchHistories[index].Point += point;
+            }
+           
+        }
         public static explicit operator User(BsonDocument v)
         {
             throw new NotImplementedException();
