@@ -13,6 +13,7 @@ namespace CodeLab.Custom_Controls
 {
     public partial class CommentContainer : FlowLayoutPanel
     {
+        public event Action<object, EventArgs> CommentAnswerClick; 
         public CommentContainer()
         {
             InitializeComponent();
@@ -20,43 +21,39 @@ namespace CodeLab.Custom_Controls
     
         public void Init()
         {
+            this.Controls.Clear();
             const int RANK_BUFFER = 25;
-            int HORIZANTAL_BUFFER = 7;
+            int horizontalBuffer = 7;
             var comments = Forms.Code.CurrentCodePiece.Comments;
             int _Rank;
             foreach (var comment in comments)
             {
-                _Rank = 0;
+                _Rank = RANK_BUFFER;
+                horizontalBuffer = 7;
                 PlaceComment(comment);
                 _Rank += RANK_BUFFER;
-                HORIZANTAL_BUFFER = 3;
+                horizontalBuffer = 3;
                 SubCommentCreate(comment.SubComments);
-
-                void SubCommentCreate(IEnumerable<SubComment> subComments)
+               void SubCommentCreate(IEnumerable<Comment> subComments)
                 {
-                    if (subComments != null)
+                    if (subComments != null && subComments.Any())
                     {
                         foreach (var subComment in subComments)
                         {
-
                             PlaceComment((Comment)subComment);
                             _Rank += RANK_BUFFER;
-                            SubCommentCreate(subComment.SubSubComments);
+                            SubCommentCreate(subComment.SubComments);
+                            _Rank -= RANK_BUFFER;
                         }
                     }
-                    else
-                    {
-                        _Rank -= RANK_BUFFER;
-                        return;
-                    }
+                  
                 }
             }
             void PlaceComment(Comment comment)
             {
-                CommentControl cc = new CommentControl(comment);
-                cc.Margin = new Padding(_Rank, HORIZANTAL_BUFFER, 0, 0);
-                //_lastY += cc.Size.Height + 10;
-                //cc.Location = new Point(0 + _Rank, _lastY);
+                CommentControl cc = new CommentControl(comment,CommentAnswerClick);
+                cc.Margin = new Padding(_Rank, horizontalBuffer, 0, 0);
+
                 this.Controls.Add(cc);
             }
         }

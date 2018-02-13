@@ -34,6 +34,7 @@
             this.LblCommentText = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LbTotalPoint = new System.Windows.Forms.Label();
+            this.ButtonAnswer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbDownVote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbUpVote)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,7 +99,7 @@
             this.panel1.Controls.Add(this.LblCommentText);
             this.panel1.Location = new System.Drawing.Point(18, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 57);
+            this.panel1.Size = new System.Drawing.Size(275, 58);
             this.panel1.TabIndex = 3;
             // 
             // LbTotalPoint
@@ -114,18 +115,32 @@
             this.LbTotalPoint.TabIndex = 4;
             this.LbTotalPoint.Text = "10";
             // 
+            // ButtonAnswer
+            // 
+            this.ButtonAnswer.BackColor = System.Drawing.Color.OrangeRed;
+            this.ButtonAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswer.ForeColor = System.Drawing.Color.White;
+            this.ButtonAnswer.Location = new System.Drawing.Point(218, 105);
+            this.ButtonAnswer.Name = "ButtonAnswer";
+            this.ButtonAnswer.Size = new System.Drawing.Size(75, 23);
+            this.ButtonAnswer.TabIndex = 5;
+            this.ButtonAnswer.Text = "Answer";
+            this.ButtonAnswer.UseVisualStyleBackColor = false;
+            this.ButtonAnswer.Click += new System.EventHandler(this.ButtonAnswer_Click);
+            // 
             // CommentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.ButtonAnswer);
             this.Controls.Add(this.LbTotalPoint);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LbUserName);
             this.Controls.Add(this.PbDownVote);
             this.Controls.Add(this.PbUpVote);
             this.Name = "CommentControl";
-            this.Size = new System.Drawing.Size(314, 105);
+            this.Size = new System.Drawing.Size(314, 135);
             ((System.ComponentModel.ISupportInitialize)(this.PbDownVote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbUpVote)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -143,5 +158,6 @@
         private System.Windows.Forms.Label LblCommentText;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LbTotalPoint;
+        private System.Windows.Forms.Button ButtonAnswer;
     }
 }

@@ -50,7 +50,7 @@ namespace CodeLab.Forms
                 Dictionary<CodePiece,int> primaryDict = new Dictionary<CodePiece, int>();
                 foreach (var item in currentUsersSearchHistory)
                 {
-                    CodePiece currentItemInViableList = viableList.First(x => x._id == item.CodePieceId);
+                    CodePiece currentItemInViableList = viableList.FirstOrDefault(x => x._id == item.CodePieceId);
                     if (currentItemInViableList != null)
                     {
                         primaryDict.Add(currentItemInViableList,item.Point);
@@ -89,9 +89,9 @@ namespace CodeLab.Forms
             thread.Stop();
             foreach (var result in results)
             {       var user = await new UserCrud().GetOne(result.Contributer);
-                    resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name));
+                    resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name,result.Votes.TotalPoint));
             }
-            LblResult.Text += " " + _searchText;
+            LblResult.Text = _searchText == "" ? "Showing All Results" : "Results for :" + _searchText;
             if (hasResults == false)
             {
                 LblResult.ForeColor = System.Drawing.Color.Red;

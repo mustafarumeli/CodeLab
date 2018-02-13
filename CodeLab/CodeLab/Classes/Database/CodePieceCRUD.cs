@@ -15,7 +15,6 @@ namespace CodeLab.Classes.Database
         {
             Table = DbFactory.CodePieces;
         }
-
         public string[] GetDistinctLanguages()
         {
             try

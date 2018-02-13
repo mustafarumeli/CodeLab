@@ -11,12 +11,12 @@ namespace CodeLab.Classes.Database.Entities
         public string Text { get; set; }
         public string UserId { get; set; }
         public Vote Vote { get; set; }
-        public List<SubComment> SubComments { get; set; }
+        public List<Comment> SubComments { get; set; }
 
 
         public Comment()
         {
-            SubComments = new List<SubComment>();
+            SubComments = new List<Comment>();
             Vote = new Vote();
         }
         

@@ -42,7 +42,10 @@ namespace CodeLab.Classes
                         }
                         finally
                         {
-                            _childThread.Abort();
+                            if (_childThread.IsAlive == true)
+                            {
+                                _childThread.Abort();
+                            }
                             _run = false;
                         }
                         Application.DoEvents();

@@ -32,6 +32,7 @@ namespace CodeLab.Forms
 
                 await DbFactory.CodePieceCrud.Insert(_current);
                 MessageBox.Show("Your Code Has Been Added " + Environment.NewLine + "Thank you");
+                this.Close(); 
             }
             else
             {

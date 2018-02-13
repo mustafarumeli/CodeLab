@@ -14,11 +14,16 @@ namespace CodeLab.Custom_Controls
     public partial class CommentControl : UserControl
     {
         Comment _currentComment;
-       // CodePiece _currentCodePiece = Code.CurrentCodePiece;
-        public CommentControl(Comment comment)
+        private readonly Action<object, EventArgs> _clickEvent;
+
+        public Comment Comment => _currentComment;
+
+        // CodePiece _currentCodePiece = Code.CurrentCodePiece;
+        public CommentControl(Comment comment,Action<object,EventArgs> clickEvent)
         {
             InitializeComponent();
             _currentComment = comment;
+            this._clickEvent = clickEvent;
             LbUserName.Text = Forms.MainForm.CurrentUser.UserName;
             LblCommentText.Text = comment.Text;
             LbTotalPoint.Text = comment.Vote?.TotalPoint.ToString();
@@ -32,6 +37,11 @@ namespace CodeLab.Custom_Controls
         private void PbDownVote_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonAnswer_Click(object sender, EventArgs e)
+        {
+            _clickEvent?.Invoke(this, e);
         }
     }
 }

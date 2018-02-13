@@ -3,16 +3,17 @@ using System.Drawing;
 using System.Windows.Forms;
 using CodeLab.Classes;
 using CodeLab.Forms;
+using System.Linq;
 
 namespace CodeLab.Custom_Controls
 {
     public partial class ResultPreviewPanel : UserControl
     {
-        public ResultPreviewPanel(string _id,string header, string date, Rate rating, string language, string author)
+        public ResultPreviewPanel(string _id,string header, string date, Rate rating, string language, string author,int totalVoteCount)
         {
             InitializeComponent();
             this._header = header;
-            Setup(_id,header, date, rating, language, author);
+            Setup(_id,header, date, rating, language, author,totalVoteCount);
 
         }
 
@@ -20,12 +21,17 @@ namespace CodeLab.Custom_Controls
         private string _header = "";
         private string _id = ""; // ID eklenecek tabii
 
-        private void Setup(string _id , string header, string date, Rate rating, string language, string author)
+        private void Setup(string _id , string header, string date, Rate rating, string language, string author,int totalVoteCount)
         {
+            if (MainForm.CurrentUser?.SearchHistories.FirstOrDefault(x => x.CodePieceId == _id) != null)
+            {
+                this.BackColor = Color.IndianRed;
+            }
             LblHeader.Text = header;
-            LblDate.Text = date;
+            LblDate.Text = date.Substring(0,date.Length-3);
             LblLang.Text = language;
             LblAuthor.Text = author;
+            LblVote.Text = totalVoteCount.ToString();
             this._id = _id;
             var starCount = rating.StarCount;
             var hasHalf = false;
@@ -59,6 +65,7 @@ namespace CodeLab.Custom_Controls
         private void customButton1_Click(object sender, EventArgs e)
         {
             var code = new Code(_id);
+            this.BackColor = Color.IndianRed;
             code.ShowDialog();
         }
     }

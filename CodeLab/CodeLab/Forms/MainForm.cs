@@ -20,8 +20,13 @@ namespace CodeLab.Forms
             if (clbLanguages.CheckedItems.Count > 0 )
             {
                 filter = new MongoDB.Bson.BsonDocument("Language",clbLanguages.CheckedItems[0]?.ToString()); 
-            } 
-            var lr = new ListResults(TbSearch.Text, filter);
+            }
+            string searchText = TbSearch.Text;
+            if (TbSearch.ForeColor==Color.Silver)
+            {
+                searchText = "";
+            }
+            var lr = new ListResults(searchText, filter);
             lr.Show();
             MainForm_Load(null, null);
         }
