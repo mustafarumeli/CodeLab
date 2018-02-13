@@ -29,14 +29,48 @@ namespace CodeLab.Custom_Controls
             LbTotalPoint.Text = comment.Vote?.TotalPoint.ToString();
         }
 
-        private void PbUpVote_Click(object sender, EventArgs e)
+        private async void PbUpVote_Click(object sender, EventArgs e)
         {
-
+            if (PbDownVote.Enabled == false)
+            {
+                _currentComment.Vote.DownVoteCount--;
+                Forms.MainForm.CurrentUser.VoteTracks.Remove(Forms.MainForm.CurrentUser.VoteTracks.First(x => x.CodePieceOrCommentId == _currentComment._id));
+            }
+            _currentComment.Vote.UpVoteCount++;
+            await Classes.Database.DbFactory.CodePieceCrud.Update(Forms.Code.CurrentCodePiece._id, Forms.Code.CurrentCodePiece);
+            VoteTrack vt = new VoteTrack()
+            {
+                CodePieceOrCommentId = _currentComment._id,
+                VotePlace = VotePlace.Comment,
+                VoteType= VoteType.UpVote
+            };
+            Forms.MainForm.CurrentUser.VoteTracks.Add(vt);
+            await Classes.Database.DbFactory.UserCrud.Update(Forms.MainForm.CurrentUser._id, Forms.MainForm.CurrentUser);
+            LbTotalPoint.Text = _currentComment.Vote?.TotalPoint.ToString();
+            (sender as PictureBox).Enabled = false;
+            PbDownVote.Enabled = true;
         }
 
-        private void PbDownVote_Click(object sender, EventArgs e)
+        private async void PbDownVote_Click(object sender, EventArgs e)
         {
-
+            if (PbUpVote.Enabled == false)
+            {
+                _currentComment.Vote.UpVoteCount--;
+                Forms.MainForm.CurrentUser.VoteTracks.Remove(Forms.MainForm.CurrentUser.VoteTracks.First(x => x.CodePieceOrCommentId == _currentComment._id));
+            }
+            _currentComment.Vote.DownVoteCount++;
+            await Classes.Database.DbFactory.CodePieceCrud.Update(Forms.Code.CurrentCodePiece._id, Forms.Code.CurrentCodePiece);
+            VoteTrack vt = new VoteTrack()
+            {
+                CodePieceOrCommentId = _currentComment._id,
+                VotePlace = VotePlace.Comment,
+                VoteType = VoteType.DownVote
+            };
+            Forms.MainForm.CurrentUser.VoteTracks.Add(vt);
+            await Classes.Database.DbFactory.UserCrud.Update(Forms.MainForm.CurrentUser._id, Forms.MainForm.CurrentUser);
+            LbTotalPoint.Text = _currentComment.Vote?.TotalPoint.ToString();
+           (sender as PictureBox).Enabled = false;
+            PbUpVote.Enabled = true;
         }
 
         private void ButtonAnswer_Click(object sender, EventArgs e)

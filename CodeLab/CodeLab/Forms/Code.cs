@@ -73,5 +73,14 @@ namespace CodeLab.Forms
                 sc.ShowDialog();
             }
         }
+
+        private void BtnMakeComment_Click(object sender, EventArgs e)
+        {
+            using (var sc = new SeeComments())
+            {
+                sc.PrepareForm();
+                sc.ShowDialog();
+            }
+        }
     }
 }

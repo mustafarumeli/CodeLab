@@ -38,6 +38,7 @@ namespace CodeLab.Forms
             this.BtnOriginal = new CodeLab.Custom_Controls.CustomButton();
             this.TbStatus = new CodeLab.Custom_Controls.CustomRichTextBox();
             this.BtnSeeComments = new System.Windows.Forms.Button();
+            this.BtnMakeComment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBpicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@ namespace CodeLab.Forms
             // 
             // BtnSeeComments
             // 
-            this.BtnSeeComments.Location = new System.Drawing.Point(23, 20);
+            this.BtnSeeComments.Location = new System.Drawing.Point(245, 48);
             this.BtnSeeComments.Name = "BtnSeeComments";
             this.BtnSeeComments.Size = new System.Drawing.Size(124, 23);
             this.BtnSeeComments.TabIndex = 6;
@@ -124,11 +125,22 @@ namespace CodeLab.Forms
             this.BtnSeeComments.UseVisualStyleBackColor = true;
             this.BtnSeeComments.Click += new System.EventHandler(this.BtnSeeComments_Click);
             // 
+            // BtnMakeComment
+            // 
+            this.BtnMakeComment.Location = new System.Drawing.Point(245, 19);
+            this.BtnMakeComment.Name = "BtnMakeComment";
+            this.BtnMakeComment.Size = new System.Drawing.Size(124, 23);
+            this.BtnMakeComment.TabIndex = 7;
+            this.BtnMakeComment.Text = "Make Comment";
+            this.BtnMakeComment.UseVisualStyleBackColor = true;
+            this.BtnMakeComment.Click += new System.EventHandler(this.BtnMakeComment_Click);
+            // 
             // Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 661);
+            this.Controls.Add(this.BtnMakeComment);
             this.Controls.Add(this.BtnSeeComments);
             this.Controls.Add(this.TbStatus);
             this.Controls.Add(this.BtnOriginal);
@@ -157,5 +169,6 @@ namespace CodeLab.Forms
         private Custom_Controls.CustomButton BtnOriginal;
         private System.Windows.Forms.Button BtnSeeComments;
         public CustomRichTextBox TbStatus;
+        private System.Windows.Forms.Button BtnMakeComment;
     }
 }

@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.ButtonAnswer);
             this.Controls.Add(this.LbTotalPoint);
             this.Controls.Add(this.panel1);
@@ -152,8 +152,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PbUpVote;
-        private System.Windows.Forms.PictureBox PbDownVote;
+        internal System.Windows.Forms.PictureBox PbUpVote;
+        internal System.Windows.Forms.PictureBox PbDownVote;
         private System.Windows.Forms.Label LbUserName;
         private System.Windows.Forms.Label LblCommentText;
         private System.Windows.Forms.Panel panel1;

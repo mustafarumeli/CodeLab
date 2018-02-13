@@ -13,12 +13,32 @@ namespace CodeLab.Custom_Controls
 {
     public partial class CommentContainer : FlowLayoutPanel
     {
-        public event Action<object, EventArgs> CommentAnswerClick; 
+        public event Action<object, EventArgs> CommentAnswerClick;
+        CommentControl _prevCommentControl;
         public CommentContainer()
         {
             InitializeComponent();
+            CommentAnswerClick += CommentContainer_CommentAnswerClick;
         }
-    
+        
+        private void CommentContainer_CommentAnswerClick(object sender, EventArgs arg2)
+        {
+            if (_prevCommentControl != null)
+            {
+                _prevCommentControl.BackColor = Color.SteelBlue;
+            }
+            _prevCommentControl = (sender as CommentControl);
+            (sender as CommentControl).BackColor = Color.Green;
+
+        }
+          public void RemoveSelectedColor()
+        {
+
+            if (_prevCommentControl != null)
+            {
+                _prevCommentControl.BackColor = Color.SteelBlue;
+            }
+        }
         public void Init()
         {
             this.Controls.Clear();
@@ -52,8 +72,20 @@ namespace CodeLab.Custom_Controls
             void PlaceComment(Comment comment)
             {
                 CommentControl cc = new CommentControl(comment,CommentAnswerClick);
+                var currentUsersVoteTrack = Forms.MainForm.CurrentUser.VoteTracks;
+                var vote = currentUsersVoteTrack.FirstOrDefault(x => x.CodePieceOrCommentId == comment._id);
+                if (vote != null)
+                {
+                    if (vote.VoteType == VoteType.UpVote)
+                    {
+                        cc.PbUpVote.Enabled = false;
+                    }
+                    else
+                    {
+                        cc.PbDownVote.Enabled = false;
+                    }
+                }
                 cc.Margin = new Padding(_Rank, horizontalBuffer, 0, 0);
-
                 this.Controls.Add(cc);
             }
         }
