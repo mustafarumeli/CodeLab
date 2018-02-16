@@ -94,7 +94,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Lime;
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
