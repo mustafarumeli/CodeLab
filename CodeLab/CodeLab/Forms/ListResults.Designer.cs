@@ -49,19 +49,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resultContainer1.AutoScroll = true;
-            this.resultContainer1.Location = new System.Drawing.Point(182, 169);
+            this.resultContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.resultContainer1.Location = new System.Drawing.Point(168, 146);
             this.resultContainer1.Name = "resultContainer1";
-            this.resultContainer1.Size = new System.Drawing.Size(1047, 376);
+            this.resultContainer1.Size = new System.Drawing.Size(541, 578);
             this.resultContainer1.TabIndex = 1;
             // 
             // ListResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 524);
+            this.ClientSize = new System.Drawing.Size(790, 726);
             this.Controls.Add(this.resultContainer1);
             this.Controls.Add(this.LblResult);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(790, 726);
             this.Name = "ListResults";
             this.Text = "ListResults";
             this.Load += new System.EventHandler(this.ListResults_LoadAsync);

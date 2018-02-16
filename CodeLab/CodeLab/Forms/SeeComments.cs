@@ -58,7 +58,20 @@ namespace CodeLab.Forms
                 {
                     _refComment.SubComments.Add(subComment);
                     cc.Margin = new Padding(_refCommentControl.Margin.Left + CommentContainer.RANK_BUFFER, _refCommentControl.Margin.Top, 0, 0);
-                    _parentFlowLayoutPanel.Controls.Add(cc);
+                    List<Control> newControlList = new List<Control>();
+                    for (int i = 0; i < _parentFlowLayoutPanel.Controls.Count; i++)
+                    {
+                        var item = _parentFlowLayoutPanel.Controls[i];
+                        if (item == _refCommentControl)
+                        {
+                            newControlList.Add(item);
+                            newControlList.Add(cc);
+                            continue;
+                        }
+                        newControlList.Add(item);
+                    }
+                    _parentFlowLayoutPanel.Controls.Clear();
+                    _parentFlowLayoutPanel.Controls.AddRange(newControlList.ToArray());
                 }
                 else if (!_isSubComment)
                 {
@@ -76,8 +89,7 @@ namespace CodeLab.Forms
                 this.Size = new Size(466, this.Height);
                 SetVisibiltyOfNewCommentControls(false);
                 await Classes.Database.DbFactory.CodePieceCrud.Update(Code.CurrentCodePiece._id, Code.CurrentCodePiece);
-                this.SuspendLayout();
-                this.ResumeLayout();
+        
             }
         }
 
