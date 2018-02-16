@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.LbTotalPoint = new System.Windows.Forms.Label();
             this.ButtonAnswer = new System.Windows.Forms.Button();
+            this.LblCommentDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbDownVote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbUpVote)).BeginInit();
             this.panel1.SuspendLayout();
@@ -128,11 +129,21 @@
             this.ButtonAnswer.UseVisualStyleBackColor = false;
             this.ButtonAnswer.Click += new System.EventHandler(this.ButtonAnswer_Click);
             // 
+            // LblCommentDate
+            // 
+            this.LblCommentDate.AutoSize = true;
+            this.LblCommentDate.Location = new System.Drawing.Point(24, 106);
+            this.LblCommentDate.Name = "LblCommentDate";
+            this.LblCommentDate.Size = new System.Drawing.Size(77, 13);
+            this.LblCommentDate.TabIndex = 6;
+            this.LblCommentDate.Text = "Comment Date";
+            // 
             // CommentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
+            this.Controls.Add(this.LblCommentDate);
             this.Controls.Add(this.ButtonAnswer);
             this.Controls.Add(this.LbTotalPoint);
             this.Controls.Add(this.panel1);
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LbTotalPoint;
         private System.Windows.Forms.Button ButtonAnswer;
+        private System.Windows.Forms.Label LblCommentDate;
     }
 }

@@ -26,6 +26,7 @@ namespace CodeLab.Custom_Controls
             this._clickEvent = clickEvent;
             LbUserName.Text = Forms.MainForm.CurrentUser.UserName;
             LblCommentText.Text = comment.Text;
+            LblCommentDate.Text = comment.CreationDate.ToString();
             LbTotalPoint.Text = comment.Vote?.TotalPoint.ToString();
         }
 
