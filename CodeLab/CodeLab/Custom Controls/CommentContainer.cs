@@ -16,7 +16,7 @@ namespace CodeLab.Custom_Controls
         public event Action<object, EventArgs> CommentAnswerClick;
         private int _lastPosition = 0;
         private const int POSITION_BUFFER = 20;
-        CommentControl _prevCommentControl;
+        private CommentControl _prevCommentControl;
         public CommentContainer()
         {
             InitializeComponent();
@@ -30,8 +30,8 @@ namespace CodeLab.Custom_Controls
                 _prevCommentControl.BackColor = Color.SteelBlue;
             }
             _prevCommentControl = (sender as CommentControl);
-            (sender as CommentControl).BackColor = Color.Green;
-
+            var commentControl = sender as CommentControl;
+            if (commentControl != null) commentControl.BackColor = Color.Green;
         }
         public void RemoveSelectedColor()
         {
@@ -46,47 +46,49 @@ namespace CodeLab.Custom_Controls
             _lastPosition += POSITION_BUFFER;
         }
         public const int RANK_BUFFER = 25;
-        public int pnlNameCounter = 1;
+        public int PnlNameCounter = 1;
         public void Init()
         {
             this.Controls.Clear();
-           
-            int horizontalBuffer = 7;
+
+            int horizontalBuffer;
             
             FlowLayoutPanel flw;
             var comments = Forms.Code.CurrentCodePiece.Comments;
             var selectedComments = comments.Take(POSITION_BUFFER).Skip(_lastPosition);
-            int _Rank;
+            int rank;
             foreach (var comment in selectedComments)
             {
-                flw = new FlowLayoutPanel();
-                flw.AutoSize = true;
-                flw.Name = "panel" + ++pnlNameCounter;
-                _Rank = RANK_BUFFER;
+                flw = new FlowLayoutPanel
+                {
+                    AutoSize = true,
+                    Name = "panel" + ++PnlNameCounter
+                };
+                rank = RANK_BUFFER;
                 horizontalBuffer = 7;
                 PlaceComment(comment);
-                _Rank += RANK_BUFFER;
+                rank += RANK_BUFFER;
                 horizontalBuffer = 3;
                 SubCommentCreate(comment.SubComments);
                 void SubCommentCreate(IEnumerable<Comment> subComments)
                 {
-                    if (subComments != null && subComments.Any())
+                    var commentsArray = subComments as Comment[] ?? subComments.ToArray();
+                    if (commentsArray.Any())
                     {
-                        foreach (var subComment in subComments)
+                        foreach (var subComment in commentsArray)
                         {
                             PlaceComment((Comment)subComment);
-                            _Rank += RANK_BUFFER;
+                            rank += RANK_BUFFER;
                             SubCommentCreate(subComment.SubComments);
-                            _Rank -= RANK_BUFFER;
+                            rank -= RANK_BUFFER;
                         }
                     }
-
                 }
                 this.Controls.Add(flw);
             }
             void PlaceComment(Comment comment)
             {
-                CommentControl cc = new CommentControl(comment, CommentAnswerClick);
+                var cc = new CommentControl(comment, CommentAnswerClick);
                 var currentUsersVoteTrack = Forms.MainForm.CurrentUser.VoteTracks;
                 var vote = currentUsersVoteTrack.FirstOrDefault(x => x.CodePieceOrCommentId == comment._id);
                 if (vote != null)
@@ -100,14 +102,14 @@ namespace CodeLab.Custom_Controls
                         cc.PbDownVote.Enabled = false;
                     }
                 }
-                cc.Margin = new Padding(_Rank, horizontalBuffer, 0, 0);
+                cc.Margin = new Padding(rank, horizontalBuffer, 0, 0);
                 flw.Controls.Add(cc);
             }
 
         }
         internal CommentControl CreateCommentControl(Comment subComment)
         {
-            CommentControl cc = new CommentControl(subComment, CommentAnswerClick);
+            var cc = new CommentControl(subComment, CommentAnswerClick);
             return cc;
         }
 

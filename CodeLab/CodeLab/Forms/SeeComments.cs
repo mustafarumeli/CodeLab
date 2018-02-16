@@ -2,23 +2,17 @@
 using CodeLab.Custom_Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CodeLab.Forms
 {
     public partial class SeeComments : MetroFramework.Forms.MetroForm
     {
-
-        bool _isSubComment = false;
-        string _idOfAssignment = "";
-        Comment _refComment;
-        CommentControl _refCommentControl;
+        private bool _isSubComment = false;
+        private string _idOfAssignment = "";
+        private Comment _refComment;
+        private CommentControl _refCommentControl;
         public SeeComments()
         {
             InitializeComponent();
@@ -27,13 +21,13 @@ namespace CodeLab.Forms
             CommentContainer.Init();
         }
 
-        FlowLayoutPanel _parentFlowLayoutPanel;
+        private FlowLayoutPanel _parentFlowLayoutPanel;
         private void CommentContainer_CommentAnswerClick(object sender, EventArgs e)
         {
-            _isSubComment = true;
             _refCommentControl = (sender as CommentControl);
-            _refComment = (_refCommentControl).Comment;
-            _parentFlowLayoutPanel = ((_refCommentControl).Parent as FlowLayoutPanel);
+            _isSubComment = true;
+            _refComment = (_refCommentControl)?.Comment;
+            _parentFlowLayoutPanel = ((_refCommentControl)?.Parent as FlowLayoutPanel);
             this.MinimumSize = new Size(774, 549);
             SetVisibiltyOfNewCommentControls(true);
         }
@@ -76,13 +70,16 @@ namespace CodeLab.Forms
                 else if (!_isSubComment)
                 {
                     Code.CurrentCodePiece.Comments.Add(subComment);
-                    var flw = new FlowLayoutPanel();
-                    flw.AutoSize = true;
-                    flw.Name = "panel" + ++CommentContainer.pnlNameCounter;
+                    var flw = new FlowLayoutPanel
+                    {
+                        AutoSize = true,
+                        Name = "panel" + ++CommentContainer.PnlNameCounter
+                    };
                     flw.Controls.Add(cc);
                     CommentContainer.Controls.Add(flw);
 
                 }
+                CommentContainer.RemoveSelectedColor();
                 MessageBox.Show("Your Comment Has Added"+Environment.NewLine+"Thank You");
 
                 this.MinimumSize = new Size(466, 549);

@@ -13,7 +13,7 @@ namespace CodeLab.Custom_Controls
 {
     public partial class CommentControl : UserControl
     {
-        Comment _currentComment;
+        private readonly Comment _currentComment;
         private readonly Action<object, EventArgs> _clickEvent;
 
         public Comment Comment => _currentComment;
@@ -45,10 +45,7 @@ namespace CodeLab.Custom_Controls
                 VotePlace = VotePlace.Comment,
                 VoteType= VoteType.UpVote
             };
-            Forms.MainForm.CurrentUser.VoteTracks.Add(vt);
-            await Classes.Database.DbFactory.UserCrud.Update(Forms.MainForm.CurrentUser._id, Forms.MainForm.CurrentUser);
-            LbTotalPoint.Text = _currentComment.Vote?.TotalPoint.ToString();
-            (sender as PictureBox).Enabled = false;
+            await UpdateDatabaseAndPicture(sender, vt);
             PbDownVote.Enabled = true;
         }
 
@@ -61,17 +58,23 @@ namespace CodeLab.Custom_Controls
             }
             _currentComment.Vote.DownVoteCount++;
             await Classes.Database.DbFactory.CodePieceCrud.Update(Forms.Code.CurrentCodePiece._id, Forms.Code.CurrentCodePiece);
-            VoteTrack vt = new VoteTrack()
+            VoteTrack vt = new VoteTrack
             {
                 CodePieceOrCommentId = _currentComment._id,
                 VotePlace = VotePlace.Comment,
                 VoteType = VoteType.DownVote
             };
+            await UpdateDatabaseAndPicture(sender, vt);
+            PbUpVote.Enabled = true;
+        }
+
+        private async Task UpdateDatabaseAndPicture(object sender, VoteTrack vt)
+        {
             Forms.MainForm.CurrentUser.VoteTracks.Add(vt);
             await Classes.Database.DbFactory.UserCrud.Update(Forms.MainForm.CurrentUser._id, Forms.MainForm.CurrentUser);
             LbTotalPoint.Text = _currentComment.Vote?.TotalPoint.ToString();
-           (sender as PictureBox).Enabled = false;
-            PbUpVote.Enabled = true;
+            var pictureBox = sender as PictureBox;
+            if (pictureBox != null) pictureBox.Enabled = false;
         }
 
         private void ButtonAnswer_Click(object sender, EventArgs e)
