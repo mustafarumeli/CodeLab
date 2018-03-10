@@ -4,6 +4,7 @@ using CodeLab.Classes.Database.Entities;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CodeLab.Forms
 {
@@ -32,38 +33,24 @@ namespace CodeLab.Forms
             }
             if(CurrentCodePiece.Language.ToLower() == "c#")
             {
-                BtnRun.Visible = true;
+                PbRun.Visible = true;
             }
             //codePiece = await _codePieceCrud.GetOne(_id);
             
-            LblDesc.Text = CurrentCodePiece.Description;
             TbCode.Text = CurrentCodePiece.Code;
-            using (var ms = new MemoryStream(CurrentCodePiece.Picture))
+         /*   using (var ms = new MemoryStream(CurrentCodePiece.Picture))
             {
                 PBpicture.Image = Image.FromStream(ms);
-            }
+            }*/
             this.Text = CurrentCodePiece.Title;
             MainForm.CurrentUser.AddOrUpdateSearchHistory(CurrentCodePiece._id, 10);
         }
 
-        private void BtnRun_Click(object sender, EventArgs e)
-        {
-             TbStatus.AppendText("Build Started.",Color.Black);
-             CodeRunner cr = new CodeRunner(TbCode.Text);
-            (object result,bool success) = cr.Result;
-            Color color = Color.Red;
-            string text = result.ToString();
-            if (success)
-            {
-                color = Color.Green;
-            }
-            TbStatus.AppendText(text,color);
-
-        }
+      
 
         private void BtnOriginal_Click(object sender, EventArgs e)
         {
-            TbCode.Text = CurrentCodePiece.Code;
+           
         }
 
         private void BtnSeeComments_Click(object sender, EventArgs e)
@@ -81,6 +68,61 @@ namespace CodeLab.Forms
                 sc.PrepareForm();
                 sc.ShowDialog();
             }
+        }
+
+        private void BtnRun_Click(object sender, EventArgs e)
+        {
+            TbStatus.AppendText("Build Started.", Color.Black);
+            CodeRunner cr = new CodeRunner(TbCode.Text);
+            (object result, bool success) = cr.Result;
+            Color color = Color.Red;
+            string text = result.ToString();
+            if (success)
+            {
+                color = Color.Green;
+            }
+            TbStatus.AppendText(text, color);
+
+        }
+
+        private void BtnOrginal_Click(object sender, EventArgs e)
+        {
+            TbCode.Text = CurrentCodePiece.Code;
+        }
+
+        private void BtnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(TbCode.Text);
+        }
+
+        private void BtnRun_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(sender as Control, "Execute");
+        }
+
+        private void BtnCopy_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(sender as Control, "Copy To Clipboard");
+        }
+
+        private void BtnOrginal_MouseLeave(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(sender as Control, "Return the original version");
+        }
+
+        private void BtnSeeComments_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(sender as Control, "See Comments");
+        }
+
+        private void BtnMakeComment_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(sender as Control, "Make Comment");
         }
     }
 }

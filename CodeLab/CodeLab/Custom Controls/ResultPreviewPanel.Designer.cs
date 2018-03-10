@@ -37,57 +37,61 @@
             this.PbStars = new System.Windows.Forms.PictureBox();
             this.IlStartImages = new System.Windows.Forms.ImageList(this.components);
             this.LblVote = new System.Windows.Forms.Label();
-            this.customButton1 = new CodeLab.Custom_Controls.CustomButton();
+            this.BtnGotoCode = new CodeLab.Custom_Controls.CustomButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.PbStars)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblDate
             // 
             this.LblDate.AutoSize = true;
-            this.LblDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDate.Font = new System.Drawing.Font("Arial", 10F);
             this.LblDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.LblDate.Location = new System.Drawing.Point(388, 142);
+            this.LblDate.Location = new System.Drawing.Point(3, 0);
             this.LblDate.Name = "LblDate";
-            this.LblDate.Size = new System.Drawing.Size(42, 18);
+            this.LblDate.Size = new System.Drawing.Size(38, 16);
             this.LblDate.TabIndex = 0;
             this.LblDate.Text = "Date";
             // 
             // LblHeader
             // 
+            this.LblHeader.AutoSize = true;
             this.LblHeader.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblHeader.ForeColor = System.Drawing.SystemColors.Control;
-            this.LblHeader.Location = new System.Drawing.Point(34, 46);
+            this.LblHeader.Location = new System.Drawing.Point(20, 19);
             this.LblHeader.Name = "LblHeader";
-            this.LblHeader.Size = new System.Drawing.Size(145, 64);
+            this.LblHeader.Size = new System.Drawing.Size(138, 42);
             this.LblHeader.TabIndex = 1;
             this.LblHeader.Text = "Header";
             // 
             // LblLang
             // 
-            this.LblLang.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLang.AutoSize = true;
+            this.LblLang.Font = new System.Drawing.Font("Arial", 10F);
             this.LblLang.ForeColor = System.Drawing.SystemColors.Control;
-            this.LblLang.Location = new System.Drawing.Point(38, 110);
+            this.LblLang.Location = new System.Drawing.Point(24, 61);
             this.LblLang.Name = "LblLang";
-            this.LblLang.Size = new System.Drawing.Size(48, 14);
+            this.LblLang.Size = new System.Drawing.Size(40, 16);
             this.LblLang.TabIndex = 2;
             this.LblLang.Text = "Lang";
             // 
             // LblAuthor
             // 
             this.LblAuthor.AutoSize = true;
-            this.LblAuthor.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAuthor.Font = new System.Drawing.Font("Arial", 10F);
             this.LblAuthor.ForeColor = System.Drawing.SystemColors.Control;
-            this.LblAuthor.Location = new System.Drawing.Point(38, 13);
+            this.LblAuthor.Location = new System.Drawing.Point(47, 0);
             this.LblAuthor.Name = "LblAuthor";
-            this.LblAuthor.Size = new System.Drawing.Size(40, 14);
+            this.LblAuthor.Size = new System.Drawing.Size(50, 16);
             this.LblAuthor.TabIndex = 2;
             this.LblAuthor.Text = "Author";
             // 
             // PbStars
             // 
-            this.PbStars.Location = new System.Drawing.Point(195, 110);
+            this.PbStars.Location = new System.Drawing.Point(27, 98);
             this.PbStars.Name = "PbStars";
-            this.PbStars.Size = new System.Drawing.Size(187, 50);
+            this.PbStars.Size = new System.Drawing.Size(187, 32);
             this.PbStars.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PbStars.TabIndex = 4;
             this.PbStars.TabStop = false;
@@ -111,40 +115,50 @@
             this.LblVote.TabIndex = 0;
             this.LblVote.Text = "Vote";
             // 
-            // customButton1
+            // BtnGotoCode
             // 
-            this.customButton1.BackColor = System.Drawing.Color.Gray;
-            this.customButton1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(35, 127);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.customButton1.MinimumSize = new System.Drawing.Size(100, 32);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(3);
-            this.customButton1.Size = new System.Drawing.Size(123, 33);
-            this.customButton1.TabIndex = 5;
-            this.customButton1.Text = "Go To Code";
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
+            this.BtnGotoCode.BackColor = System.Drawing.Color.Green;
+            this.BtnGotoCode.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.BtnGotoCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGotoCode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGotoCode.ForeColor = System.Drawing.Color.White;
+            this.BtnGotoCode.Location = new System.Drawing.Point(395, 132);
+            this.BtnGotoCode.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.BtnGotoCode.MinimumSize = new System.Drawing.Size(100, 32);
+            this.BtnGotoCode.Name = "BtnGotoCode";
+            this.BtnGotoCode.Padding = new System.Windows.Forms.Padding(3);
+            this.BtnGotoCode.Size = new System.Drawing.Size(123, 33);
+            this.BtnGotoCode.TabIndex = 5;
+            this.BtnGotoCode.Text = "Go To Code";
+            this.BtnGotoCode.UseVisualStyleBackColor = false;
+            this.BtnGotoCode.Click += new System.EventHandler(this.BtnGotoCode_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.LblDate);
+            this.flowLayoutPanel1.Controls.Add(this.LblAuthor);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 148);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(366, 17);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // ResultPreviewPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
-            this.Controls.Add(this.customButton1);
-            this.Controls.Add(this.PbStars);
-            this.Controls.Add(this.LblAuthor);
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Controls.Add(this.BtnGotoCode);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.LblLang);
+            this.Controls.Add(this.PbStars);
             this.Controls.Add(this.LblHeader);
             this.Controls.Add(this.LblVote);
-            this.Controls.Add(this.LblDate);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ResultPreviewPanel";
             this.Size = new System.Drawing.Size(523, 171);
             ((System.ComponentModel.ISupportInitialize)(this.PbStars)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +172,8 @@
         private System.Windows.Forms.Label LblAuthor;
         private System.Windows.Forms.PictureBox PbStars;
         private System.Windows.Forms.ImageList IlStartImages;
-        private CustomButton customButton1;
+        private CustomButton BtnGotoCode;
         private System.Windows.Forms.Label LblVote;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -29,52 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
-            this.LblResult = new System.Windows.Forms.Label();
             this.resultContainer1 = new CodeLab.Custom_Controls.ResultContainer();
             this.SuspendLayout();
             // 
-            // LblResult
-            // 
-            this.LblResult.AutoSize = true;
-            this.LblResult.Font = new System.Drawing.Font("Arial", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblResult.Location = new System.Drawing.Point(175, 90);
-            this.LblResult.Name = "LblResult";
-            this.LblResult.Size = new System.Drawing.Size(210, 38);
-            this.LblResult.TabIndex = 0;
-            this.LblResult.Text = "Results For : ";
-            // 
             // resultContainer1
             // 
-            this.resultContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.resultContainer1.AutoScroll = true;
-            this.resultContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.resultContainer1.Location = new System.Drawing.Point(168, 146);
+            this.resultContainer1.BackColor = System.Drawing.Color.White;
+            this.resultContainer1.Location = new System.Drawing.Point(20, 63);
             this.resultContainer1.Name = "resultContainer1";
-            this.resultContainer1.Size = new System.Drawing.Size(541, 578);
+            this.resultContainer1.Size = new System.Drawing.Size(523, 800);
             this.resultContainer1.TabIndex = 1;
             // 
             // ListResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 726);
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(563, 726);
             this.Controls.Add(this.resultContainer1);
-            this.Controls.Add(this.LblResult);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(790, 726);
+            this.MaximizeBox = false;
             this.Name = "ListResults";
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
+            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "ListResults";
+            this.TransparencyKey = System.Drawing.SystemColors.Info;
             this.Load += new System.EventHandler(this.ListResults_LoadAsync);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LblResult;
         private Custom_Controls.ResultContainer resultContainer1;
     }
 }

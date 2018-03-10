@@ -25,12 +25,12 @@ namespace CodeLab.Custom_Controls
         {
             if (MainForm.CurrentUser?.SearchHistories.FirstOrDefault(x => x.CodePieceId == _id) != null)
             {
-                this.BackColor = Color.IndianRed;
+                this.BackColor = Color.SeaGreen;
             }
             LblHeader.Text = header;
-            LblDate.Text = date.Substring(0,date.Length-3);
+            LblDate.Text = "Added on: " + date;
             LblLang.Text = language;
-            LblAuthor.Text = author;
+            LblAuthor.Text +=": "+ author;
             LblVote.Text = totalVoteCount.ToString();
             this._id = _id;
             var starCount = rating.StarCount;
@@ -62,10 +62,10 @@ namespace CodeLab.Custom_Controls
             PbStars.Image = b;
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void BtnGotoCode_Click(object sender, EventArgs e)
         {
             var code = new Code(_id);
-            this.BackColor = Color.IndianRed;
+            this.BackColor = Color.SeaGreen;
             code.ShowDialog();
         }
     }

@@ -22,8 +22,8 @@ namespace CodeLab.Forms
         
         private async void ListResults_LoadAsync(object sender, EventArgs e)
         {
-            LblResult.Text = "Listing";
-            var thread = new Threader(LblResult,"Listing");
+            this.Text = "Listing";
+            var thread = new Threader(this,"Listing");
             thread.Run();
             List<CodePiece> results = await DbFactory.CodePieceCrud.GetAll(_filter);
             bool hasResults = false;
@@ -89,13 +89,12 @@ namespace CodeLab.Forms
             thread.Stop();
             foreach (var result in results)
             {       var user = await new UserCrud().GetOne(result.Contributer);
-                    resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToString(CultureInfo.InvariantCulture), result.Scores, result.Language, user.Name,result.Votes.TotalPoint));
+                    resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToShortDateString(), result.Scores, result.Language, user.Name,result.Votes.TotalPoint));
             }
-            LblResult.Text = _searchText == "" ? "Showing All Results" : "Results for :" + _searchText;
+            this.Text = _searchText == "" ? "Showing All Results" : "Results for : " + _searchText;
             if (hasResults == false)
             {
-                LblResult.ForeColor = System.Drawing.Color.Red;
-                LblResult.Text += Environment.NewLine + "NO RESULT";
+                this.Text +=  "NO RESULT";
             }
 
         }
