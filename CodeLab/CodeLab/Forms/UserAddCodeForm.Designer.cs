@@ -41,12 +41,6 @@
             // 
             this.ClbLanguages.FormattingEnabled = true;
             this.ClbLanguages.HorizontalExtent = 3;
-            this.ClbLanguages.Items.AddRange(new object[] {
-            "C#",
-            "Java",
-            "C++",
-            "C",
-            "JavaScript"});
             this.ClbLanguages.Location = new System.Drawing.Point(23, 140);
             this.ClbLanguages.Name = "ClbLanguages";
             this.ClbLanguages.Size = new System.Drawing.Size(397, 49);

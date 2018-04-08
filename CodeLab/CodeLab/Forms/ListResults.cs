@@ -19,11 +19,11 @@ namespace CodeLab.Forms
             _searchText = searchText;
             _filter = filter;
         }
-        
+
         private async void ListResults_LoadAsync(object sender, EventArgs e)
         {
             this.Text = "Listing";
-            var thread = new Threader(this,"Listing");
+            var thread = new Threader(this, "Listing");
             thread.Run();
             List<CodePiece> results = await DbFactory.CodePieceCrud.GetAll(_filter);
             bool hasResults = false;
@@ -32,8 +32,10 @@ namespace CodeLab.Forms
             {
                 List<CodePiece> returnList = new List<CodePiece>();
                 List<CodePiece> viableList = new List<CodePiece>();//CodePiece._id
-                var currentUsersSearchHistory = MainForm.CurrentUser.SearchHistories;
-               
+                var currentUsersSearchHistory = new List<SearchHistory>();
+                if (MainForm.CurrentUser?.SearchHistories != null)
+                    currentUsersSearchHistory = MainForm.CurrentUser.SearchHistories;
+
                 foreach (var result in results)
                 {
 
@@ -47,13 +49,13 @@ namespace CodeLab.Forms
                     }
 
                 }
-                Dictionary<CodePiece,int> primaryDict = new Dictionary<CodePiece, int>();
+                Dictionary<CodePiece, int> primaryDict = new Dictionary<CodePiece, int>();
                 foreach (var item in currentUsersSearchHistory)
                 {
                     CodePiece currentItemInViableList = viableList.FirstOrDefault(x => x._id == item.CodePieceId);
                     if (currentItemInViableList != null)
                     {
-                        primaryDict.Add(currentItemInViableList,item.Point);
+                        primaryDict.Add(currentItemInViableList, item.Point);
                         viableList.Remove(currentItemInViableList);
                     }
                 }
@@ -69,7 +71,7 @@ namespace CodeLab.Forms
                 string searchTextTemp = _searchText.ToLower();
                 int searchTextLenght = _searchText.Length;
                 int occurance = 0;
-                for (int i = 0; i < searchInto.Length-searchTextLenght; i++)
+                for (int i = 0; i < searchInto.Length - searchTextLenght; i++)
                 {
                     string currentSlice = searchInto.Substring(i, searchTextLenght);
                     if (currentSlice == searchTextTemp)
@@ -83,18 +85,19 @@ namespace CodeLab.Forms
                 }
                 else
                 {
-                   return false;
+                    return false;
                 }
             }
             thread.Stop();
             foreach (var result in results)
-            {       var user = await new UserCrud().GetOne(result.Contributer);
-                    resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToShortDateString(), result.Scores, result.Language, user.Name,result.Votes.TotalPoint));
+            {
+                var user = await new UserCrud().GetOne(result.Contributer);
+                resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToShortDateString(), result.Scores, result.Language, user.Name, result.Votes.TotalPoint));
             }
             this.Text = _searchText == "" ? "Showing All Results" : "Results for : " + _searchText;
             if (hasResults == false)
             {
-                this.Text +=  "NO RESULT";
+                this.Text += "NO RESULT";
             }
 
         }

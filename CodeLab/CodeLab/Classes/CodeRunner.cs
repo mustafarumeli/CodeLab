@@ -16,8 +16,7 @@ namespace CodeLab.Classes
     public class CodeRunner
     {
         #region Properties
-        string _ipAddress = Properties.Settings.Default.DebugServerIp;
-        int _port = Properties.Settings.Default.DebugServerPort;
+        
         #endregion
         #region Public
         /// <summary>
@@ -29,6 +28,10 @@ namespace CodeLab.Classes
         #region private
         private Socket _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         private byte[] _dataBuffer = new byte[1024];
+        //string _ipAddress = Properties.Settings.Default.DebugServerIp;
+        //int _port = Properties.Settings.Default.DebugServerPort;
+        string _ipAddress = "172.31.134.251";
+        int _port = 4242;
         /// Starts to trying to connect to the server. Every failed attempt and successfull connection will Invoke the given method with a paramater giving the current status of connection.
         /// </summary>
         /// <param name="ConnectionStatus"></param>
@@ -74,13 +77,21 @@ namespace CodeLab.Classes
         }
         private void OnReceive(IAsyncResult ar)
         {
-            int receiveSize = _clientSocket.EndReceive(ar);
+            int receiveSize = 0;
+            try
+            {
+                receiveSize = _clientSocket.EndReceive(ar);
+            }catch(SocketException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
             if (receiveSize > 0)
             {
                 byte[] receivedData = new byte[receiveSize];
                 Array.Copy(_dataBuffer, receivedData, receiveSize);
                 OnReceived(Encoding.UTF8.GetString(receivedData));
             }
+            _clientSocket.Disconnect(true);
         }
     }
     /// <summary>

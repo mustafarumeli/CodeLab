@@ -90,7 +90,8 @@ namespace CodeLab.Forms
 
         private void UserAddCodeForm_Load(object sender, EventArgs e)
         {
-            ClbLanguages.Items.AddRange(DbFactory.CodePieceCrud.GetDistinctLanguages());
+            //ClbLanguages.Items.AddRange(DbFactory.CodePieceCrud.GetDistinctLanguages());
+            ClbLanguages.Items.AddRange(Enum.GetNames(typeof(Languages)));
         }
     }
 }

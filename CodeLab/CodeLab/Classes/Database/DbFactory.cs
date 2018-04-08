@@ -17,6 +17,8 @@ namespace CodeLab.Classes.Database
         static readonly int server_port = 27017;
         static readonly string database_name = "cool_db";
         public static IMongoClient Client = new MongoClient($"mongodb://{server_username}:{server_password}@{server_host}:{server_port}/{database_name}");
+        //private static IMongoClient Client = new MongoClient();
+        //private static string database_name = "LocalTest";
         private static IMongoDatabase _database;
         public static IMongoDatabase Database => _database ?? (_database = Client.GetDatabase(database_name));
 

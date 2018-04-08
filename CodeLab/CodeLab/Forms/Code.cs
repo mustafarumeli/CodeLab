@@ -33,7 +33,7 @@ namespace CodeLab.Forms
        
             TbCode.Text = CurrentCodePiece.Code;
             this.Text = CurrentCodePiece.Title;
-            MainForm.CurrentUser.AddOrUpdateSearchHistory(CurrentCodePiece._id, 10);
+            MainForm.CurrentUser?.AddOrUpdateSearchHistory(CurrentCodePiece._id, 10);
         }
 
       
