@@ -193,6 +193,7 @@
     <Compile Include="Classes\Database\Entities\CodePiece.cs" />
     <Compile Include="Classes\Database\Entities\User.cs" />
     <Compile Include="Classes\Rate.cs" />
+    <Compile Include="Classes\ServerConnection.cs" />
     <Compile Include="Classes\Threader.cs" />
     <Compile Include="Custom Controls\CommentContainer.cs">
       <SubType>Component</SubType>
