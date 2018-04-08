@@ -37,11 +37,11 @@ namespace CodeLab.Forms
                 Random rnd = new Random();
                 var cPiece = new CodePiece
                 {
-                    
+
                     Contributer = MainForm.CurrentUser._id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
-                    Language =  ClbLanguages.SelectedItem.ToString(),
+                    Language = Languages.python, //ClbLanguages.SelectedItem.ToString(),
                     Scores = new Classes.Rate(rnd.Next(0,100), rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100)),
                     Tags = TxtCodeTags.Text.Split(','),
                     Title = TxtCodeTitle.Text,

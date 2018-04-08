@@ -56,8 +56,7 @@ namespace CodeLab.Forms
             this.PbRun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PbRun.TabIndex = 11;
             this.PbRun.TabStop = false;
-            this.PbRun.Visible = false;
-            this.PbRun.Click += new System.EventHandler(this.BtnRun_Click);
+            this.PbRun.Click += new System.EventHandler(this.BtnRun_ClickAsync);
             this.PbRun.MouseHover += new System.EventHandler(this.BtnRun_MouseHover);
             // 
             // PbCopy

@@ -18,7 +18,7 @@ namespace CodeLab.Forms
 
         void SetPreCode()
         {
-            string currentLanguage = _current.Language.ToLower();
+            string currentLanguage = _current.Language.ToString();
             string filePath = "../../Resources/LanguagePre/" + currentLanguage + ".txt";
             if (File.Exists(filePath)) 
                 TbCode.Text = File.ReadAllText(filePath);
@@ -36,7 +36,7 @@ namespace CodeLab.Forms
             }
             else
             {
-                MessageBox.Show("Code IsNot Long Enough");
+                MessageBox.Show("Code Is Not Long Enough");
             }
 
         }

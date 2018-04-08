@@ -17,31 +17,21 @@ namespace CodeLab.Forms
         {
             InitializeComponent();
             _id = id;
-            
+         
         }
 
 
-        private async void Code_LoadAsync(object sender, EventArgs e)
+        private  void Code_LoadAsync(object sender, EventArgs e)
         {
             this.Visible = false;
             this.Hide();
             using (Waiting wating = new Waiting(_id))
             {
-
                 wating.ShowDialog();
                 CurrentCodePiece = wating.CodePiece;
             }
-            if(CurrentCodePiece.Language.ToLower() == "c#")
-            {
-                PbRun.Visible = true;
-            }
-            //codePiece = await _codePieceCrud.GetOne(_id);
-            
+       
             TbCode.Text = CurrentCodePiece.Code;
-         /*   using (var ms = new MemoryStream(CurrentCodePiece.Picture))
-            {
-                PBpicture.Image = Image.FromStream(ms);
-            }*/
             this.Text = CurrentCodePiece.Title;
             MainForm.CurrentUser.AddOrUpdateSearchHistory(CurrentCodePiece._id, 10);
         }
@@ -70,18 +60,34 @@ namespace CodeLab.Forms
             }
         }
 
-        private void BtnRun_Click(object sender, EventArgs e)
+        private async void BtnRun_ClickAsync(object sender, EventArgs e)
         {
-            TbStatus.AppendText("Build Started.", Color.Black);
-            CodeRunner cr = new CodeRunner(TbCode.Text);
-            (object result, bool success) = cr.Result;
-            Color color = Color.Red;
-            string text = result.ToString();
-            if (success)
+            var debug = new CodeLab.Classes.Database.Entities.Debug();
+            debug.Code = TbCode.Text;
+            debug.Language = CurrentCodePiece.Language;
+            if (await DbFactory.DebugCrud.Insert(debug))
             {
-                color = Color.Green;
+                CodeRunner cr = new CodeRunner();
+                cr.ConnectionStatus += Cr_ConnectionStatus;
+                cr.OnReceived += Cr_OnReceived;
+                await cr.SendCode(debug._id);
             }
-            TbStatus.AppendText(text, color);
+         
+        }
+        private async void Cr_OnReceived(string _id)
+        {
+            var debug = await DbFactory.DebugCrud.GetOne(_id);
+            Invoke(new Action(() =>
+            {
+                TbStatus.AppendText(debug.SuccessResult, Color.Green);
+                TbStatus.AppendText(debug.ErrorResult, Color.Red);
+            }));
+            await DbFactory.DebugCrud.Delete(_id);
+        }
+
+        private void Cr_ConnectionStatus(string obj)
+        {
+            TbStatus.AppendText(obj, Color.Black);
 
         }
 

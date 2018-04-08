@@ -8,5 +8,20 @@
     <Setting Name="UserId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="DebugServerIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">35.204.91.193</Value>
+    </Setting>
+    <Setting Name="DebugServerPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4242</Value>
+    </Setting>
+    <Setting Name="DatabaseServerIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">35.231.112.9</Value>
+    </Setting>
+    <Setting Name="DatabaseUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ohm</Value>
+    </Setting>
+    <Setting Name="DatabaseUserPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">741895623ohm</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

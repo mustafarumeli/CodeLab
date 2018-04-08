@@ -1,5 +1,8 @@
-﻿using CodeLab.Classes.Database.Entities;
+﻿using CodeLab.Classes.Database;
+using CodeLab.Classes.Database.Entities;
 using CodeLab.Forms.Auth;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,14 +15,15 @@ namespace CodeLab.Forms
         public MainForm()
         {
             InitializeComponent();
+            DbFactory.Database.RunCommand((Command<BsonDocument>)"{ping:1}");
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            MongoDB.Bson.BsonDocument filter = new MongoDB.Bson.BsonDocument();
-            if (clbLanguages.CheckedItems.Count > 0 )
+            MongoDB.Bson.BsonDocument filter = new BsonDocument();
+            if (clbLanguages.CheckedItems.Count > 0)
             {
-                filter = new MongoDB.Bson.BsonDocument("Language",clbLanguages.CheckedItems[0]?.ToString()); 
+                filter = new BsonDocument("Language",clbLanguages.CheckedItems[0]?.ToString()); 
             }
             string searchText = TbSearch.Text;
             if (TbSearch.ForeColor==Color.Silver)

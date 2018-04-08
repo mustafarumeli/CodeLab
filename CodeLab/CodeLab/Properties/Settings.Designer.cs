@@ -46,5 +46,65 @@ namespace CodeLab.Properties {
                 this["UserId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("35.204.91.193")]
+        public string DebugServerIp {
+            get {
+                return ((string)(this["DebugServerIp"]));
+            }
+            set {
+                this["DebugServerIp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4242")]
+        public int DebugServerPort {
+            get {
+                return ((int)(this["DebugServerPort"]));
+            }
+            set {
+                this["DebugServerPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("35.231.112.9")]
+        public string DatabaseServerIp {
+            get {
+                return ((string)(this["DatabaseServerIp"]));
+            }
+            set {
+                this["DatabaseServerIp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ohm")]
+        public string DatabaseUserName {
+            get {
+                return ((string)(this["DatabaseUserName"]));
+            }
+            set {
+                this["DatabaseUserName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("741895623ohm")]
+        public string DatabaseUserPassword {
+            get {
+                return ((string)(this["DatabaseUserPassword"]));
+            }
+            set {
+                this["DatabaseUserPassword"] = value;
+            }
+        }
     }
 }

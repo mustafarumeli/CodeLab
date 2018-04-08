@@ -6,6 +6,7 @@ namespace CodeLab.Custom_Controls
 {
     public class CustomRichTextBox:RichTextBox
     { 
+
         public void AppendText(string text, Color color)
         {
             SelectionStart = TextLength;
@@ -15,5 +16,7 @@ namespace CodeLab.Custom_Controls
             AppendText(text+Environment.NewLine);
             SelectionColor = ForeColor;
         }
+
+       
     }
 }

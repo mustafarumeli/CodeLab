@@ -83,9 +83,7 @@ namespace CodeLab.Classes.Database
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(entity);
                 var bsonDocument = BsonDocument.Parse(json);
                 await Table.InsertOneAsync(bsonDocument);
-                return true;
-
-
+                return true;      
         }
 
         public async Task<bool> Update(string id, T entity)

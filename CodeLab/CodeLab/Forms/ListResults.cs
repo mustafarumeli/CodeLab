@@ -64,7 +64,7 @@ namespace CodeLab.Forms
             }
             bool IsAViableResult(CodePiece result)
             {
-                string searchInto = result.Title + result.Description;
+                string searchInto = result.Title + result.Description + result.Tags;
                 searchInto = searchInto.ToLower();
                 string searchTextTemp = _searchText.ToLower();
                 int searchTextLenght = _searchText.Length;
