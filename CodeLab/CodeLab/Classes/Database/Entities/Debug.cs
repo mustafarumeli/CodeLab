@@ -8,10 +8,15 @@ namespace CodeLab.Classes.Database.Entities
 {
     public enum Languages
     {
+        [EnumAttributes(DisplayName ="C#")]
         csharp,
+        [EnumAttributes(DisplayName = "C")]
         c,
+        [EnumAttributes(DisplayName = "C++")]
         cpp,
+        [EnumAttributes(DisplayName = "Python")]
         python,
+        [EnumAttributes(DisplayName = "Java")]
         java
     }
     public class Debug : DbObject

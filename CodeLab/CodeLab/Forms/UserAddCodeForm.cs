@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using CodeLab.Classes.Database;
+using CodeLab.Classes;
 
 namespace CodeLab.Forms
 {
@@ -31,8 +32,6 @@ namespace CodeLab.Forms
       
             if (CheckValidations == true && MainForm.CurrentUser != null)
             {
-                {
-                }
                
                 Random rnd = new Random();
                 var cPiece = new CodePiece
@@ -41,7 +40,7 @@ namespace CodeLab.Forms
                     Contributer = MainForm.CurrentUser._id,
                     Date = DateTime.Now,
                     Description = TxtCodeDescription.Text,
-                    Language = Languages.python, //ClbLanguages.SelectedItem.ToString(),
+                    Language = EnumHelper<Languages>.GetValueFromAttribute(ClbLanguages.SelectedItem.ToString()),
                     Scores = new Classes.Rate(rnd.Next(0,100), rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100)),
                     Tags = TxtCodeTags.Text.Split(','),
                     Title = TxtCodeTitle.Text,
@@ -91,7 +90,8 @@ namespace CodeLab.Forms
         private void UserAddCodeForm_Load(object sender, EventArgs e)
         {
             //ClbLanguages.Items.AddRange(DbFactory.CodePieceCrud.GetDistinctLanguages());
-            ClbLanguages.Items.AddRange(Enum.GetNames(typeof(Languages)));
+               
+            ClbLanguages.DataSource = (EnumHelper<Languages>.GetDisplayValues(new Languages()));
         }
     }
 }

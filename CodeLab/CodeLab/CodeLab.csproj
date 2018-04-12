@@ -192,6 +192,8 @@
     <Compile Include="Classes\Database\DbObject.cs" />
     <Compile Include="Classes\Database\Entities\CodePiece.cs" />
     <Compile Include="Classes\Database\Entities\User.cs" />
+    <Compile Include="Classes\EnumAttribute.cs" />
+    <Compile Include="Classes\EnumHelper.cs" />
     <Compile Include="Classes\Rate.cs" />
     <Compile Include="Classes\ServerConnection.cs" />
     <Compile Include="Classes\Threader.cs" />

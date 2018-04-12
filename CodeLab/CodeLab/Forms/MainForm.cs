@@ -1,4 +1,5 @@
-﻿using CodeLab.Classes.Database;
+﻿using CodeLab.Classes;
+using CodeLab.Classes.Database;
 using CodeLab.Classes.Database.Entities;
 using CodeLab.Forms.Auth;
 using MongoDB.Bson;
@@ -23,7 +24,7 @@ namespace CodeLab.Forms
             MongoDB.Bson.BsonDocument filter = new BsonDocument();
             if (clbLanguages.CheckedItems.Count > 0)
             {
-                filter = new BsonDocument("Language",clbLanguages.CheckedItems[0]?.ToString()); 
+                filter = new BsonDocument("Language", EnumHelper<Languages>.GetValueFromAttribute(clbLanguages.CheckedItems[0]?.ToString())); 
             }
             string searchText = TbSearch.Text;
             if (TbSearch.ForeColor==Color.Silver)
@@ -38,9 +39,6 @@ namespace CodeLab.Forms
         private void LoggedIn(string message)
         {
             PbContribute.Visible = true;
-            //LblAuth.Text = message + " " + CurrentUser.Name.Substring(0, 4)+"..";
-            //LblAuth.Click -= LblAuth_Click;
-            //LblAuth.Click += LblAuth_LogOut;
             PbLoginRegister.Image = Properties.Resources.lgout64;
             PbLoginRegister.Click -= PbLoginRegister_Click;
             PbLoginRegister.Click += PbLoginRegister_Logout;
@@ -53,12 +51,9 @@ namespace CodeLab.Forms
                 CurrentUser = null;
                 PbContribute.Visible = false;
                 PbLoginRegister.Image = Properties.Resources.lgn64;
-                //LblAuth.Text = "SignUp/Register";
                 Properties.Settings.Default.RememberMe = false;
                 Properties.Settings.Default.UserId = "";
                 Properties.Settings.Default.Save();
-                //LblAuth.Click -= LblAuth_LogOut;
-                //LblAuth.Click += LblAuth_Click;
                 PbLoginRegister.Click -= PbLoginRegister_Logout;
                 PbLoginRegister.Click += PbLoginRegister_Click ;
             }
@@ -75,16 +70,11 @@ namespace CodeLab.Forms
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            clbLanguages.Items.Clear();
-            var items = Classes.Database.DbFactory.CodePieceCrud.GetDistinctLanguages();
-            if (items.Length > 0)
-            {
-                clbLanguages.Visible = true;
-                clbLanguages.Items.AddRange(items);
-            }
+
+            clbLanguages.DataSource = (EnumHelper<Languages>.GetDisplayValues(new Languages()));
             if (Properties.Settings.Default.RememberMe == true)
             {
-                CurrentUser = await Classes.Database.DbFactory.UserCrud.GetOne(Properties.Settings.Default.UserId);
+                CurrentUser = await DbFactory.UserCrud.GetOne(Properties.Settings.Default.UserId);
                 LoggedIn("Welcome Back");
             }
         }

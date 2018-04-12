@@ -66,7 +66,6 @@
             this.clbLanguages.Name = "clbLanguages";
             this.clbLanguages.Size = new System.Drawing.Size(706, 19);
             this.clbLanguages.TabIndex = 5;
-            this.clbLanguages.Visible = false;
             // 
             // PbContribute
             // 
