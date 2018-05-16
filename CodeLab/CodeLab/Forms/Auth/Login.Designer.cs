@@ -45,7 +45,7 @@
             this.TbUserName.Multiline = true;
             this.TbUserName.Name = "TbUserName";
             this.TbUserName.Size = new System.Drawing.Size(228, 36);
-            this.TbUserName.TabIndex = 2;
+            this.TbUserName.TabIndex = 0;
             this.TbUserName.Text = "User Name";
             this.TbUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TbUserName.Enter += new System.EventHandler(this.TbUserName_Enter);
@@ -60,7 +60,7 @@
             this.MtbPassword.MinimumSize = new System.Drawing.Size(228, 36);
             this.MtbPassword.Name = "MtbPassword";
             this.MtbPassword.Size = new System.Drawing.Size(228, 36);
-            this.MtbPassword.TabIndex = 3;
+            this.MtbPassword.TabIndex = 1;
             this.MtbPassword.Text = "Password";
             this.MtbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbPassword.Enter += new System.EventHandler(this.MtbPassword_Enter);
@@ -89,7 +89,7 @@
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Padding = new System.Windows.Forms.Padding(3);
             this.LoginButton.Size = new System.Drawing.Size(228, 57);
-            this.LoginButton.TabIndex = 0;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_ClickAsync);
@@ -111,7 +111,7 @@
             this.CbRemember.Location = new System.Drawing.Point(64, 197);
             this.CbRemember.Name = "CbRemember";
             this.CbRemember.Size = new System.Drawing.Size(95, 17);
-            this.CbRemember.TabIndex = 6;
+            this.CbRemember.TabIndex = 2;
             this.CbRemember.Text = "Remember Me";
             this.CbRemember.UseVisualStyleBackColor = true;
             // 

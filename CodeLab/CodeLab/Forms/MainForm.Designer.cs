@@ -51,7 +51,7 @@
             this.TbSearch.Multiline = true;
             this.TbSearch.Name = "TbSearch";
             this.TbSearch.Size = new System.Drawing.Size(629, 80);
-            this.TbSearch.TabIndex = 2;
+            this.TbSearch.TabIndex = 0;
             this.TbSearch.Text = "Search here...";
             this.TbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TbSearch.Enter += new System.EventHandler(this.TbSearch_Enter);
@@ -65,11 +65,11 @@
             this.clbLanguages.MultiColumn = true;
             this.clbLanguages.Name = "clbLanguages";
             this.clbLanguages.Size = new System.Drawing.Size(706, 19);
-            this.clbLanguages.TabIndex = 5;
+            this.clbLanguages.TabIndex = 2;
             // 
             // PbContribute
             // 
-            this.PbContribute.Image = global::CodeLab.Properties.Resources.contribute;
+            this.PbContribute.Image = global::CodeLab.Properties.Resources.file__1_;
             this.PbContribute.Location = new System.Drawing.Point(926, 23);
             this.PbContribute.Name = "PbContribute";
             this.PbContribute.Size = new System.Drawing.Size(48, 48);
@@ -96,7 +96,8 @@
             // 
             this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSearch.BackgroundImage = global::CodeLab.Properties.Resources.Glass1;
+            this.BtnSearch.BackgroundImage = global::CodeLab.Properties.Resources.magnifier__1_;
+            this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Location = new System.Drawing.Point(782, 202);
             this.BtnSearch.MaximumSize = new System.Drawing.Size(80, 80);

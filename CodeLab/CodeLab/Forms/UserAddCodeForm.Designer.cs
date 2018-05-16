@@ -44,7 +44,7 @@
             this.ClbLanguages.Location = new System.Drawing.Point(23, 140);
             this.ClbLanguages.Name = "ClbLanguages";
             this.ClbLanguages.Size = new System.Drawing.Size(397, 49);
-            this.ClbLanguages.TabIndex = 4;
+            this.ClbLanguages.TabIndex = 1;
             // 
             // BtnAddCode
             // 
@@ -59,7 +59,7 @@
             this.BtnAddCode.Name = "BtnAddCode";
             this.BtnAddCode.Padding = new System.Windows.Forms.Padding(3);
             this.BtnAddCode.Size = new System.Drawing.Size(327, 30);
-            this.BtnAddCode.TabIndex = 1;
+            this.BtnAddCode.TabIndex = 5;
             this.BtnAddCode.Text = "Insert Code";
             this.BtnAddCode.UseVisualStyleBackColor = false;
             this.BtnAddCode.Click += new System.EventHandler(this.CbtnSend_ClickAsync);
@@ -70,7 +70,7 @@
             this.TxtCodeTitle.Location = new System.Drawing.Point(23, 112);
             this.TxtCodeTitle.Name = "TxtCodeTitle";
             this.TxtCodeTitle.Size = new System.Drawing.Size(397, 22);
-            this.TxtCodeTitle.TabIndex = 6;
+            this.TxtCodeTitle.TabIndex = 0;
             this.TxtCodeTitle.Text = "Code Title";
             // 
             // TxtCodeDescription
@@ -80,7 +80,7 @@
             this.TxtCodeDescription.Multiline = true;
             this.TxtCodeDescription.Name = "TxtCodeDescription";
             this.TxtCodeDescription.Size = new System.Drawing.Size(397, 156);
-            this.TxtCodeDescription.TabIndex = 7;
+            this.TxtCodeDescription.TabIndex = 2;
             this.TxtCodeDescription.Text = "Code Description";
             // 
             // TxtCodeTags
@@ -89,7 +89,7 @@
             this.TxtCodeTags.Location = new System.Drawing.Point(55, 403);
             this.TxtCodeTags.Name = "TxtCodeTags";
             this.TxtCodeTags.Size = new System.Drawing.Size(327, 22);
-            this.TxtCodeTags.TabIndex = 8;
+            this.TxtCodeTags.TabIndex = 4;
             this.TxtCodeTags.Text = "Tags";
             // 
             // BtnPicture
@@ -105,7 +105,7 @@
             this.BtnPicture.Name = "BtnPicture";
             this.BtnPicture.Padding = new System.Windows.Forms.Padding(3);
             this.BtnPicture.Size = new System.Drawing.Size(327, 30);
-            this.BtnPicture.TabIndex = 1;
+            this.BtnPicture.TabIndex = 3;
             this.BtnPicture.Text = "Add Picture";
             this.BtnPicture.UseVisualStyleBackColor = false;
             this.BtnPicture.Click += new System.EventHandler(this.BtnPicture_Click);

@@ -58,7 +58,7 @@
             // 
             this.TbName.Font = new System.Drawing.Font("Arial", 12F);
             this.TbName.Location = new System.Drawing.Point(140, 103);
-            this.TbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbName.Margin = new System.Windows.Forms.Padding(4);
             this.TbName.MaxLength = 25;
             this.TbName.Name = "TbName";
             this.TbName.Size = new System.Drawing.Size(148, 26);
@@ -72,18 +72,18 @@
             this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(50, 18);
-            this.label.TabIndex = 1;
+            this.label.TabIndex = 0;
             this.label.Text = "Name";
             // 
             // TbEmail
             // 
             this.TbEmail.Font = new System.Drawing.Font("Arial", 12F);
             this.TbEmail.Location = new System.Drawing.Point(140, 139);
-            this.TbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TbEmail.MaxLength = 25;
             this.TbEmail.Name = "TbEmail";
             this.TbEmail.Size = new System.Drawing.Size(148, 26);
-            this.TbEmail.TabIndex = 2;
+            this.TbEmail.TabIndex = 1;
             this.TbEmail.Leave += new System.EventHandler(this.TbEmail_Leave);
             // 
             // label1
@@ -93,7 +93,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 18);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 1;
             this.label1.Text = "E-Mail";
             // 
             // label2
@@ -103,18 +103,18 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 18);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Security Question";
             // 
             // TbSecurityAnswer
             // 
             this.TbSecurityAnswer.Font = new System.Drawing.Font("Arial", 12F);
             this.TbSecurityAnswer.Location = new System.Drawing.Point(140, 213);
-            this.TbSecurityAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbSecurityAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.TbSecurityAnswer.MaxLength = 15;
             this.TbSecurityAnswer.Name = "TbSecurityAnswer";
             this.TbSecurityAnswer.Size = new System.Drawing.Size(148, 26);
-            this.TbSecurityAnswer.TabIndex = 6;
+            this.TbSecurityAnswer.TabIndex = 3;
             this.TbSecurityAnswer.Leave += new System.EventHandler(this.TbSecurityAnswer_Leave);
             // 
             // label3
@@ -124,7 +124,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 18);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Security Answer";
             // 
             // groupBox1
@@ -139,11 +139,11 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TbUserName);
             this.groupBox1.Location = new System.Drawing.Point(10, 276);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(910, 179);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Options";
             // 
@@ -155,7 +155,7 @@
             this.LRePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRePassword.Name = "LRePassword";
             this.LRePassword.Size = new System.Drawing.Size(0, 18);
-            this.LRePassword.TabIndex = 15;
+            this.LRePassword.TabIndex = 8;
             // 
             // LPassword
             // 
@@ -165,7 +165,7 @@
             this.LPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LPassword.Name = "LPassword";
             this.LPassword.Size = new System.Drawing.Size(0, 18);
-            this.LPassword.TabIndex = 14;
+            this.LPassword.TabIndex = 5;
             // 
             // LUsername
             // 
@@ -175,7 +175,7 @@
             this.LUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LUsername.Name = "LUsername";
             this.LUsername.Size = new System.Drawing.Size(0, 18);
-            this.LUsername.TabIndex = 12;
+            this.LUsername.TabIndex = 2;
             // 
             // label6
             // 
@@ -184,18 +184,18 @@
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 18);
-            this.label6.TabIndex = 13;
+            this.label6.TabIndex = 6;
             this.label6.Text = "Re-Password";
             // 
             // TbRePassword
             // 
             this.TbRePassword.Font = new System.Drawing.Font("Arial", 12F);
             this.TbRePassword.Location = new System.Drawing.Point(147, 108);
-            this.TbRePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbRePassword.Margin = new System.Windows.Forms.Padding(4);
             this.TbRePassword.MaxLength = 20;
             this.TbRePassword.Name = "TbRePassword";
             this.TbRePassword.Size = new System.Drawing.Size(148, 26);
-            this.TbRePassword.TabIndex = 12;
+            this.TbRePassword.TabIndex = 7;
             this.TbRePassword.UseSystemPasswordChar = true;
             this.TbRePassword.Leave += new System.EventHandler(this.TbRePassword_Leave);
             // 
@@ -206,18 +206,18 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 18);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 3;
             this.label5.Text = "Password";
             // 
             // TbPassword
             // 
             this.TbPassword.Font = new System.Drawing.Font("Arial", 12F);
             this.TbPassword.Location = new System.Drawing.Point(147, 72);
-            this.TbPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TbPassword.MaxLength = 20;
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.Size = new System.Drawing.Size(148, 26);
-            this.TbPassword.TabIndex = 10;
+            this.TbPassword.TabIndex = 4;
             this.TbPassword.UseSystemPasswordChar = true;
             this.TbPassword.Leave += new System.EventHandler(this.TbPassword_Leave);
             // 
@@ -228,18 +228,18 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 18);
-            this.label4.TabIndex = 9;
+            this.label4.TabIndex = 0;
             this.label4.Text = "User Name";
             // 
             // TbUserName
             // 
             this.TbUserName.Font = new System.Drawing.Font("Arial", 12F);
             this.TbUserName.Location = new System.Drawing.Point(147, 36);
-            this.TbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.TbUserName.MaxLength = 15;
             this.TbUserName.Name = "TbUserName";
             this.TbUserName.Size = new System.Drawing.Size(148, 26);
-            this.TbUserName.TabIndex = 9;
+            this.TbUserName.TabIndex = 1;
             this.TbUserName.Leave += new System.EventHandler(this.TbUserName_Leave);
             // 
             // LName
@@ -250,7 +250,7 @@
             this.LName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LName.Name = "LName";
             this.LName.Size = new System.Drawing.Size(0, 18);
-            this.LName.TabIndex = 9;
+            this.LName.TabIndex = 0;
             // 
             // LEmail
             // 
@@ -260,7 +260,7 @@
             this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
             this.LEmail.Size = new System.Drawing.Size(0, 18);
-            this.LEmail.TabIndex = 10;
+            this.LEmail.TabIndex = 1;
             // 
             // LSecurityAnswer
             // 
@@ -270,7 +270,7 @@
             this.LSecurityAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LSecurityAnswer.Name = "LSecurityAnswer";
             this.LSecurityAnswer.Size = new System.Drawing.Size(0, 18);
-            this.LSecurityAnswer.TabIndex = 11;
+            this.LSecurityAnswer.TabIndex = 3;
             // 
             // CbSecurityQuestion
             // 
@@ -286,10 +286,10 @@
             "Your mother\'s maiden name",
             "Your lucky number"});
             this.CbSecurityQuestion.Location = new System.Drawing.Point(140, 173);
-            this.CbSecurityQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CbSecurityQuestion.Margin = new System.Windows.Forms.Padding(4);
             this.CbSecurityQuestion.Name = "CbSecurityQuestion";
             this.CbSecurityQuestion.Size = new System.Drawing.Size(322, 25);
-            this.CbSecurityQuestion.TabIndex = 13;
+            this.CbSecurityQuestion.TabIndex = 2;
             this.CbSecurityQuestion.UseSelectable = true;
             // 
             // BtnApply
@@ -303,9 +303,9 @@
             this.BtnApply.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.BtnApply.MinimumSize = new System.Drawing.Size(150, 42);
             this.BtnApply.Name = "BtnApply";
-            this.BtnApply.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnApply.Padding = new System.Windows.Forms.Padding(4);
             this.BtnApply.Size = new System.Drawing.Size(150, 48);
-            this.BtnApply.TabIndex = 12;
+            this.BtnApply.TabIndex = 5;
             this.BtnApply.Text = "Register";
             this.BtnApply.UseVisualStyleBackColor = false;
             this.BtnApply.Click += new System.EventHandler(this.BtnApply_Click);
@@ -330,7 +330,7 @@
             this.Controls.Add(this.TbName);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Register";
             this.Padding = new System.Windows.Forms.Padding(30, 83, 30, 28);

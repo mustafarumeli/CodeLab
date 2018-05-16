@@ -54,7 +54,7 @@
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Username or E-Mail";
             // 
             // BtnAccept
@@ -70,7 +70,7 @@
             this.BtnAccept.Name = "BtnAccept";
             this.BtnAccept.Padding = new System.Windows.Forms.Padding(3);
             this.BtnAccept.Size = new System.Drawing.Size(254, 30);
-            this.BtnAccept.TabIndex = 2;
+            this.BtnAccept.TabIndex = 1;
             this.BtnAccept.Text = "Continue";
             this.BtnAccept.UseVisualStyleBackColor = false;
             this.BtnAccept.Click += new System.EventHandler(this.BtnAccept_ClickAsync);
@@ -83,7 +83,7 @@
             this.PUser.Location = new System.Drawing.Point(21, 63);
             this.PUser.Name = "PUser";
             this.PUser.Size = new System.Drawing.Size(256, 184);
-            this.PUser.TabIndex = 3;
+            this.PUser.TabIndex = 0;
             // 
             // GBAuthentication
             // 
@@ -94,7 +94,7 @@
             this.GBAuthentication.Location = new System.Drawing.Point(6, 52);
             this.GBAuthentication.Name = "GBAuthentication";
             this.GBAuthentication.Size = new System.Drawing.Size(248, 129);
-            this.GBAuthentication.TabIndex = 6;
+            this.GBAuthentication.TabIndex = 1;
             this.GBAuthentication.TabStop = false;
             this.GBAuthentication.Text = "Authenication";
             this.GBAuthentication.Visible = false;
@@ -105,7 +105,7 @@
             this.label3.Location = new System.Drawing.Point(6, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Your Answer";
             // 
             // TBQuestion
@@ -114,7 +114,7 @@
             this.TBQuestion.Location = new System.Drawing.Point(9, 39);
             this.TBQuestion.Name = "TBQuestion";
             this.TBQuestion.Size = new System.Drawing.Size(235, 20);
-            this.TBQuestion.TabIndex = 2;
+            this.TBQuestion.TabIndex = 0;
             // 
             // label2
             // 
@@ -122,7 +122,7 @@
             this.label2.Location = new System.Drawing.Point(6, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 13);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Your Security Quesion";
             // 
             // TBAnswer
@@ -130,7 +130,7 @@
             this.TBAnswer.Location = new System.Drawing.Point(9, 87);
             this.TBAnswer.Name = "TBAnswer";
             this.TBAnswer.Size = new System.Drawing.Size(235, 20);
-            this.TBAnswer.TabIndex = 3;
+            this.TBAnswer.TabIndex = 2;
             // 
             // ForgotPassword
             // 

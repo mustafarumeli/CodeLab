@@ -75,7 +75,7 @@
             this.label1.Location = new System.Drawing.Point(8, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 25);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Your Code";
             // 
             // PanelBefore
@@ -86,7 +86,7 @@
             this.PanelBefore.Location = new System.Drawing.Point(10, 63);
             this.PanelBefore.Name = "PanelBefore";
             this.PanelBefore.Size = new System.Drawing.Size(331, 100);
-            this.PanelBefore.TabIndex = 3;
+            this.PanelBefore.TabIndex = 0;
             // 
             // TextBoxNewPassword
             // 
@@ -94,7 +94,7 @@
             this.TextBoxNewPassword.Location = new System.Drawing.Point(143, 20);
             this.TextBoxNewPassword.Name = "TextBoxNewPassword";
             this.TextBoxNewPassword.Size = new System.Drawing.Size(189, 32);
-            this.TextBoxNewPassword.TabIndex = 3;
+            this.TextBoxNewPassword.TabIndex = 0;
             // 
             // TextBoxPasswordAgain
             // 
@@ -102,7 +102,7 @@
             this.TextBoxPasswordAgain.Location = new System.Drawing.Point(143, 69);
             this.TextBoxPasswordAgain.Name = "TextBoxPasswordAgain";
             this.TextBoxPasswordAgain.Size = new System.Drawing.Size(189, 32);
-            this.TextBoxPasswordAgain.TabIndex = 4;
+            this.TextBoxPasswordAgain.TabIndex = 1;
             // 
             // label2
             // 
@@ -111,7 +111,7 @@
             this.label2.Location = new System.Drawing.Point(29, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Password";
             // 
             // label3
@@ -121,7 +121,7 @@
             this.label3.Location = new System.Drawing.Point(-6, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 25);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 1;
             this.label3.Text = "Re-Password";
             // 
             // ButtonSend
@@ -137,7 +137,7 @@
             this.ButtonSend.Name = "ButtonSend";
             this.ButtonSend.Padding = new System.Windows.Forms.Padding(3);
             this.ButtonSend.Size = new System.Drawing.Size(100, 30);
-            this.ButtonSend.TabIndex = 6;
+            this.ButtonSend.TabIndex = 2;
             this.ButtonSend.Text = "Send";
             this.ButtonSend.UseVisualStyleBackColor = false;
             this.ButtonSend.Click += new System.EventHandler(this.ButtonSend_Click);
@@ -152,13 +152,13 @@
             this.PanelPasswordSend.Location = new System.Drawing.Point(2, 179);
             this.PanelPasswordSend.Name = "PanelPasswordSend";
             this.PanelPasswordSend.Size = new System.Drawing.Size(339, 148);
-            this.PanelPasswordSend.TabIndex = 7;
+            this.PanelPasswordSend.TabIndex = 1;
             // 
             // PasswordRecovery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 201);
+            this.ClientSize = new System.Drawing.Size(350, 170);
             this.Controls.Add(this.PanelPasswordSend);
             this.Controls.Add(this.PanelBefore);
             this.Name = "PasswordRecovery";

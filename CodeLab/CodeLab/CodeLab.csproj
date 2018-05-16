@@ -302,15 +302,21 @@
     <None Include="Resources\contribute.png" />
     <None Include="Resources\copy32.png" />
     <None Include="Resources\convert to original32.png" />
+    <None Include="Resources\chat.png" />
     <Content Include="Resources\DownArrow.png" />
     <None Include="Resources\UpArrow1.png" />
     <None Include="Resources\DownArrow1.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\file %281%29.png" />
     <Content Include="Resources\lgn64.png" />
     <None Include="Resources\lgn641.png" />
     <None Include="Resources\lgout64.png" />
     <None Include="Resources\makecomment32.png" />
     <None Include="Resources\seecomments32.png" />
     <None Include="Resources\run32.png" />
+    <None Include="Resources\magnifier %281%29.png" />
+    <None Include="Resources\undo-arrow-of-circular-shape-with-half-broken-line.png" />
+    <None Include="Resources\play-button.png" />
     <Content Include="Resources\UpArrow.png" />
     <EmbeddedResource Include="Custom Controls\CommentControl.resx">
       <DependentUpon>CommentControl.cs</DependentUpon>
