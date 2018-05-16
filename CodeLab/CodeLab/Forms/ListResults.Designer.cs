@@ -29,25 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListResults));
-            this.resultContainer1 = new CodeLab.Custom_Controls.ResultContainer();
+            this.resultContainer1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // resultContainer1
             // 
-            this.resultContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.resultContainer1.AutoScroll = true;
-            this.resultContainer1.BackColor = System.Drawing.Color.White;
-            this.resultContainer1.Location = new System.Drawing.Point(20, 63);
+            this.resultContainer1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.resultContainer1.Location = new System.Drawing.Point(15, 64);
             this.resultContainer1.Name = "resultContainer1";
-            this.resultContainer1.Size = new System.Drawing.Size(523, 800);
-            this.resultContainer1.TabIndex = 1;
+            this.resultContainer1.Size = new System.Drawing.Size(525, 579);
+            this.resultContainer1.TabIndex = 0;
             // 
             // ListResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(563, 726);
+            this.ClientSize = new System.Drawing.Size(562, 640);
             this.Controls.Add(this.resultContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -63,6 +62,7 @@
         }
 
         #endregion
-        private Custom_Controls.ResultContainer resultContainer1;
+
+        private System.Windows.Forms.FlowLayoutPanel resultContainer1;
     }
 }

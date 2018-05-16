@@ -625,3 +625,4 @@ C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CoreCo
 C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CopyComplete
 C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.exe
 C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.pdb
+C:\Users\zuzu\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.PasswordRecovery.resources

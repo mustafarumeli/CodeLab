@@ -56,64 +56,74 @@
             // 
             // TbName
             // 
-            this.TbName.Location = new System.Drawing.Point(105, 79);
+            this.TbName.Font = new System.Drawing.Font("Arial", 12F);
+            this.TbName.Location = new System.Drawing.Point(140, 103);
+            this.TbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbName.MaxLength = 25;
             this.TbName.Name = "TbName";
-            this.TbName.Size = new System.Drawing.Size(100, 20);
+            this.TbName.Size = new System.Drawing.Size(148, 26);
             this.TbName.TabIndex = 0;
             this.TbName.Leave += new System.EventHandler(this.TbName_Leave);
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(64, 82);
+            this.label.Location = new System.Drawing.Point(78, 108);
+            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(35, 13);
+            this.label.Size = new System.Drawing.Size(50, 18);
             this.label.TabIndex = 1;
             this.label.Text = "Name";
             // 
             // TbEmail
             // 
-            this.TbEmail.Location = new System.Drawing.Point(105, 105);
+            this.TbEmail.Font = new System.Drawing.Font("Arial", 12F);
+            this.TbEmail.Location = new System.Drawing.Point(140, 139);
+            this.TbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbEmail.MaxLength = 25;
             this.TbEmail.Name = "TbEmail";
-            this.TbEmail.Size = new System.Drawing.Size(100, 20);
+            this.TbEmail.Size = new System.Drawing.Size(148, 26);
             this.TbEmail.TabIndex = 2;
             this.TbEmail.Leave += new System.EventHandler(this.TbEmail_Leave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 108);
+            this.label1.Location = new System.Drawing.Point(76, 144);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Size = new System.Drawing.Size(53, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "E-Mail";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 134);
+            this.label2.Location = new System.Drawing.Point(-4, 180);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.Size = new System.Drawing.Size(130, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Security Question";
             // 
             // TbSecurityAnswer
             // 
-            this.TbSecurityAnswer.Location = new System.Drawing.Point(105, 158);
+            this.TbSecurityAnswer.Font = new System.Drawing.Font("Arial", 12F);
+            this.TbSecurityAnswer.Location = new System.Drawing.Point(140, 213);
+            this.TbSecurityAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbSecurityAnswer.MaxLength = 15;
             this.TbSecurityAnswer.Name = "TbSecurityAnswer";
-            this.TbSecurityAnswer.Size = new System.Drawing.Size(100, 20);
+            this.TbSecurityAnswer.Size = new System.Drawing.Size(148, 26);
             this.TbSecurityAnswer.TabIndex = 6;
             this.TbSecurityAnswer.Leave += new System.EventHandler(this.TbSecurityAnswer_Leave);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 161);
+            this.label3.Location = new System.Drawing.Point(6, 217);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.Size = new System.Drawing.Size(119, 18);
             this.label3.TabIndex = 7;
             this.label3.Text = "Security Answer";
             // 
@@ -128,9 +138,11 @@
             this.groupBox1.Controls.Add(this.TbPassword);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TbUserName);
-            this.groupBox1.Location = new System.Drawing.Point(7, 199);
+            this.groupBox1.Location = new System.Drawing.Point(10, 276);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 129);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(910, 179);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Options";
@@ -139,44 +151,50 @@
             // 
             this.LRePassword.AutoSize = true;
             this.LRePassword.ForeColor = System.Drawing.Color.Red;
-            this.LRePassword.Location = new System.Drawing.Point(204, 74);
+            this.LRePassword.Location = new System.Drawing.Point(306, 116);
+            this.LRePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRePassword.Name = "LRePassword";
-            this.LRePassword.Size = new System.Drawing.Size(0, 13);
+            this.LRePassword.Size = new System.Drawing.Size(0, 18);
             this.LRePassword.TabIndex = 15;
             // 
             // LPassword
             // 
             this.LPassword.AutoSize = true;
             this.LPassword.ForeColor = System.Drawing.Color.Red;
-            this.LPassword.Location = new System.Drawing.Point(204, 48);
+            this.LPassword.Location = new System.Drawing.Point(306, 80);
+            this.LPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LPassword.Name = "LPassword";
-            this.LPassword.Size = new System.Drawing.Size(0, 13);
+            this.LPassword.Size = new System.Drawing.Size(0, 18);
             this.LPassword.TabIndex = 14;
             // 
             // LUsername
             // 
             this.LUsername.AutoSize = true;
             this.LUsername.ForeColor = System.Drawing.Color.Red;
-            this.LUsername.Location = new System.Drawing.Point(204, 22);
+            this.LUsername.Location = new System.Drawing.Point(306, 44);
+            this.LUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LUsername.Name = "LUsername";
-            this.LUsername.Size = new System.Drawing.Size(0, 13);
+            this.LUsername.Size = new System.Drawing.Size(0, 18);
             this.LUsername.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 81);
+            this.label6.Location = new System.Drawing.Point(33, 112);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.Size = new System.Drawing.Size(103, 18);
             this.label6.TabIndex = 13;
             this.label6.Text = "Re-Password";
             // 
             // TbRePassword
             // 
-            this.TbRePassword.Location = new System.Drawing.Point(98, 78);
+            this.TbRePassword.Font = new System.Drawing.Font("Arial", 12F);
+            this.TbRePassword.Location = new System.Drawing.Point(147, 108);
+            this.TbRePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbRePassword.MaxLength = 20;
             this.TbRePassword.Name = "TbRePassword";
-            this.TbRePassword.Size = new System.Drawing.Size(100, 20);
+            this.TbRePassword.Size = new System.Drawing.Size(148, 26);
             this.TbRePassword.TabIndex = 12;
             this.TbRePassword.UseSystemPasswordChar = true;
             this.TbRePassword.Leave += new System.EventHandler(this.TbRePassword_Leave);
@@ -184,18 +202,21 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 55);
+            this.label5.Location = new System.Drawing.Point(58, 76);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(78, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "Password";
             // 
             // TbPassword
             // 
-            this.TbPassword.Location = new System.Drawing.Point(98, 52);
+            this.TbPassword.Font = new System.Drawing.Font("Arial", 12F);
+            this.TbPassword.Location = new System.Drawing.Point(147, 72);
+            this.TbPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbPassword.MaxLength = 20;
             this.TbPassword.Name = "TbPassword";
-            this.TbPassword.Size = new System.Drawing.Size(100, 20);
+            this.TbPassword.Size = new System.Drawing.Size(148, 26);
             this.TbPassword.TabIndex = 10;
             this.TbPassword.UseSystemPasswordChar = true;
             this.TbPassword.Leave += new System.EventHandler(this.TbPassword_Leave);
@@ -203,18 +224,21 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 29);
+            this.label4.Location = new System.Drawing.Point(48, 40);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(87, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = "User Name";
             // 
             // TbUserName
             // 
-            this.TbUserName.Location = new System.Drawing.Point(98, 26);
+            this.TbUserName.Font = new System.Drawing.Font("Arial", 12F);
+            this.TbUserName.Location = new System.Drawing.Point(147, 36);
+            this.TbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbUserName.MaxLength = 15;
             this.TbUserName.Name = "TbUserName";
-            this.TbUserName.Size = new System.Drawing.Size(100, 20);
+            this.TbUserName.Size = new System.Drawing.Size(148, 26);
             this.TbUserName.TabIndex = 9;
             this.TbUserName.Leave += new System.EventHandler(this.TbUserName_Leave);
             // 
@@ -222,27 +246,30 @@
             // 
             this.LName.AutoSize = true;
             this.LName.ForeColor = System.Drawing.Color.Red;
-            this.LName.Location = new System.Drawing.Point(211, 82);
+            this.LName.Location = new System.Drawing.Point(298, 108);
+            this.LName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LName.Name = "LName";
-            this.LName.Size = new System.Drawing.Size(0, 13);
+            this.LName.Size = new System.Drawing.Size(0, 18);
             this.LName.TabIndex = 9;
             // 
             // LEmail
             // 
             this.LEmail.AutoSize = true;
             this.LEmail.ForeColor = System.Drawing.Color.Red;
-            this.LEmail.Location = new System.Drawing.Point(211, 108);
+            this.LEmail.Location = new System.Drawing.Point(298, 144);
+            this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
-            this.LEmail.Size = new System.Drawing.Size(0, 13);
+            this.LEmail.Size = new System.Drawing.Size(0, 18);
             this.LEmail.TabIndex = 10;
             // 
             // LSecurityAnswer
             // 
             this.LSecurityAnswer.AutoSize = true;
             this.LSecurityAnswer.ForeColor = System.Drawing.Color.Red;
-            this.LSecurityAnswer.Location = new System.Drawing.Point(211, 161);
+            this.LSecurityAnswer.Location = new System.Drawing.Point(298, 217);
+            this.LSecurityAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LSecurityAnswer.Name = "LSecurityAnswer";
-            this.LSecurityAnswer.Size = new System.Drawing.Size(0, 13);
+            this.LSecurityAnswer.Size = new System.Drawing.Size(0, 18);
             this.LSecurityAnswer.TabIndex = 11;
             // 
             // CbSecurityQuestion
@@ -258,9 +285,10 @@
             "Your favorite colour",
             "Your mother\'s maiden name",
             "Your lucky number"});
-            this.CbSecurityQuestion.Location = new System.Drawing.Point(105, 129);
+            this.CbSecurityQuestion.Location = new System.Drawing.Point(140, 173);
+            this.CbSecurityQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbSecurityQuestion.Name = "CbSecurityQuestion";
-            this.CbSecurityQuestion.Size = new System.Drawing.Size(216, 25);
+            this.CbSecurityQuestion.Size = new System.Drawing.Size(322, 25);
             this.CbSecurityQuestion.TabIndex = 13;
             this.CbSecurityQuestion.UseSelectable = true;
             // 
@@ -271,12 +299,12 @@
             this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnApply.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnApply.ForeColor = System.Drawing.Color.White;
-            this.BtnApply.Location = new System.Drawing.Point(100, 357);
-            this.BtnApply.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.BtnApply.MinimumSize = new System.Drawing.Size(100, 30);
+            this.BtnApply.Location = new System.Drawing.Point(319, 482);
+            this.BtnApply.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.BtnApply.MinimumSize = new System.Drawing.Size(150, 42);
             this.BtnApply.Name = "BtnApply";
-            this.BtnApply.Padding = new System.Windows.Forms.Padding(3);
-            this.BtnApply.Size = new System.Drawing.Size(100, 35);
+            this.BtnApply.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnApply.Size = new System.Drawing.Size(150, 48);
             this.BtnApply.TabIndex = 12;
             this.BtnApply.Text = "Register";
             this.BtnApply.UseVisualStyleBackColor = false;
@@ -284,9 +312,9 @@
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 426);
+            this.ClientSize = new System.Drawing.Size(938, 590);
             this.Controls.Add(this.CbSecurityQuestion);
             this.Controls.Add(this.BtnApply);
             this.Controls.Add(this.LSecurityAnswer);
@@ -300,9 +328,12 @@
             this.Controls.Add(this.TbEmail);
             this.Controls.Add(this.label);
             this.Controls.Add(this.TbName);
+            this.Font = new System.Drawing.Font("Arial", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Register";
+            this.Padding = new System.Windows.Forms.Padding(30, 83, 30, 28);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Register";
             this.groupBox1.ResumeLayout(false);

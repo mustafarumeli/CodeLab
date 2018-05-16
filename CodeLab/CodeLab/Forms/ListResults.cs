@@ -92,7 +92,7 @@ namespace CodeLab.Forms
             foreach (var result in results)
             {
                 var user = await new UserCrud().GetOne(result.Contributer);
-                resultContainer1.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToShortDateString(), result.Scores, result.Language, user.Name, result.Votes.TotalPoint));
+                resultContainer1.Controls.Add(new ResultPreviewPanel(result._id, result.Title, result.Date.ToShortDateString(), result.Scores, result.Language, user.Name, result.Votes.TotalPoint));
             }
             this.Text = _searchText == "" ? "Showing All Results" : "Results for : " + _searchText;
             if (hasResults == false)

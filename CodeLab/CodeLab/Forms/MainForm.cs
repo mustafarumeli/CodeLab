@@ -44,9 +44,10 @@ namespace CodeLab.Forms
             PbLoginRegister.Click += PbLoginRegister_Logout;
 
         }
-        private void PbLoginRegister_Logout(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to log out? ", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        private void  PbLoginRegister_Logout(object sender, EventArgs e)
+        {var res  = MessageBox.Show("Are you sure you want to log out? ", "Logout", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
                 CurrentUser = null;
                 PbContribute.Visible = false;

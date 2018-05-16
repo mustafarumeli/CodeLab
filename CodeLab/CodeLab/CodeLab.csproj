@@ -242,6 +242,12 @@
     <Compile Include="Forms\Auth\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Auth\PasswordRecovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\PasswordRecovery.Designer.cs">
+      <DependentUpon>PasswordRecovery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Auth\Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\PasswordRecovery.resx">
+      <DependentUpon>PasswordRecovery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
