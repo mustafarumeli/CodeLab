@@ -260,6 +260,18 @@
     <Compile Include="Forms\Code.Designer.cs">
       <DependentUpon>Code.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditCode\EditCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCode\EditCode.Designer.cs">
+      <DependentUpon>EditCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCode\UserEditCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCode\UserEditCodeForm.Designer.cs">
+      <DependentUpon>UserEditCodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InsertCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +353,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Code.resx">
       <DependentUpon>Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCode\EditCode.resx">
+      <DependentUpon>EditCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCode\UserEditCodeForm.resx">
+      <DependentUpon>UserEditCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InsertCode.resx">
       <DependentUpon>InsertCode.cs</DependentUpon>

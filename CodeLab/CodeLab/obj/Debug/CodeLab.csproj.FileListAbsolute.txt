@@ -626,3 +626,8 @@ C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CopyCo
 C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.exe
 C:\Users\HP\Source\Repos\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.pdb
 C:\Users\zuzu\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.PasswordRecovery.resources
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.Auth.PasswordRecovery.resources
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.UserEditCodeForm.resources
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CoreCompileInputs.cache
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CopyComplete
+D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.EditCode.resources

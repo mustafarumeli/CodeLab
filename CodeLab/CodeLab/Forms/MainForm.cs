@@ -17,6 +17,9 @@ namespace CodeLab.Forms
         {
             InitializeComponent();
             DbFactory.Database.RunCommand((Command<BsonDocument>)"{ping:1}");
+
+
+
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
