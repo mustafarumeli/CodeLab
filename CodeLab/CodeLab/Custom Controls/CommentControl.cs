@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeLab.Classes.Database;
 using CodeLab.Classes.Database.Entities;
 
 namespace CodeLab.Custom_Controls
@@ -18,18 +19,21 @@ namespace CodeLab.Custom_Controls
 
         public Comment Comment => _currentComment;
 
-        // CodePiece _currentCodePiece = Code.CurrentCodePiece;
-        public CommentControl(Comment comment,Action<object,EventArgs> clickEvent)
+        public async void SetUserName(string _id)
+        {
+            LbUserName.Text =
+                (await DbFactory.UserCrud.GetOne(_id)).UserName;
+        }
+        public CommentControl(Comment comment, Action<object, EventArgs> clickEvent)
         {
             InitializeComponent();
             _currentComment = comment;
             this._clickEvent = clickEvent;
-            LbUserName.Text = Forms.MainForm.CurrentUser.UserName;
+            SetUserName(comment.UserId);
             LblCommentText.Text = comment.Text;
             LblCommentDate.Text = comment.CreationDate.ToString();
             LbTotalPoint.Text = comment.Vote?.TotalPoint.ToString();
         }
-
         private async void PbUpVote_Click(object sender, EventArgs e)
         {
             if (PbDownVote.Enabled == false)
@@ -43,12 +47,11 @@ namespace CodeLab.Custom_Controls
             {
                 CodePieceOrCommentId = _currentComment._id,
                 VotePlace = VotePlace.Comment,
-                VoteType= VoteType.UpVote
+                VoteType = VoteType.UpVote
             };
             await UpdateDatabaseAndPicture(sender, vt);
             PbDownVote.Enabled = true;
         }
-
         private async void PbDownVote_Click(object sender, EventArgs e)
         {
             if (PbUpVote.Enabled == false)
@@ -67,7 +70,6 @@ namespace CodeLab.Custom_Controls
             await UpdateDatabaseAndPicture(sender, vt);
             PbUpVote.Enabled = true;
         }
-
         private async Task UpdateDatabaseAndPicture(object sender, VoteTrack vt)
         {
             Forms.MainForm.CurrentUser.VoteTracks.Add(vt);
@@ -76,7 +78,6 @@ namespace CodeLab.Custom_Controls
             var pictureBox = sender as PictureBox;
             if (pictureBox != null) pictureBox.Enabled = false;
         }
-
         private void ButtonAnswer_Click(object sender, EventArgs e)
         {
             _clickEvent?.Invoke(this, e);

@@ -1,13 +1,9 @@
-﻿using System;
+﻿using CodeLab.Classes.Database.Entities;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CodeLab.Classes.Database.Entities;
 
 namespace CodeLab.Custom_Controls
 {
@@ -17,12 +13,13 @@ namespace CodeLab.Custom_Controls
         private int _lastPosition = 0;
         private const int POSITION_BUFFER = 20;
         private CommentControl _prevCommentControl;
+        public const int RANK_BUFFER = 25;
+        public int PnlNameCounter = 1;
         public CommentContainer()
         {
             InitializeComponent();
             CommentAnswerClick += CommentContainer_CommentAnswerClick;
         }
-
         public void CommentContainer_CommentAnswerClick(object sender, EventArgs arg2)
         {
             if (_prevCommentControl != null)
@@ -45,8 +42,6 @@ namespace CodeLab.Custom_Controls
         {
             _lastPosition += POSITION_BUFFER;
         }
-        public const int RANK_BUFFER = 25;
-        public int PnlNameCounter = 1;
         public void Init()
         {
             this.Controls.Clear();
@@ -86,6 +81,8 @@ namespace CodeLab.Custom_Controls
                 }
                 this.Controls.Add(flw);
             }
+
+
             void PlaceComment(Comment comment)
             {
                 var cc = new CommentControl(comment, CommentAnswerClick);

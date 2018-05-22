@@ -195,7 +195,6 @@
     <Compile Include="Classes\EnumAttribute.cs" />
     <Compile Include="Classes\EnumHelper.cs" />
     <Compile Include="Classes\Rate.cs" />
-    <Compile Include="Classes\ServerConnection.cs" />
     <Compile Include="Classes\Threader.cs" />
     <Compile Include="Custom Controls\CommentContainer.cs">
       <SubType>Component</SubType>
@@ -320,6 +319,7 @@
     <None Include="Resources\DownArrow1.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\file %281%29.png" />
+    <None Include="Resources\edit.png" />
     <Content Include="Resources\lgn64.png" />
     <None Include="Resources\lgn641.png" />
     <None Include="Resources\lgout64.png" />

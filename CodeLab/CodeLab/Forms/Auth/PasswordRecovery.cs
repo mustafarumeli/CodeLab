@@ -44,7 +44,6 @@ namespace CodeLab.Forms.Auth
                     PanelBefore.Visible = false;
                     PanelPasswordSend.Location = PanelBefore.Location;
                     PanelBefore.Visible = true;
-                    //todo enter new password
                 }
                 else
                 {

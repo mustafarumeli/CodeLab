@@ -23,8 +23,8 @@ namespace CodeLab.Classes.Database.Entities
     {
         public Debug()
         {
-            SuccessResult = "test";
-            ErrorResult = "test";
+            SuccessResult = "";
+            ErrorResult = "";
         }
         public string Code { get; set; }
         public Languages Language { get; set; }

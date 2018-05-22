@@ -38,7 +38,6 @@ namespace CodeLab.Forms
 
                 foreach (var result in results)
                 {
-
                     if (IsAViableResult(result) == true)
                     {
                         if (hasResults == false)

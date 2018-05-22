@@ -35,12 +35,12 @@ namespace CodeLab.Forms.Auth
                 {
                     if (_answer == TBAnswer.Text)
                     {
-                        SmtpClient client = new SmtpClient("smtpout.secureserver.net",465);
+                        SmtpClient client = new SmtpClient("smtp-mail.outlook.com", 587);
                         client.UseDefaultCredentials = false;
                         client.EnableSsl = true;
-                        client.Credentials = new NetworkCredential("info@ohmsoftware.org","741895623ohm");
+                        client.Credentials = new NetworkCredential("helpgraduationproject@outlook.com", "tuba1234");
                         
-                        MailMessage mm = new MailMessage("info@ohmsoftware.org",user.Email);
+                        MailMessage mm = new MailMessage("helpgraduationproject@outlook.com", user.Email);
                         mm.Subject = "Your Password Recovery Code";
                         var replace = System.IO.Path.GetRandomFileName().Replace(".","");
                         mm.Body = "Your code is below. Enter the code before the time runs out. <br/><h3>"+replace+ "</h3>";

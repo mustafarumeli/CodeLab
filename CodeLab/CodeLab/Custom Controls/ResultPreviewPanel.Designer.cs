@@ -34,12 +34,10 @@
             this.LblHeader = new System.Windows.Forms.Label();
             this.LblLang = new System.Windows.Forms.Label();
             this.LblAuthor = new System.Windows.Forms.Label();
-            this.PbStars = new System.Windows.Forms.PictureBox();
             this.IlStartImages = new System.Windows.Forms.ImageList(this.components);
             this.LblVote = new System.Windows.Forms.Label();
             this.BtnGotoCode = new CodeLab.Custom_Controls.CustomButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.PbStars)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,15 +84,6 @@
             this.LblAuthor.Size = new System.Drawing.Size(50, 16);
             this.LblAuthor.TabIndex = 2;
             this.LblAuthor.Text = "Author";
-            // 
-            // PbStars
-            // 
-            this.PbStars.Location = new System.Drawing.Point(27, 98);
-            this.PbStars.Name = "PbStars";
-            this.PbStars.Size = new System.Drawing.Size(187, 32);
-            this.PbStars.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PbStars.TabIndex = 4;
-            this.PbStars.TabStop = false;
             // 
             // IlStartImages
             // 
@@ -150,13 +139,11 @@
             this.Controls.Add(this.BtnGotoCode);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.LblLang);
-            this.Controls.Add(this.PbStars);
             this.Controls.Add(this.LblHeader);
             this.Controls.Add(this.LblVote);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ResultPreviewPanel";
             this.Size = new System.Drawing.Size(523, 171);
-            ((System.ComponentModel.ISupportInitialize)(this.PbStars)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -170,7 +157,6 @@
         private System.Windows.Forms.Label LblHeader;
         private System.Windows.Forms.Label LblLang;
         private System.Windows.Forms.Label LblAuthor;
-        private System.Windows.Forms.PictureBox PbStars;
         private System.Windows.Forms.ImageList IlStartImages;
         private CustomButton BtnGotoCode;
         private System.Windows.Forms.Label LblVote;

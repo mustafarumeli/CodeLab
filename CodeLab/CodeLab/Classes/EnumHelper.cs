@@ -9,7 +9,6 @@ namespace CodeLab.Classes
 {
     public static class EnumHelper<T>
     {
-
         public static IList<string> GetNames(Enum value)
         {
             return (value as Enum).GetType().GetFields(BindingFlags.Static | BindingFlags.Public).Select(fi => fi.Name).ToList();
@@ -25,12 +24,10 @@ namespace CodeLab.Classes
         }
         public static T GetValueFromAttribute(string displayName)
         {
-            var type = typeof(T);
-            if (!type.IsEnum) throw new InvalidOperationException();
-            foreach (var field in type.GetFields())
+            if (!typeof(T).IsEnum) throw new InvalidOperationException();
+            foreach (var field in typeof(T).GetFields())
             {
-                var attribute = Attribute.GetCustomAttribute(field,
-                    typeof(EnumAttributes)) as EnumAttributes;
+                var attribute = Attribute.GetCustomAttribute(field,typeof(EnumAttributes)) as EnumAttributes;
                 if (attribute != null)
                 {
                     if (attribute.DisplayName == displayName)

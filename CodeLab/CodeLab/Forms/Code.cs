@@ -17,7 +17,10 @@ namespace CodeLab.Forms
         {
             InitializeComponent();
             _id = id;
-         
+            if (MainForm.CurrentUser == null)
+            {
+                PbMakeComment.Visible = false;
+            }
         }
 
 
@@ -34,15 +37,13 @@ namespace CodeLab.Forms
             TbCode.Text = CurrentCodePiece.Code;
             this.Text = CurrentCodePiece.Title;
             MainForm.CurrentUser?.AddOrUpdateSearchHistory(CurrentCodePiece._id, 10);
+
+            if (MainForm.CurrentUser != null && CurrentCodePiece.Contributer==MainForm.CurrentUser._id)
+            {
+                PictureBoxEditCode.Visible = true;
+            }
         }
-
-      
-
-        private void BtnOriginal_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void BtnSeeComments_Click(object sender, EventArgs e)
         {
             using (var sc = new SeeComments())
@@ -62,7 +63,7 @@ namespace CodeLab.Forms
 
         private async void BtnRun_ClickAsync(object sender, EventArgs e)
         {
-            var debug = new CodeLab.Classes.Database.Entities.Debug();
+            var debug = new Debug();
             debug.Code = TbCode.Text;
             debug.Language = CurrentCodePiece.Language;
             if (await DbFactory.DebugCrud.Insert(debug))
@@ -84,13 +85,12 @@ namespace CodeLab.Forms
             }));
             await DbFactory.DebugCrud.Delete(_id);
         }
-
         private void Cr_ConnectionStatus(string obj)
         {
             TbStatus.AppendText(obj, Color.Black);
 
         }
-
+   
         private void BtnOrginal_Click(object sender, EventArgs e)
         {
             TbCode.Text = CurrentCodePiece.Code;
@@ -103,7 +103,7 @@ namespace CodeLab.Forms
 
         private void BtnRun_MouseHover(object sender, EventArgs e)
         {
-            ToolTip tt = new ToolTip();
+            ToolTip tt = new ToolTip(); // tooltip is a small pop-up window that displays some information when you rollover on a control. 
             tt.SetToolTip(sender as Control, "Execute");
         }
 
@@ -129,6 +129,14 @@ namespace CodeLab.Forms
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(sender as Control, "Make Comment");
+        }
+
+        private void PictureBoxEditCode_Click(object sender, EventArgs e)
+        {
+            using (var eF = new UserEditCodeForm(CurrentCodePiece._id))
+            {
+                eF.ShowDialog();
+            }
         }
     }
 }

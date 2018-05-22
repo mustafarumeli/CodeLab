@@ -631,3 +631,5 @@ D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.UserEditCodeForm.res
 D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CoreCompileInputs.cache
 D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.csproj.CopyComplete
 D:\Projeler\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.EditCode.resources
+C:\Users\zuzu\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.EditCode.resources
+C:\Users\zuzu\Desktop\CodeLab\CodeLab\CodeLab\obj\Debug\CodeLab.Forms.UserEditCodeForm.resources

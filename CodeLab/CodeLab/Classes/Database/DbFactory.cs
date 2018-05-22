@@ -6,19 +6,13 @@ namespace CodeLab.Classes.Database
 {
    public class DbFactory
     {
-        // public static IMongoClient Client = new MongoClient("mongodb://mustafarumeli:2dDfShKEX9rbc6e2eHxedLaouu8glHyZE9Ghz5PauBTfBkhpIWhvZuwxsgal1bnhQ2ZIQdIgjxDSrfT6XjS9YA==@mustafarumeli.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
-        //public static IMongoClient Client = new MongoClient();
-        /// <summary>
-        /// For Creating Remote Connection to linux host we create mongoclientsetting field 
-        /// </summary>
         static readonly string server_username = "ohm";
         static readonly string server_password = "741895623ohm";
         static readonly string server_host = "35.231.112.9";
         static readonly int server_port = 27017;
         static readonly string database_name = "cool_db";
         public static IMongoClient Client = new MongoClient($"mongodb://{server_username}:{server_password}@{server_host}:{server_port}/{database_name}");
-        //private static IMongoClient Client = new MongoClient();
-        //private static string database_name = "LocalTest";
+
         private static IMongoDatabase _database;
         public static IMongoDatabase Database => _database ?? (_database = Client.GetDatabase(database_name));
 
@@ -30,7 +24,6 @@ namespace CodeLab.Classes.Database
 
         private static DebugCRUD _debugCRUD;
         public static DebugCRUD DebugCrud => _debugCRUD ?? (_debugCRUD = new DebugCRUD());
-
 
         private static IMongoCollection<BsonDocument> _users;
         public static IMongoCollection<BsonDocument> Users => _users ?? (_users = Database.GetCollection<BsonDocument>(typeof(User).Name));
