@@ -10,6 +10,7 @@ namespace CodeLab.Classes
     public class CryptoService
     {
 
+      // Hash Encryption
         public static string Encrypt(string password)
         {
             byte[] salt;
